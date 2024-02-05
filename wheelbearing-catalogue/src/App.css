@@ -1,42 +1,118 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+}
+
+.navbar {
+  background: linear-gradient(to right, #e67e22, #ff8200, #ffbf0d);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.navbar h2 {
+  margin: 0;
+}
+
+.navbar-logo {
+  height: 50px;
+}
+.background-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url("./assets/cvBoots.png") no-repeat center center;
+  background-size: cover;
+}
+
+.dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  height: 100vh;
+}
+
+.inner-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  width: 30%;
+  background-color: rgba(67, 75, 85, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.filter select {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  color: #32383f;
+  border: 1px solid #ff8200;
+  border-radius: 4px;
+}
+
+.button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #ff8200;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.button:hover {
+  background-color: #ffbf0d;
+}
+
+.red {
+  background-color: #f44336;
+}
+
+.footer {
+  background-color: #32383f;
+  color: #fff;
+  opacity: 0.8;
   text-align: center;
+  padding: 10px 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 14px;
+  z-index: 2;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+/* colour scheme */
+/* #ff8200 */
+/* #ffbf0d */
+/* #32383f */
+/* #434b55 */
+/* rgba(0, 0, 0, 1); */
