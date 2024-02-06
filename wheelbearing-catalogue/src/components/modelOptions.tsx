@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import supabase from "../assets/supaBaseClient";
 
-// Define an interface for the component's props
 interface ModelOptionsProps {
   selectedManufacturer: string;
   reset: boolean;

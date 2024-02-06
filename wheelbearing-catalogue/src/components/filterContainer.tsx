@@ -1,14 +1,12 @@
 import { useState } from "react";
 import ManufacturerOptions from "./manufFilter";
 import ModelOptions from "./modelOptions";
-// import SearchButton from "./searchButton";
+
 import supabase from "../assets/supaBaseClient";
 import EngineSizeOptions from "./EngineSizeOptions";
 import ResetButton from "./Reset";
+import MarkSeriesOptions from "./MarkSeriesOptions";
 // import { useNavigate } from "react-router-dom";
-// import SearchButton from "./Search";
-
-//state variables for dropdown choices
 
 const FilterContainer = () => {
   // const navigate = useNavigate();
@@ -16,9 +14,8 @@ const FilterContainer = () => {
   const [reset, setReset] = useState<boolean>(false);
   const [selectedModel, setSelectedModel] = useState<string>("");
   const [selectedEngineSize, setSelectedEngineSize] = useState<string>("");
-  // const [selectedPosition, setSelectedPosition] = useState("");
+  const [selectedMarkSeries, setSelectedMarkSeries] = useState<string>("");
 
-  //dropdown event handlers
   const handleManufacturerChange = (manufacturer: string) => {
     setSelectedManufacturer(manufacturer);
   };
@@ -31,9 +28,9 @@ const FilterContainer = () => {
     setSelectedEngineSize(engineSize);
   };
 
-  // const handlePositionChange = (position) => {
-  //   setSelectedPosition(position);
-  // };
+  const handleMarkSeriesChange = (markSeries: string) => {
+    setSelectedMarkSeries(markSeries);
+  };
 
   // const handleSearch = async () => {
   //   try {
@@ -93,7 +90,12 @@ const FilterContainer = () => {
           reset={reset}
           onEngineSizeChange={handleEngineSizeChange}
         />
-
+        <MarkSeriesOptions
+          selectedModel={selectedModel}
+          selectedEngineSize={selectedEngineSize}
+          reset={reset}
+          onMarkSeriesChange={handleMarkSeriesChange}
+        />
         {/* <SearchButton onSearch={handleSearch} /> */}
         <ResetButton onReset={handleReset} />
       </div>
