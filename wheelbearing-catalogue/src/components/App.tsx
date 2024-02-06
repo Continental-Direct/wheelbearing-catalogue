@@ -1,8 +1,8 @@
-import { BrowserRouter as Router, Routes } from "react-router-dom";
-import "./App.css";
-import Nav from "./nav";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "../App.css";
+import Nav from "./Nav";
 import Footer from "./Footer";
-// import FilterContainer from "./filterContainer";
+import FilterContainer from "./filterContainer";
 // import SearchResultPage from "./SearchResultsPage";
 
 function App() {
@@ -12,8 +12,8 @@ function App() {
       <div className="background-container">
         <div className="dark-overlay">
           <Routes>
-            {/* <Route path="/" element={<FilterContainer />} />
-            <Route path="/results" element={<SearchResultPage />} /> */}
+            <Route path="/" element={<FilterContainer />} />
+            {/* <Route path="/results" element={<SearchResultPage />} /> */}
           </Routes>
         </div>
       </div>

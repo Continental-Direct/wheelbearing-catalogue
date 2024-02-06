@@ -44,3 +44,5 @@ const manufacturers = [
   "Volkswagen",
   "Volvo",
 ];
+
+export default manufacturers;
