@@ -3,7 +3,7 @@ import ManufacturerOptions from "./manufFilter";
 import ModelOptions from "./modelOptions";
 // import SearchButton from "./searchButton";
 import supabase from "../assets/supaBaseClient";
-// import PositionOptions from "./positionOptions";
+import EngineSizeOptions from "./EngineSizeOptions";
 import ResetButton from "./Reset";
 // import { useNavigate } from "react-router-dom";
 // import SearchButton from "./Search";
@@ -15,7 +15,7 @@ const FilterContainer = () => {
   const [selectedManufacturer, setSelectedManufacturer] = useState<string>("");
   const [reset, setReset] = useState<boolean>(false);
   const [selectedModel, setSelectedModel] = useState<string>("");
-  // const [selectedBodyType, setSelectedBodyType] = useState("");
+  const [selectedEngineSize, setSelectedEngineSize] = useState<string>("");
   // const [selectedPosition, setSelectedPosition] = useState("");
 
   //dropdown event handlers
@@ -25,19 +25,12 @@ const FilterContainer = () => {
 
   const handleModelChange = (model: string) => {
     setSelectedModel(model);
-    setSelectedModel("");
   };
 
-  // const handleModelChange = (model) => {
-  //   setSelectedModel(model);
-  //   setSelectedBodyType("");
-  //   setSelectedPosition("");
-  // };
+  const handleEngineSizeChange = (engineSize: string) => {
+    setSelectedEngineSize(engineSize);
+  };
 
-  // const handleBodyTypeChange = (bodyType) => {
-  //   setSelectedBodyType(bodyType);
-  //   setSelectedPosition("");
-  // };
   // const handlePositionChange = (position) => {
   //   setSelectedPosition(position);
   // };
@@ -75,12 +68,13 @@ const FilterContainer = () => {
     setReset((prevReset) => !prevReset);
     setSelectedManufacturer("");
     setSelectedModel("");
-    // setSelectedBodyType("");
+    setSelectedEngineSize("");
     // setSelectedPosition("");
   };
 
   //component markup
 
+  console.log(selectedModel);
   return (
     <div className="container">
       <div className="inner-container">
@@ -94,17 +88,12 @@ const FilterContainer = () => {
           reset={reset}
           onModelChange={handleModelChange}
         />
-        {/* <BodyTypeOptions
+        <EngineSizeOptions
           selectedModel={selectedModel}
           reset={reset}
-          onBodyTypeChange={handleBodyTypeChange} // Use handleBodyTypeChange as the callback function
-        /> */}
-        {/* <PositionOptions
-          selectedModel={selectedModel}
-          selectedBodyType={selectedBodyType}
-          reset={reset}
-          onPositionChange={handlePositionChange}
-        /> */}
+          onEngineSizeChange={handleEngineSizeChange}
+        />
+
         {/* <SearchButton onSearch={handleSearch} /> */}
         <ResetButton onReset={handleReset} />
       </div>

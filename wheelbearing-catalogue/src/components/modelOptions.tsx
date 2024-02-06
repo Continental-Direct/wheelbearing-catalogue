@@ -28,7 +28,7 @@ const ModelOptions: React.FC<ModelOptionsProps> = ({
       try {
         if (selectedManufacturer) {
           const { data, error } = await supabase
-            .from("wiperblades2")
+            .from("Wheelbearing")
             .select("Model")
             .eq("Manuf", selectedManufacturer);
 
