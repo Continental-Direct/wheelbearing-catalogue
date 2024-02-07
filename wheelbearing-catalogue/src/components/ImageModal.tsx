@@ -40,7 +40,7 @@ const ImageModal: React.FC<ImageModalProps> = ({
       <div
         style={{
           padding: 20,
-          background: "linear-gradient(to right, #e67e22, #ff8200, #ffbf0d)",
+          backgroundColor: "orange",
           borderRadius: 5,
           position: "relative",
         }}

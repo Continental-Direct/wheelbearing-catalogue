@@ -12,25 +12,38 @@ body {
 }
 
 .navbar {
-  background: linear-gradient(to right, #e67e22, #ff8200, #ffbf0d);
+  background: linear-gradient(to right, #ffbf0d, #ff8200, #e67e22);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-}
-
-.navbar h2 {
-  margin: 0;
+  position: relative;
 }
 
 .navbar-logo {
+  position: absolute;
+  left: 50%;
+  top: 50%; /* Center the logo vertically */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Adjust for both horizontal and vertical centering */
   height: 50px;
 }
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
 .background-container {
   position: relative;
   width: 100%;
   height: 100vh;
-  background: url("./assets/cvBoots.png") no-repeat center center;
+  background: url("./assets/wheelbearings-draft-background.webp") no-repeat
+    center center;
   background-size: cover;
 }
 
