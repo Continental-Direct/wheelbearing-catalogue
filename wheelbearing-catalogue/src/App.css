@@ -172,11 +172,14 @@ body {
   align-items: center;
   padding: 16px;
   margin: 8px;
-  width: 200px; /* Adjust based on your layout */
+  width: 18%;
 }
 
 .card-logo {
   margin-bottom: 8px;
+}
+.logo {
+  width: 20%;
 }
 
 .card-image img {
@@ -189,15 +192,30 @@ body {
   text-align: center;
 }
 
+.model-desc {
+  color: #32383f;
+}
+
 .product-name {
   font-weight: bold;
+  color: #32383f;
 }
 
 .description,
 .price,
-.position,
-.part-number {
+.position {
   font-size: 0.9rem;
+  color: #32383f;
+}
+
+/* CardContainer.css */
+.card-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
 }
 
 .buy-button {
