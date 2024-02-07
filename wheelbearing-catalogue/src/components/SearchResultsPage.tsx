@@ -17,7 +17,7 @@ interface RowData {
 }
 
 const SearchResultPage: React.FC = () => {
-  const location = useLocation(); // Assuming location.state has a searchResults array
+  const location = useLocation();
   const { searchResults } = location.state || { searchResults: [] };
   const [isModalOpen, setModalOpen] = useState(false);
   const [currentImageUrl, setCurrentImageUrl] = useState("");
@@ -76,7 +76,7 @@ const SearchResultPage: React.FC = () => {
       columns,
       data: searchResults,
     },
-    useFilters // Use filtering plugin
+    useFilters
   );
 
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
