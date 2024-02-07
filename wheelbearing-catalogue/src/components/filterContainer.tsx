@@ -1,15 +1,15 @@
 import { useState } from "react";
 import ManufacturerOptions from "./manufFilter";
 import ModelOptions from "./modelOptions";
-
-import supabase from "../assets/supaBaseClient";
 import EngineSizeOptions from "./EngineSizeOptions";
-import ResetButton from "./Reset";
 import MarkSeriesOptions from "./MarkSeriesOptions";
-// import { useNavigate } from "react-router-dom";
+import ResetButton from "./Reset";
+import SearchButton from "./Search";
+import supabase from "../assets/supaBaseClient";
+import { useNavigate } from "react-router-dom";
 
 const FilterContainer = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [selectedManufacturer, setSelectedManufacturer] = useState<string>("");
   const [reset, setReset] = useState<boolean>(false);
   const [selectedModel, setSelectedModel] = useState<string>("");
@@ -32,46 +32,41 @@ const FilterContainer = () => {
     setSelectedMarkSeries(markSeries);
   };
 
-  // const handleSearch = async () => {
-  //   try {
-  let query = supabase.from("wiperblades2").select("*");
-
-  if (selectedManufacturer) {
-    query = query.eq("Manuf", selectedManufacturer);
-  }
-  //     if (selectedModel) {
-  //       query = query.eq("Model", selectedModel);
-  //     }
-  //     if (selectedBodyType) {
-  //       // Use selectedBodyType
-  //       query = query.eq("BodyType", selectedBodyType); // Assuming "BodyType" is the correct field
-  //     }
-  //     if (selectedPosition) {
-  //       // Use selectedPosition
-  //       query = query.eq("Position", selectedPosition); // Assuming "Position" is the correct field
-  //     }
-
-  //     const { data, error } = await query;
-
-  //     if (error) throw error;
-  //     console.log("Data returned from Supabase:", data);
-  //     navigate("/results", { state: { searchResults: data } });
-  //   } catch (error) {
-  //     console.error("Error in search:", error.message);
-  //   }
-  // };
-
   const handleReset = () => {
     setReset((prevReset) => !prevReset);
     setSelectedManufacturer("");
     setSelectedModel("");
     setSelectedEngineSize("");
-    // setSelectedPosition("");
+    setSelectedMarkSeries("");
   };
 
-  //component markup
+  const handleSearch = async () => {
+    try {
+      let query = supabase.from("wiperblades2").select("*");
 
-  console.log(selectedModel);
+      if (selectedManufacturer) {
+        query = query.eq("Manuf", selectedManufacturer);
+      }
+      if (selectedModel) {
+        query = query.eq("Model", selectedModel);
+      }
+      if (selectedEngineSize) {
+        query = query.eq("EngineSize", selectedEngineSize);
+      }
+      if (selectedMarkSeries) {
+        query = query.eq("MarkSeries", selectedMarkSeries);
+      }
+
+      const { data, error } = await query;
+
+      if (error) throw error;
+      console.log("Data returned from Supabase:", data);
+      navigate("/results", { state: { searchResults: data } });
+    } catch (error) {
+      console.error("Error in search:", (error as any).message);
+    }
+  };
+
   return (
     <div className="container">
       <div className="inner-container">
@@ -96,7 +91,7 @@ const FilterContainer = () => {
           reset={reset}
           onMarkSeriesChange={handleMarkSeriesChange}
         />
-        {/* <SearchButton onSearch={handleSearch} /> */}
+        <SearchButton onSearch={handleSearch} />
         <ResetButton onReset={handleReset} />
       </div>
     </div>
