@@ -42,7 +42,7 @@ const FilterContainer = () => {
 
   const handleSearch = async () => {
     try {
-      let query = supabase.from("wiperblades2").select("*");
+      let query = supabase.from("Wheelbearing").select("*");
 
       if (selectedManufacturer) {
         query = query.eq("Manuf", selectedManufacturer);
@@ -54,7 +54,7 @@ const FilterContainer = () => {
         query = query.eq("EngineSize", selectedEngineSize);
       }
       if (selectedMarkSeries) {
-        query = query.eq("MarkSeries", selectedMarkSeries);
+        query = query.eq("mark_series", selectedMarkSeries);
       }
 
       const { data, error } = await query;
@@ -70,7 +70,7 @@ const FilterContainer = () => {
   return (
     <div className="container">
       <div className="inner-container">
-        <h3>Wiper blades catalogue</h3>
+        <h3>Wheelbearing catalogue</h3>
         <ManufacturerOptions
           onManufacturerChange={handleManufacturerChange}
           reset={reset}

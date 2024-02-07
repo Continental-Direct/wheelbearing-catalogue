@@ -97,6 +97,45 @@ body {
   background-color: #f44336;
 }
 
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #32383f;
+}
+
+.table th,
+.table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #434b55;
+  color: #ddd;
+}
+
+.table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.table tr:nth-child(odd) {
+  background-color: #f0f0f0;
+}
+
+.footer {
+  background-color: #32383f;
+  color: #fff;
+  opacity: 0.8;
+  text-align: center;
+  padding: 10px 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 14px;
+  z-index: 2;
+}
+
 .footer {
   background-color: #32383f;
   color: #fff;
