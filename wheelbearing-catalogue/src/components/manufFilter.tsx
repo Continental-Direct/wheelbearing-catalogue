@@ -2,22 +2,16 @@ import { useState, useEffect, FC } from "react";
 
 import manufacturers from "./manufacturers";
 
-//expected 'shape' of props for this component
-
 interface ManufacturerOptionsProps {
   onManufacturerChange: (value: string) => void;
   reset: boolean;
 }
-
-//component definition with expected interface
 
 const ManufacturerOptions: FC<ManufacturerOptionsProps> = ({
   onManufacturerChange,
   reset,
 }) => {
   const [selectedManufacturer, setSelectedManufacturer] = useState<string>("");
-
-  
 
   const handleManufacturerChange = (
     event: React.ChangeEvent<HTMLSelectElement>

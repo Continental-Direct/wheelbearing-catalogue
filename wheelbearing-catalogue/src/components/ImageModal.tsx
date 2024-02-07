@@ -1,8 +1,21 @@
 import React from "react";
 
-const ImageModal = ({ isOpen, onClose, imageUrl }: { isOpen: boolean, onClose: () => void, imageUrl: string }) => {
+interface ImageModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  imageUrl: string;
+  PartNumber: string; // Add partNumber to the props
+}
+
+const ImageModal: React.FC<ImageModalProps> = ({
+  isOpen,
+  onClose,
+  imageUrl,
+  PartNumber,
+}) => {
   React.useEffect(() => {
-    const closeOnEscapeKey = (e: KeyboardEvent) => (e.key === "Escape" ? onClose() : null);
+    const closeOnEscapeKey = (e: KeyboardEvent) =>
+      e.key === "Escape" ? onClose() : null;
     document.body.addEventListener("keydown", closeOnEscapeKey);
     return () => document.body.removeEventListener("keydown", closeOnEscapeKey);
   }, [onClose]);
@@ -27,7 +40,7 @@ const ImageModal = ({ isOpen, onClose, imageUrl }: { isOpen: boolean, onClose: (
       <div
         style={{
           padding: 20,
-          backgroundColor: "#fff",
+          background: "linear-gradient(to right, #e67e22, #ff8200, #ffbf0d)",
           borderRadius: 5,
           position: "relative",
         }}
@@ -37,18 +50,26 @@ const ImageModal = ({ isOpen, onClose, imageUrl }: { isOpen: boolean, onClose: (
           alt="Enlarged"
           style={{ maxWidth: "50vw", maxHeight: "50vh" }}
         />
-        <button
-          onClick={onClose}
+        <div
           style={{
-            display: "block",
-            marginTop: 10,
             position: "absolute",
-            top: 0,
-            right: 0,
+            top: 10,
+            right: 10,
+            cursor: "pointer",
+            userSelect: "none",
+            padding: "5px 10px",
+            background: "#f00",
+            color: "#fff",
+            borderRadius: "50%",
           }}
+          onClick={onClose}
         >
-          Close
-        </button>
+          X
+        </div>
+
+        <div style={{ textAlign: "center", marginTop: "10px" }}>
+          Part Number: {PartNumber}
+        </div>
       </div>
     </div>
   );

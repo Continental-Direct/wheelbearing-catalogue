@@ -13,7 +13,7 @@ declare module "react-table" {
 
 interface RowData {
   PartNumber: string;
-  [key: string]: any; // Use an index signature for additional properties
+  [key: string]: any;
 }
 
 const SearchResultPage: React.FC = () => {
@@ -21,6 +21,7 @@ const SearchResultPage: React.FC = () => {
   const { searchResults } = location.state || { searchResults: [] };
   const [isModalOpen, setModalOpen] = useState(false);
   const [currentImageUrl, setCurrentImageUrl] = useState("");
+  const [currentPartNumber, setCurrentPartNumber] = useState("");
 
   const columns: Column<RowData>[] = React.useMemo(
     () => [
@@ -59,6 +60,7 @@ const SearchResultPage: React.FC = () => {
               style={{ width: 100, cursor: "pointer" }}
               onClick={() => {
                 setCurrentImageUrl(imageUrl);
+                setCurrentPartNumber(value);
                 setModalOpen(true);
               }}
             />
@@ -86,6 +88,7 @@ const SearchResultPage: React.FC = () => {
         isOpen={isModalOpen}
         onClose={() => setModalOpen(false)}
         imageUrl={currentImageUrl}
+        PartNumber={currentPartNumber}
       />
       {searchResults.length > 0 ? (
         <table {...getTableProps()} className="table">
