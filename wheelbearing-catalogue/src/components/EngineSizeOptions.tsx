@@ -38,6 +38,7 @@ const EngineSizeOptions: React.FC<EngineSizeOptionsProps> = ({
             const uniqueEngineSizes = [
               ...new Set(data.map((item: any) => item.EngineSize)),
             ];
+            uniqueEngineSizes.sort((a, b) => Number(a) - Number(b));
 
             setEngineSizes(uniqueEngineSizes);
           }
