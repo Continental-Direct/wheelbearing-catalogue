@@ -7,9 +7,15 @@ interface InfoModalProps {
     imageUrl: string;
     PartNumber: string;
     ModelDesc: string;
-    Manuf: string; // Include manufacturer
-    Model: string; // Include model
-    // Include other fields from CardProps as needed
+    Manuf: string;
+    Model: string;
+    EngineSize: string; // Added
+    Years: string; // Added
+    FuelType: string; // Added
+    BodyType: string; // Added
+    Transmission: string; // Added
+    Fitment: string; // Added
+    // Add any other fields as needed
   };
 }
 
@@ -18,9 +24,6 @@ const InfoModal: React.FC<InfoModalProps> = ({ isOpen, onClose, content }) => {
   return (
     <div className="modal-backdrop" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <span className="close-button" onClick={onClose}>
-          &times;
-        </span>
         <div className="modal-body">
           <img
             className="modal-image"
@@ -29,16 +32,41 @@ const InfoModal: React.FC<InfoModalProps> = ({ isOpen, onClose, content }) => {
           />
           <div className="text-content">
             <p className="name">
-              {content.Manuf} {content.Model}
+              {content.Manuf} {content.Model} Wheelbearing Kit
             </p>
             <h3>Details</h3>
             <ul className="modal-info">
-              <li>{content.ModelDesc}</li>
-              <li>Placeholder</li>
-              <li>Placeholder</li>
-              <li>Placeholder</li>
-              <li>Placeholder</li>
-              <li>Placeholder</li>
+              <li>
+                <span className="modal-category">Description:</span>
+                {content.ModelDesc}
+              </li>
+              <li>
+                <span className="modal-category">Engine Size:</span>
+                {content.EngineSize}
+              </li>
+              <li>
+                <span className="modal-category">Years:</span> {content.Years}
+              </li>
+              <li>
+                <span className="modal-category">Fuel Type:</span>
+                {content.FuelType}
+              </li>
+              <li>
+                <span className="modal-category">Part Number:</span>
+                {content.PartNumber}
+              </li>
+              <li>
+                <span className="modal-category">Body Type:</span>
+                {content.BodyType}
+              </li>
+              <li>
+                <span className="modal-category">Transmission:</span>
+                {content.Transmission}
+              </li>
+              <li>
+                <span className="modal-category">Fitment:</span>
+                {content.Fitment}
+              </li>
             </ul>
           </div>
         </div>

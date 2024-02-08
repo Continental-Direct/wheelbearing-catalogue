@@ -21,6 +21,12 @@ const CardContainer: React.FC = () => {
     ModelDesc: string;
     Manuf: string;
     Model: string;
+    EngineSize: string;
+    Years: string;
+    FuelType: string;
+    BodyType: string;
+    Transmission: string;
+    Fitment: string;
   } | null>(null);
 
   const handleOpenModal = (data: CardProps) => {
@@ -31,6 +37,12 @@ const CardContainer: React.FC = () => {
       ModelDesc: data.ModelDesc,
       Manuf: data.Manuf,
       Model: data.Model,
+      EngineSize: data.EngineSize,
+      Years: data.Years,
+      FuelType: data.FuelType,
+      BodyType: data.BodyType,
+      Transmission: data.Transmission,
+      Fitment: data.Fitment,
     });
     setIsModalOpen(true);
     console.log("Modal content:");

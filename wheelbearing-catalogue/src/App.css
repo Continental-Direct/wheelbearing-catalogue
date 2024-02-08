@@ -246,7 +246,7 @@ body {
 }
 
 .modal-content {
-  max-width: 75%; /* Adjusted for better control over layout */
+  max-width: 60%; /* Adjusted for better control over layout */
   height: 50%;
   background-color: white;
   padding: 30px;
@@ -265,6 +265,9 @@ body {
 .modal-image {
   max-width: 50%; /* Adjust size as needed */
   margin-right: 20px; /* Adds some space between the image and the text */
+}
+.modal-category {
+  font-weight: bold;
 }
 
 .name {

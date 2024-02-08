@@ -6,6 +6,12 @@ export interface CardProps {
   Position: string;
   Manuf: string;
   Model: string;
+  EngineSize: string;
+  Years: string;
+  FuelType: string;
+  BodyType: string;
+  Transmission: string;
+  Fitment: string;
   openModal: () => void;
 }
 
