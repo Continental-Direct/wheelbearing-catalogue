@@ -4,9 +4,7 @@ const Nav = () => {
   return (
     <nav className="navbar">
       <div className="navbar-left"></div>{" "}
-      {/* Placeholder for balancing layout */}
       <div className="navbar-center">
-        {/* Removed Link from around the logo */}
         <img src={"/continental.png"} alt="Logo" className="navbar-logo" />
       </div>
       <div className="navbar-right">
