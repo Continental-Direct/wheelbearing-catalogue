@@ -24,15 +24,12 @@ const Card: React.FC<CardProps> = ({
 
   return (
     <div className="card">
-      <div className="card-logo">
-        <img src="./continental.png" alt="Continental" className="logo" />
-      </div>
       <div className="card-image">
         <img src={imageUrl} alt={PartNumber} />
       </div>
       <div className="card-info">
         <h3 className="product-name">{PartNumber}</h3>
-        <p className="model-desc">
+        <p className="product-name">
           {Manuf} {Model}
         </p>
         <p className="model-desc">{ModelDesc}</p>

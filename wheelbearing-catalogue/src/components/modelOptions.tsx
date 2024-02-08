@@ -35,7 +35,7 @@ const ModelOptions: React.FC<ModelOptionsProps> = ({
             console.error("Error fetching models:", error.message);
             return;
           }
-
+          console.log("Data returned from Supabase:", data);
           const uniqueModels = [
             ...new Set(data.map((item: any) => item.Model)),
           ];

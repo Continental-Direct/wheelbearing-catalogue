@@ -3,7 +3,7 @@ import "../App.css";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import FilterContainer from "./filterContainer";
-// import SearchResultsPage from "./SearchResultsPage";
+import SearchResultsPage from "./SearchResultsPage";
 import CardContainer from "../CardContainer";
 
 function App() {
