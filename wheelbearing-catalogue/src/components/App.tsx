@@ -4,6 +4,7 @@ import Nav from "./Nav";
 import Footer from "./Footer";
 import FilterContainer from "./filterContainer";
 import SearchResultsPage from "./SearchResultsPage";
+import CardContainer from "../CardContainer";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
         <div className="dark-overlay">
           <Routes>
             <Route path="/" element={<FilterContainer />} />
-            <Route path="/results" element={<SearchResultsPage />} />
+            {/* <Route path="/results" element={<SearchResultsPage />} /> */}
+            <Route path="/results" element={<CardContainer cardsData={[]} />} />
           </Routes>
         </div>
       </div>
