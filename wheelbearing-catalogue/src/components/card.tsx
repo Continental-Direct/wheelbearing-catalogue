@@ -1,26 +1,24 @@
 import React from "react";
 
 export interface CardProps {
-  imageUrl: string;
   PartNumber: string;
-  ModelDesc: string; // Changed from 'description' to 'ModelDesc'
+  ModelDesc: string;
   Position: string;
-  Manuf: string; // Added manufacturer field
-  Model: string; // Added model field
+  Manuf: string;
+  Model: string;
+  openModal: () => void;
 }
+
 const Card: React.FC<CardProps> = ({
   PartNumber,
-  Position,
   ModelDesc,
+  Position,
   Manuf,
   Model,
+  openModal,
 }) => {
-  const buildImageUrl = (partNumber: string) => {
-    return `https://dsucoxafocjydztfhxum.supabase.co/storage/v1/object/public/wheelbearing/Autocat%20Wheel%20Bearing%20Images%20(CDM)/${partNumber}.jpg`;
-  };
-
-  // Call the function to get the image URL
-  const imageUrl = buildImageUrl(PartNumber);
+  // Function to build the image URL based on the PartNumber
+  const imageUrl = `https://dsucoxafocjydztfhxum.supabase.co/storage/v1/object/public/wheelbearing/Autocat%20Wheel%20Bearing%20Images%20(CDM)/${PartNumber}.jpg`;
 
   return (
     <div className="card">
@@ -36,7 +34,9 @@ const Card: React.FC<CardProps> = ({
         <p className="price">**price placeholder**</p>
         <p className="position">{Position}</p>
       </div>
-      <button className="buy-button">More Info</button>
+      <button className="buy-button" onClick={openModal}>
+        More Info
+      </button>
     </div>
   );
 };

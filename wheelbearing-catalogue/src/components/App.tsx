@@ -3,8 +3,7 @@ import "../App.css";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import FilterContainer from "./filterContainer";
-// import SearchResultsPage from "./SearchResultsPage";
-import CardContainer from "../CardContainer";
+import CardContainer from "../CardContainer"; // Add the missing import statement
 
 function App() {
   return (
@@ -14,8 +13,7 @@ function App() {
         <div className="dark-overlay">
           <Routes>
             <Route path="/" element={<FilterContainer />} />
-            {/* <Route path="/results" element={<SearchResultsPage />} /> */}
-            <Route path="/results" element={<CardContainer cardsData={[]} />} />
+            <Route path="/results" element={<CardContainer />} /> /
           </Routes>
         </div>
       </div>
