@@ -232,6 +232,45 @@ body {
   background-color: #e67e22;
 }
 
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  max-width: 75%; /* Adjusted for better control over layout */
+  height: 50%;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row; /* Changed to row for side-by-side layout */
+  align-items: center;
+  color: #32383f;
+  overflow: hidden;
+}
+
+.modal-body {
+  display: flex;
+}
+
+.modal-image {
+  max-width: 50%; /* Adjust size as needed */
+  margin-right: 20px; /* Adds some space between the image and the text */
+}
+
+.name {
+  font-size: 1.5rem;
+}
+
 /* colour scheme */
 /* #ff8200 */
 /* #ffbf0d */

@@ -19,6 +19,8 @@ const CardContainer: React.FC = () => {
     imageUrl: string;
     PartNumber: string;
     ModelDesc: string;
+    Manuf: string;
+    Model: string;
   } | null>(null);
 
   const handleOpenModal = (data: CardProps) => {
@@ -27,6 +29,8 @@ const CardContainer: React.FC = () => {
       imageUrl,
       PartNumber: data.PartNumber,
       ModelDesc: data.ModelDesc,
+      Manuf: data.Manuf,
+      Model: data.Model,
     });
     setIsModalOpen(true);
     console.log("Modal content:");

@@ -3,7 +3,7 @@ import "../App.css";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import FilterContainer from "./filterContainer";
-import CardContainer from "../CardContainer"; // Add the missing import statement
+import CardContainer from "../CardContainer"; 
 
 function App() {
   return (
