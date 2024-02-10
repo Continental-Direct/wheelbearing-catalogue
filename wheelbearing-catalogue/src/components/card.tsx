@@ -41,7 +41,7 @@ const Card: React.FC<CardProps> = ({
         <p className="position">{Position}</p>
       </div>
       <button className="buy-button" onClick={openModal}>
-        More Info
+        View
       </button>
     </div>
   );

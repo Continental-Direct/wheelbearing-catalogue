@@ -37,37 +37,43 @@ const InfoModal: React.FC<InfoModalProps> = ({ isOpen, onClose, content }) => {
             <h3>Details</h3>
             <ul className="modal-info">
               <li>
-                <span className="modal-category">Description:</span>
+                <span className="modal-category">Description: </span>
                 {content.ModelDesc}
               </li>
               <li>
-                <span className="modal-category">Engine Size:</span>
+                <span className="modal-category">Engine Size: </span>
                 {content.EngineSize}
               </li>
               <li>
-                <span className="modal-category">Years:</span> {content.Years}
+                <span className="modal-category">Years: </span> {content.Years}
               </li>
               <li>
-                <span className="modal-category">Fuel Type:</span>
+                <span className="modal-category">Fuel Type: </span>
                 {content.FuelType}
               </li>
               <li>
-                <span className="modal-category">Part Number:</span>
+                <span className="modal-category">Part Number: </span>
                 {content.PartNumber}
               </li>
               <li>
-                <span className="modal-category">Body Type:</span>
+                <span className="modal-category">Body Type: </span>
                 {content.BodyType}
               </li>
               <li>
-                <span className="modal-category">Transmission:</span>
+                <span className="modal-category">Transmission: </span>
                 {content.Transmission}
               </li>
               <li>
-                <span className="modal-category">Fitment:</span>
+                <span className="modal-category">Fitment: </span>
                 {content.Fitment}
               </li>
             </ul>
+            <div className="modal-buttons">
+              <button className="buy-now-button">Buy now</button>
+              <button className="back-to-menu-button" onClick={onClose}>
+                Back
+              </button>
+            </div>
           </div>
         </div>
       </div>

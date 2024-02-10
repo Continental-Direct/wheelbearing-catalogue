@@ -244,9 +244,12 @@ body {
   align-items: center;
   z-index: 1000;
 }
+.modal-info {
+  margin-bottom: 30px;
+}
 
 .modal-content {
-  max-width: 60%; /* Adjusted for better control over layout */
+  max-width: 50%; /* Adjusted for better control over layout */
   height: 50%;
   background-color: white;
   padding: 30px;
@@ -260,6 +263,7 @@ body {
 
 .modal-body {
   display: flex;
+  gap: 20px;
 }
 
 .modal-image {
@@ -268,6 +272,34 @@ body {
 }
 .modal-category {
   font-weight: bold;
+}
+.text-content {
+  font-size: 16px;
+}
+.modal-buttons {
+  display: flex;
+  justify-content: space-around; /* Adjust as needed */
+  margin-top: 20px;
+}
+
+.buy-now-button,
+.back-to-menu-button {
+  padding: 10px 20px; /* Adjust padding as needed */
+  border: none; /* Removes the border */
+  border-radius: 5px; /* Adds rounded corners */
+  cursor: pointer; /* Changes the cursor on hover */
+  outline: none; /* Removes the outline */
+  font-size: 16px;
+}
+
+.buy-now-button {
+  background-color: #ff8200; /* Example blue color for BUY NOW */
+  color: white; /* White text color */
+}
+
+.back-to-menu-button {
+  background-color: #6c757d; /* Example gray color for Back to Menu */
+  color: white; /* White text color */
 }
 
 .name {
