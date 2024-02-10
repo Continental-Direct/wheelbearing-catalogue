@@ -46,7 +46,6 @@ const SearchResultPage: React.FC = () => {
       { Header: "Valve", accessor: "Valve", Filter: SelectColumnFilter },
       { Header: "Position", accessor: "MPos", Filter: SelectColumnFilter },
 
-      // Define other columns as needed
       {
         Header: "Image",
         id: "image",

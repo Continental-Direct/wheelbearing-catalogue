@@ -9,13 +9,13 @@ interface InfoModalProps {
     ModelDesc: string;
     Manuf: string;
     Model: string;
-    EngineSize: string; // Added
-    Years: string; // Added
-    FuelType: string; // Added
-    BodyType: string; // Added
-    Transmission: string; // Added
-    Fitment: string; // Added
-    // Add any other fields as needed
+    EngineSize: string; 
+    Years: string; 
+    FuelType: string; 
+    BodyType: string; 
+    Transmission: string; 
+    Fitment: string; 
+   
   };
 }
 

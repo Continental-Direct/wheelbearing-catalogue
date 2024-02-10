@@ -4,7 +4,7 @@ interface ImageModalProps {
   isOpen: boolean;
   onClose: () => void;
   imageUrl: string;
-  PartNumber: string; // Add partNumber to the props
+  PartNumber: string; 
 }
 
 const ImageModal: React.FC<ImageModalProps> = ({

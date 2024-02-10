@@ -1,5 +1,6 @@
 import React from "react";
 
+
 export interface CardProps {
   PartNumber: string;
   ModelDesc: string;
@@ -23,7 +24,7 @@ const Card: React.FC<CardProps> = ({
   Model,
   openModal,
 }) => {
-  // Function to build the image URL based on the PartNumber
+
   const imageUrl = `https://dsucoxafocjydztfhxum.supabase.co/storage/v1/object/public/wheelbearing/Autocat%20Wheel%20Bearing%20Images%20(CDM)/${PartNumber}.jpg`;
 
   return (

@@ -267,8 +267,8 @@ body {
 }
 
 .modal-image {
-  max-width: 50%; /* Adjust size as needed */
-  margin-right: 20px; /* Adds some space between the image and the text */
+  max-width: 50%; 
+  margin-right: 20px;
 }
 .modal-category {
   font-weight: bold;
@@ -278,28 +278,28 @@ body {
 }
 .modal-buttons {
   display: flex;
-  justify-content: space-around; /* Adjust as needed */
+  justify-content: space-around; 
   margin-top: 20px;
 }
 
 .buy-now-button,
 .back-to-menu-button {
-  padding: 10px 20px; /* Adjust padding as needed */
-  border: none; /* Removes the border */
-  border-radius: 5px; /* Adds rounded corners */
-  cursor: pointer; /* Changes the cursor on hover */
-  outline: none; /* Removes the outline */
+  padding: 10px 20px; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  outline: none; 
   font-size: 16px;
 }
 
 .buy-now-button {
-  background-color: #ff8200; /* Example blue color for BUY NOW */
-  color: white; /* White text color */
+  background-color: #ff8200; 
+  color: white; 
 }
 
 .back-to-menu-button {
-  background-color: #6c757d; /* Example gray color for Back to Menu */
-  color: white; /* White text color */
+  background-color: #6c757d; 
+  color: white; 
 }
 
 .name {
