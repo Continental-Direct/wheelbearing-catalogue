@@ -4,31 +4,18 @@ import Nav from "./Nav";
 import Footer from "./Footer";
 import FilterContainer from "./filterContainer";
 import CardContainer from "../CardContainer";
+import SearchResultPage from "./SearchResultsPage";
 
 function App() {
   return (
     <Router>
       <Nav />
-      <div className="background-container">
-        <div className="dark-overlay">
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <div className="layout-container">
-                    <FilterContainer />
-                    <div className="image-container">
-                      <img src="continental.png" alt="Descriptive Alt Text" />
-                    </div>
-                  </div>
-                </>
-              }
-            />
-            <Route path="/results" element={<CardContainer />} />
-          </Routes>
-        </div>
-      </div>
+
+      <Routes>
+        <Route path="/" element={<FilterContainer />} />
+        <Route path="/results" element={<CardContainer />} />
+      </Routes>
+
       <Footer />
     </Router>
   );

@@ -54,7 +54,24 @@ const FilterSection: React.FC<FilterSectionProps> = ({ onFilterChange }) => {
         />{" "}
         Diesel
       </div>
-
+      <div>
+        <input
+          type="checkbox"
+          name="FuelType"
+          value="Hybrid"
+          onChange={handleCheckboxChange}
+        />{" "}
+        Hybrid
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          name="FuelType"
+          value="Electric"
+          onChange={handleCheckboxChange}
+        />{" "}
+        Electric
+      </div>
       {/* Filter by Drive Type */}
       <h3>Drive Type</h3>
       <div>
@@ -95,6 +112,51 @@ const FilterSection: React.FC<FilterSectionProps> = ({ onFilterChange }) => {
           onChange={handleCheckboxChange}
         />{" "}
         SUV
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          name="BodyType"
+          value="Estate"
+          onChange={handleCheckboxChange}
+        />
+        Estate
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          name="BodyType"
+          value="ATV"
+          onChange={handleCheckboxChange}
+        />{" "}
+        ATV
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          name="BodyType"
+          value="Saloon"
+          onChange={handleCheckboxChange}
+        />{" "}
+        Saloon
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          name="BodyType"
+          value="Cabrio"
+          onChange={handleCheckboxChange}
+        />{" "}
+        Cabrio
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          name="BodyType"
+          value="Van"
+          onChange={handleCheckboxChange}
+        />
+        Van
       </div>
       {/* Add more filters as needed */}
     </div>

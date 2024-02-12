@@ -27,7 +27,7 @@ const SearchResultPage: React.FC = () => {
     () => [
       {
         Header: "Part Number",
-        accessor: "PartNumber",
+        accessor: "CD",
         Filter: SelectColumnFilter,
       },
       {
@@ -49,7 +49,7 @@ const SearchResultPage: React.FC = () => {
       {
         Header: "Image",
         id: "image",
-        accessor: "PartNumber",
+        accessor: "CD",
         Cell: ({ value }) => {
           const imageUrl = `https://dsucoxafocjydztfhxum.supabase.co/storage/v1/object/public/wheelbearing/Autocat%20Wheel%20Bearing%20Images%20(CDM)/${value}.jpg`;
           return (
