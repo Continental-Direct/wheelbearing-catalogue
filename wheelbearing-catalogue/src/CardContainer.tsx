@@ -9,14 +9,21 @@ export interface CardContainerProps {
   cardsData: CardProps[];
 }
 
+interface Filters {
+  [key: string]: string[];
+}
+
 const CardContainer: React.FC = () => {
+  const [filters, setFilters] = useState<Filters>({
+    Transmission: [],
+    FuelType: [],
+    BodyType: [],
+  });
   const location = useLocation();
   const { searchResults } = (location.state as {
     searchResults: CardProps[];
   }) || { searchResults: [] };
-  const [filters, setFilters] = useState<{ Transmission: string[] }>({
-    Transmission: [],
-  });
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState<{
     imageUrl: string;
@@ -58,20 +65,25 @@ const CardContainer: React.FC = () => {
 
   const onFilterChange = (name: string, value: string, checked: boolean) => {
     setFilters((prevFilters) => {
-      if (name === "Transmission") {
-        const newTransmissionFilters = checked
-          ? [...prevFilters.Transmission, value]
-          : prevFilters.Transmission.filter((item) => item !== value);
-        return { ...prevFilters, Transmission: newTransmissionFilters };
-      }
-      return prevFilters; // Ensure previous filters are returned if no conditions are met
+      const newFilterValues = checked
+        ? [...(prevFilters[name] || []), value]
+        : (prevFilters[name] || []).filter((item) => item !== value);
+      return { ...prevFilters, [name]: newFilterValues };
     });
   };
-  const filteredResults = searchResults.filter((data) =>
-    filters.Transmission.length > 0
-      ? filters.Transmission.includes(data.Transmission)
-      : true
-  );
+
+  const filteredResults = searchResults.filter((data) => {
+    const matchesTransmission =
+      filters.Transmission.length === 0 ||
+      filters.Transmission.includes(data.Transmission);
+    const matchesFuelType =
+      filters.FuelType.length === 0 || filters.FuelType.includes(data.FuelType);
+    const matchesBodyType =
+      filters.BodyType.length === 0 || filters.BodyType.includes(data.BodyType);
+
+    return matchesTransmission && matchesFuelType && matchesBodyType;
+  });
+
   return (
     <>
       <div className="content-container">
