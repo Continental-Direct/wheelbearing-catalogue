@@ -22,7 +22,6 @@ const ModelOptions: React.FC<ModelOptionsProps> = ({
   };
 
   useEffect(() => {
-    console.log("Selected Manufacturer:", selectedManufacturer);
     const fetchModels = async () => {
       try {
         if (selectedManufacturer) {

@@ -65,9 +65,19 @@ const CardContainer: React.FC = () => {
 
   const onFilterChange = (name: string, value: string, checked: boolean) => {
     setFilters((prevFilters) => {
-      const newFilterValues = checked
-        ? [...(prevFilters[name] || []), value]
-        : (prevFilters[name] || []).filter((item) => item !== value);
+      // Get the previous values of the filter, or an empty array if it doesn't exist
+      const prevFilterValues = prevFilters[name] || [];
+  
+      let newFilterValues;
+  
+      if (checked) {
+        // If checked is true, add the new value to the filter
+        newFilterValues = [...prevFilterValues, value];
+      } else {
+        // If checked is false, remove the new value from the filter
+        newFilterValues = prevFilterValues.filter((item) => item !== value);
+      }
+      // Return a new filters object with the updated filter values
       return { ...prevFilters, [name]: newFilterValues };
     });
   };
