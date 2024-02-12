@@ -17,7 +17,7 @@ const CardContainer: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState<{
     imageUrl: string;
-    PartNumber: string;
+    CD: string;
     ModelDesc: string;
     Manuf: string;
     Model: string;
@@ -30,10 +30,10 @@ const CardContainer: React.FC = () => {
   } | null>(null);
 
   const handleOpenModal = (data: CardProps) => {
-    const imageUrl = `https://dsucoxafocjydztfhxum.supabase.co/storage/v1/object/public/wheelbearing/Autocat%20Wheel%20Bearing%20Images%20(CDM)/${data.PartNumber}.jpg`;
+    const imageUrl = `https://dsucoxafocjydztfhxum.supabase.co/storage/v1/object/public/wheelbearing/Autocat%20Wheel%20Bearing%20Images%20(CDM)/${data.CD}.jpg`;
     setModalContent({
       imageUrl,
-      PartNumber: data.PartNumber,
+      CD: data.CD,
       ModelDesc: data.ModelDesc,
       Manuf: data.Manuf,
       Model: data.Model,

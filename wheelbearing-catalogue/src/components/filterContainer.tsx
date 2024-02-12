@@ -42,7 +42,7 @@ const FilterContainer = () => {
 
   const handleSearch = async () => {
     try {
-      let query = supabase.from("Wheelbearing").select("*");
+      let query = supabase.from("wheelbearing2").select("*");
 
       if (selectedManufacturer) {
         query = query.eq("Manuf", selectedManufacturer);

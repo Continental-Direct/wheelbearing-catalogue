@@ -5,17 +5,16 @@ interface InfoModalProps {
   onClose: () => void;
   content: {
     imageUrl: string;
-    PartNumber: string;
+    CD: string;
     ModelDesc: string;
     Manuf: string;
     Model: string;
-    EngineSize: string; 
-    Years: string; 
-    FuelType: string; 
-    BodyType: string; 
-    Transmission: string; 
-    Fitment: string; 
-   
+    EngineSize: string;
+    Years: string;
+    FuelType: string;
+    BodyType: string;
+    Transmission: string;
+    Fitment: string;
   };
 }
 
@@ -28,7 +27,7 @@ const InfoModal: React.FC<InfoModalProps> = ({ isOpen, onClose, content }) => {
           <img
             className="modal-image"
             src={content.imageUrl}
-            alt={content.PartNumber}
+            alt={content.CD}
           />
           <div className="text-content">
             <p className="name">
@@ -53,7 +52,7 @@ const InfoModal: React.FC<InfoModalProps> = ({ isOpen, onClose, content }) => {
               </li>
               <li>
                 <span className="modal-category">Part Number: </span>
-                {content.PartNumber}
+                {content.CD}
               </li>
               <li>
                 <span className="modal-category">Body Type: </span>
