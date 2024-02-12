@@ -95,7 +95,7 @@ const CardContainer: React.FC = () => {
   });
 
   return (
-    <>
+    <div className="component-container-cards">
       <div className="content-container">
         <FilterSection onFilterChange={onFilterChange} />
         <div className="card-container">
@@ -115,7 +115,7 @@ const CardContainer: React.FC = () => {
           />
         )}
       </div>
-    </>
+    </div>
   );
 };
 

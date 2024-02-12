@@ -24,10 +24,7 @@ body {
   position: absolute;
   left: 50%;
   top: 50%; /* Center the logo vertically */
-  transform: translate(
-    -50%,
-    -50%
-  ); /* Adjust for both horizontal and vertical centering */
+  transform: translate(-50%, -50%);
   height: 50px;
 }
 
@@ -37,47 +34,43 @@ body {
   justify-content: flex-end;
   gap: 10px;
 }
-
+/* 
 .background-container {
-  position: relative;
   width: 100%;
-  height: 100vh;
-  background: url("./assets/wheelbearings-draft-background.webp") no-repeat
-    center center;
   background-size: cover;
-}
+  background: linear-gradient(135deg, #e0e0e0 25%, #c2c2c2 75%);
+} */
 
 .dark-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
-  height: 100vh;
 }
 
 .inner-container {
-  position: relative;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
-  width: 20%;
-  background-color: rgba(67, 75, 85, 0.9);
+  padding: 1.62rem 4rem;
+  width: 50%;
+  background-color: #32383f;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 2;
+}
+
+.layout-container {
+  display: flex;
+}
+
+/* Style for the image itself */
+.image-container img {
+  max-width: 100%;
 }
 
 .filter select {
@@ -328,6 +321,10 @@ body {
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 16px;
+}
+
+.component-container-cards {
+  width: 95%;
 }
 
 /* colour scheme */
