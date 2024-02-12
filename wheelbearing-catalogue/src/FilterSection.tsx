@@ -13,26 +13,26 @@ const FilterSection: React.FC<FilterSectionProps> = ({ onFilterChange }) => {
   return (
     <div className="filter-section">
       <h2>Filters</h2>
-      {/* Example filters */}
+      {/* Filter by Transmission */}
       <div>
         <input
           type="checkbox"
-          name="Manuf"
-          value="Toyota"
+          name="Transmission"
+          value="Automatic"
           onChange={handleCheckboxChange}
         />{" "}
-        Toyota
+        Automatic
       </div>
       <div>
         <input
           type="checkbox"
-          name="Manuf"
-          value="Ford"
+          name="Transmission"
+          value="Manual"
           onChange={handleCheckboxChange}
         />{" "}
-        Ford
+        Manual
       </div>
-      {/* Repeat for other filters */}
+      {/* Add more transmission types as needed */}
     </div>
   );
 };

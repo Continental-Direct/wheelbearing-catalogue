@@ -14,7 +14,9 @@ const CardContainer: React.FC = () => {
   const { searchResults } = (location.state as {
     searchResults: CardProps[];
   }) || { searchResults: [] };
-
+  const [filters, setFilters] = useState<{ Transmission: string[] }>({
+    Transmission: [],
+  });
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState<{
     imageUrl: string;
@@ -54,12 +56,28 @@ const CardContainer: React.FC = () => {
     setModalContent(null);
   };
 
+  const onFilterChange = (name: string, value: string, checked: boolean) => {
+    setFilters((prevFilters) => {
+      if (name === "Transmission") {
+        const newTransmissionFilters = checked
+          ? [...prevFilters.Transmission, value]
+          : prevFilters.Transmission.filter((item) => item !== value);
+        return { ...prevFilters, Transmission: newTransmissionFilters };
+      }
+      return prevFilters; // Ensure previous filters are returned if no conditions are met
+    });
+  };
+  const filteredResults = searchResults.filter((data) =>
+    filters.Transmission.length > 0
+      ? filters.Transmission.includes(data.Transmission)
+      : true
+  );
   return (
     <>
       <div className="content-container">
-        <FilterSection />
+        <FilterSection onFilterChange={onFilterChange} />
         <div className="card-container">
-          {searchResults.map((data, index) => (
+          {filteredResults.map((data, index) => (
             <Card
               key={index}
               {...data}
