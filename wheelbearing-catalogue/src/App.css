@@ -267,7 +267,7 @@ body {
 }
 
 .modal-image {
-  max-width: 50%; 
+  max-width: 50%;
   margin-right: 20px;
 }
 .modal-category {
@@ -278,32 +278,56 @@ body {
 }
 .modal-buttons {
   display: flex;
-  justify-content: space-around; 
+  justify-content: space-around;
   margin-top: 20px;
 }
 
 .buy-now-button,
 .back-to-menu-button {
-  padding: 10px 20px; 
-  border: none; 
-  border-radius: 5px; 
-  cursor: pointer; 
-  outline: none; 
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
   font-size: 16px;
 }
 
 .buy-now-button {
-  background-color: #ff8200; 
-  color: white; 
+  background-color: #ff8200;
+  color: white;
 }
 
 .back-to-menu-button {
-  background-color: #6c757d; 
-  color: white; 
+  background-color: #6c757d;
+  color: white;
 }
 
 .name {
   font-size: 1.5rem;
+}
+
+.content-container {
+  display: flex;
+  justify-content: center;
+  align-items: start; /* Align items at the top */
+  gap: 20px; /* Adjust gap between filters and cards */
+}
+
+.filter-section {
+  flex-basis: 20%;
+  background-color: rgba(67, 75, 85, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+  color: white; /* Assuming a dark background */
+  margin-top: 20px;
+}
+
+.card-container {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 16px;
 }
 
 /* colour scheme */

@@ -3,6 +3,7 @@ import Card from "./components/card";
 import InfoModal from "./components/InfoModal";
 import { CardProps } from "./components/card";
 import { useLocation } from "react-router-dom";
+import FilterSection from "./FilterSection";
 
 export interface CardContainerProps {
   cardsData: CardProps[];
@@ -55,18 +56,25 @@ const CardContainer: React.FC = () => {
 
   return (
     <>
-      <div className="card-container">
-        {searchResults.map((data, index) => (
-          <Card key={index} {...data} openModal={() => handleOpenModal(data)} />
-        ))}
+      <div className="content-container">
+        <FilterSection />
+        <div className="card-container">
+          {searchResults.map((data, index) => (
+            <Card
+              key={index}
+              {...data}
+              openModal={() => handleOpenModal(data)}
+            />
+          ))}
+        </div>
+        {isModalOpen && modalContent && (
+          <InfoModal
+            isOpen={isModalOpen}
+            onClose={handleCloseModal}
+            content={modalContent}
+          />
+        )}
       </div>
-      {isModalOpen && modalContent && (
-        <InfoModal
-          isOpen={isModalOpen}
-          onClose={handleCloseModal}
-          content={modalContent}
-        />
-      )}
     </>
   );
 };
