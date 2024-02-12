@@ -36,7 +36,7 @@ const CardContainer: React.FC = () => {
     FuelType: string;
     BodyType: string;
     Transmission: string;
-    Fitment: string;
+    MPos: string;
   } | null>(null);
 
   const handleOpenModal = (data: CardProps) => {
@@ -52,7 +52,7 @@ const CardContainer: React.FC = () => {
       FuelType: data.FuelType,
       BodyType: data.BodyType,
       Transmission: data.Transmission,
-      Fitment: data.Fitment,
+      MPos: data.MPos,
     });
     setIsModalOpen(true);
     console.log("Modal content:");
@@ -67,9 +67,9 @@ const CardContainer: React.FC = () => {
     setFilters((prevFilters) => {
       // Get the previous values of the filter, or an empty array if it doesn't exist
       const prevFilterValues = prevFilters[name] || [];
-  
+
       let newFilterValues;
-  
+
       if (checked) {
         // If checked is true, add the new value to the filter
         newFilterValues = [...prevFilterValues, value];

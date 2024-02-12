@@ -11,7 +11,7 @@ export interface CardProps {
   FuelType: string;
   BodyType: string;
   Transmission: string;
-  Fitment: string;
+  MPos: string;
   openModal: () => void;
 }
 
