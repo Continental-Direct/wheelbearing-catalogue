@@ -4,7 +4,7 @@ import supabase from "../assets/supaBaseClient";
 interface YearsOptionsProps {
   selectedModel: string;
   selectedEngineSize: string;
-  selectedMarkSeries: string; // Added if Years depends on Mark/Series
+  selectedMarkSeries: string;
   reset: boolean;
   onYearsChange: (year: string) => void;
 }
@@ -12,7 +12,7 @@ interface YearsOptionsProps {
 const YearsOptions: React.FC<YearsOptionsProps> = ({
   selectedModel,
   selectedEngineSize,
-  selectedMarkSeries, // Added if Years depends on Mark/Series
+  selectedMarkSeries,
   reset,
   onYearsChange,
 }) => {
@@ -28,16 +28,13 @@ const YearsOptions: React.FC<YearsOptionsProps> = ({
   useEffect(() => {
     const fetchYears = async () => {
       try {
-        if (
-          selectedModel &&
-          selectedEngineSize /* Add selectedMarkSeries if needed */
-        ) {
+        if (selectedModel && selectedEngineSize && selectedMarkSeries) {
           const { data, error } = await supabase
             .from("wheelbearing2")
             .select("Years") // Adjust column name as per your DB
             .eq("Model", selectedModel)
-            .eq("EngineSize", selectedEngineSize);
-          // .eq("mark_series", selectedMarkSeries) // Uncomment if Years depends on Mark/Series
+            .eq("EngineSize", selectedEngineSize)
+            .eq("mark_series", selectedMarkSeries);
           if (error) {
             console.error("Error fetching years:", error.message);
           } else {
@@ -55,7 +52,8 @@ const YearsOptions: React.FC<YearsOptionsProps> = ({
     };
 
     fetchYears();
-  }, [selectedModel, selectedEngineSize, selectedMarkSeries]); 
+  }, [selectedModel, selectedEngineSize, selectedMarkSeries]);
+
   useEffect(() => {
     if (reset) {
       setYears([]);

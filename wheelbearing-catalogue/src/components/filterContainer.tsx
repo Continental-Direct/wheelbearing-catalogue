@@ -8,6 +8,7 @@ import SearchButton from "./Search";
 import supabase from "../assets/supaBaseClient";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
+import YearsOptions from "./YearsOptions";
 
 const FilterContainer = () => {
   const navigate = useNavigate();
@@ -16,6 +17,7 @@ const FilterContainer = () => {
   const [selectedModel, setSelectedModel] = useState<string>("");
   const [selectedEngineSize, setSelectedEngineSize] = useState<string>("");
   const [selectedMarkSeries, setSelectedMarkSeries] = useState<string>("");
+  const [selectedYear, setSelectedYear] = useState<string>("");
 
   const handleManufacturerChange = (manufacturer: string) => {
     setSelectedManufacturer(manufacturer);
@@ -31,6 +33,10 @@ const FilterContainer = () => {
 
   const handleMarkSeriesChange = (markSeries: string) => {
     setSelectedMarkSeries(markSeries);
+  };
+
+  const handleYearChange = (year: string) => {
+    setSelectedYear(year);
   };
 
   const handleReset = () => {
@@ -56,6 +62,9 @@ const FilterContainer = () => {
       }
       if (selectedMarkSeries) {
         query = query.eq("mark_series", selectedMarkSeries);
+      }
+      if (selectedYear) {
+        query = query.eq("Years", selectedYear);
       }
 
       const { data, error } = await query;
@@ -92,6 +101,13 @@ const FilterContainer = () => {
             selectedEngineSize={selectedEngineSize}
             reset={reset}
             onMarkSeriesChange={handleMarkSeriesChange}
+          />
+          <YearsOptions
+            selectedModel={selectedModel}
+            selectedEngineSize={selectedEngineSize}
+            selectedMarkSeries={selectedMarkSeries}
+            reset={reset}
+            onYearsChange={handleYearChange}
           />
           <SearchButton onSearch={handleSearch} />
           <ResetButton onReset={handleReset} />
