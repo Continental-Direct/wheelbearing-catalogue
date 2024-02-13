@@ -71,7 +71,7 @@ const FilterContainer = () => {
   return (
     <div className="container">
       <div className="inner-container">
-        <h2 className="filter-title">Wheelbearing catalogue</h2>
+        <h3 className="filter-title">WHEELBEARING CATALOGUE</h3>
         <div className="dropdown-container">
           <ManufacturerOptions
             onManufacturerChange={handleManufacturerChange}
@@ -106,7 +106,7 @@ const FilterContainer = () => {
           />
         </div>
         <div className="home-info">
-          <h3>CD Wheel Bearings</h3>
+          <h3>CD WHEEL BEARINGS</h3>
           <p>
             All generation wheel bearings and hubs. Featuring the highest
             quality, all kits are complete with any ancillary components
