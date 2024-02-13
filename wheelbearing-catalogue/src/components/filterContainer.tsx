@@ -70,29 +70,49 @@ const FilterContainer = () => {
   return (
     <div className="container">
       <div className="inner-container">
-        <h3>Wheelbearing catalogue</h3>
-        <ManufacturerOptions
-          onManufacturerChange={handleManufacturerChange}
-          reset={reset}
-        />
-        <ModelOptions
-          selectedManufacturer={selectedManufacturer}
-          reset={reset}
-          onModelChange={handleModelChange}
-        />
-        <EngineSizeOptions
-          selectedModel={selectedModel}
-          reset={reset}
-          onEngineSizeChange={handleEngineSizeChange}
-        />
-        <MarkSeriesOptions
-          selectedModel={selectedModel}
-          selectedEngineSize={selectedEngineSize}
-          reset={reset}
-          onMarkSeriesChange={handleMarkSeriesChange}
-        />
-        <SearchButton onSearch={handleSearch} />
-        <ResetButton onReset={handleReset} />
+        <h2 className="filter-title">Wheelbearing catalogue</h2>
+        <div className="dropdown-container">
+          <ManufacturerOptions
+            onManufacturerChange={handleManufacturerChange}
+            reset={reset}
+          />
+          <ModelOptions
+            selectedManufacturer={selectedManufacturer}
+            reset={reset}
+            onModelChange={handleModelChange}
+          />
+          <EngineSizeOptions
+            selectedModel={selectedModel}
+            reset={reset}
+            onEngineSizeChange={handleEngineSizeChange}
+          />
+          <MarkSeriesOptions
+            selectedModel={selectedModel}
+            selectedEngineSize={selectedEngineSize}
+            reset={reset}
+            onMarkSeriesChange={handleMarkSeriesChange}
+          />
+          <SearchButton onSearch={handleSearch} />
+          <ResetButton onReset={handleReset} />
+        </div>
+      </div>
+      <div className="wheelbearing-info">
+        <div className="home-img-container">
+          <img
+            className="home-img"
+            src="wheelbearings.png"
+            alt="wheelbearings"
+          />
+        </div>
+        <div className="home-info">
+          <h3>CD Wheel Bearings</h3>
+          <p>
+            All generation wheel bearings and hubs. Featuring the highest
+            quality, all kits are complete with any ancillary components
+            required to complete the installation correctly. 100% coverage for
+            all popular applications.
+          </p>
+        </div>
       </div>
     </div>
   );
