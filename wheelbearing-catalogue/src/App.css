@@ -168,6 +168,8 @@ body {
 
 .model-desc {
   color: #32383f;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .product-name {
@@ -178,7 +180,7 @@ body {
 .description,
 .price,
 .position {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #32383f;
 }
 
@@ -190,6 +192,7 @@ body {
   margin-top: 8px;
   border-radius: 4px;
   cursor: pointer;
+  width: 30%;
 }
 
 .buy-button:hover {
@@ -268,7 +271,7 @@ body {
 }
 
 .name {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .card-container {
