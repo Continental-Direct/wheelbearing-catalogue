@@ -33,7 +33,15 @@ const FilterSection: React.FC<FilterSectionProps> = ({ onFilterChange }) => {
         />{" "}
         Manual
       </div>
-
+      <div>
+        <input
+          type="checkbox"
+          name="Transmission"
+          value="Semi-Automatic"
+          onChange={handleCheckboxChange}
+        />{" "}
+        Semi-Automatic
+      </div>
       {/* Filter by Fuel Type */}
       <h3>Fuel Type</h3>
       <div>
