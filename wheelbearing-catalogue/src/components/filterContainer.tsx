@@ -80,7 +80,7 @@ const FilterContainer = () => {
   return (
     <div className="container">
       <div className="inner-container">
-        <h3 className="filter-title">WHEELBEARING CATALOGUE</h3>
+        <h3 className="filter-title">WHEEL BEARING CATALOGUE</h3>
         <div className="dropdown-container">
           <ManufacturerOptions
             onManufacturerChange={handleManufacturerChange}

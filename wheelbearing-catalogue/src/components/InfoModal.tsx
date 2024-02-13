@@ -31,9 +31,6 @@ const InfoModal: React.FC<InfoModalProps> = ({ isOpen, onClose, content }) => {
             alt={content.CD}
           />
           <div className="text-content">
-            <p className="name">
-              {content.Manuf} {content.Model} Wheelbearing Kit
-            </p>
             <h3>Details</h3>
             <ul className="modal-info">
               <li>

@@ -41,7 +41,7 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  background: linear-gradient(135deg, #e0e0e0 25%, #c2c2c2 75%);
+  background: linear-gradient(135deg, #b8b8b8 25%, #a4a4a4 75%);
 }
 
 .wheelbearing-info {
@@ -56,7 +56,12 @@ body {
 
 .home-info {
   background-color: #32383fc9;
-  padding: 2rem;
+  padding: 3rem;
+}
+
+.home-info h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
 }
 
 .inner-container {
@@ -82,7 +87,7 @@ body {
 }
 
 .footer {
-  background-color: #32383fc9;
+  background-color: #2a2a2a;
   color: #fff;
   text-align: center;
   padding: 20px;
