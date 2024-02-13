@@ -77,7 +77,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({ onFilterChange }) => {
       <div>
         <input
           type="checkbox"
-          name="DriveType"
+          name="TRWDansDRWDive"
           value="FWD"
           onChange={handleCheckboxChange}
         />{" "}
