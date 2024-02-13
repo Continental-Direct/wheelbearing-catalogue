@@ -94,8 +94,8 @@ const CardContainer: React.FC = () => {
     const matchesBodyType =
       filters.BodyType.length === 0 || filters.BodyType.includes(data.BodyType);
     const matchesDriveType =
-      filters.DriveType.length === 0 ||
-      filters.DriveType.includes(data.TRWDansDRWDive);
+      filters.TRWDansDRWDive.length === 0 ||
+      filters.TRWDansDRWDive.includes(data.TRWDansDRWDive);
 
     return (
       matchesTransmission &&

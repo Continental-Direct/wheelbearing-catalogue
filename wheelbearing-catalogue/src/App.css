@@ -193,7 +193,7 @@ body {
   align-items: center;
   padding: 16px;
   margin: 8px;
-  max-width: 40%;
+  max-width: 42%;
   overflow: hidden;
   font-size: 18px;
 }
@@ -234,7 +234,7 @@ body {
 }
 
 .card-column p {
-  margin-bottom: 12px; /* Increase spacing between each item */
+  margin-bottom: 12px;
 }
 
 .model-desc {
@@ -356,7 +356,6 @@ body {
 .content-container {
   display: grid;
   grid-template-columns: 1fr 4fr; /* Adjust the ratio as needed */
-  gap: 20px; /* This replaces your gap property */
   width: 100%;
   background: linear-gradient(135deg, #e0e0e0 25%, #c2c2c2 75%);
   padding: 20px;
