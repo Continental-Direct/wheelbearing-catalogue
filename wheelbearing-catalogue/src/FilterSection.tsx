@@ -69,7 +69,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({ onFilterChange }) => {
           name="FuelType"
           value="Electric"
           onChange={handleCheckboxChange}
-        />{" "}
+        />
         Electric
       </div>
       {/* Filter by Drive Type */}

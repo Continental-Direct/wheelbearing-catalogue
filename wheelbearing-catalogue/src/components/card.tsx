@@ -14,6 +14,7 @@ export interface CardProps {
   MPos: string;
   abs_note: string;
   Fueltype: string;
+  TRWDansDRWDive: string;
   openModal: () => void;
 }
 

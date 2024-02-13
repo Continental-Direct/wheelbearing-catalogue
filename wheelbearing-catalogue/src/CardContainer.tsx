@@ -18,6 +18,7 @@ const CardContainer: React.FC = () => {
     Transmission: [],
     FuelType: [],
     BodyType: [],
+    TRWDansDRWDive: [],
   });
   const location = useLocation();
   const { searchResults } = (location.state as {
@@ -37,6 +38,7 @@ const CardContainer: React.FC = () => {
     BodyType: string;
     Transmission: string;
     MPos: string;
+    TRWDansDRWDive: string;
   } | null>(null);
 
   const handleOpenModal = (data: CardProps) => {
@@ -53,6 +55,7 @@ const CardContainer: React.FC = () => {
       BodyType: data.BodyType,
       Transmission: data.Transmission,
       MPos: data.MPos,
+      TRWDansDRWDive: data.TRWDansDRWDive,
     });
     setIsModalOpen(true);
     console.log("Modal content:");
@@ -90,8 +93,16 @@ const CardContainer: React.FC = () => {
       filters.FuelType.length === 0 || filters.FuelType.includes(data.FuelType);
     const matchesBodyType =
       filters.BodyType.length === 0 || filters.BodyType.includes(data.BodyType);
+    const matchesDriveType =
+      filters.DriveType.length === 0 ||
+      filters.DriveType.includes(data.TRWDansDRWDive);
 
-    return matchesTransmission && matchesFuelType && matchesBodyType;
+    return (
+      matchesTransmission &&
+      matchesFuelType &&
+      matchesBodyType &&
+      matchesDriveType
+    );
   });
 
   return (

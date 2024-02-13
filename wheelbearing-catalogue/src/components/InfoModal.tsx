@@ -15,6 +15,7 @@ interface InfoModalProps {
     BodyType: string;
     Transmission: string;
     MPos: string;
+    TRWDansDRWDive: string;
   };
 }
 
@@ -65,6 +66,10 @@ const InfoModal: React.FC<InfoModalProps> = ({ isOpen, onClose, content }) => {
               <li>
                 <span className="modal-category">Fitment: </span>
                 {content.MPos}
+              </li>
+              <li>
+                <span className="modal-category">Drive type: </span>
+                {content.TRWDansDRWDive}
               </li>
             </ul>
             <div className="modal-buttons">
