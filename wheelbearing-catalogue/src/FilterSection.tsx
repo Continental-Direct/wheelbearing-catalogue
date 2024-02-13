@@ -144,6 +144,15 @@ const FilterSection: React.FC<FilterSectionProps> = ({ onFilterChange }) => {
         <input
           type="checkbox"
           name="BodyType"
+          value="Saloon"
+          onChange={handleCheckboxChange}
+        />{" "}
+        Coupe
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          name="BodyType"
           value="Cabrio"
           onChange={handleCheckboxChange}
         />{" "}
