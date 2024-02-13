@@ -95,26 +95,20 @@ const CardContainer: React.FC = () => {
   });
 
   return (
-    <div className="component-container-cards">
-      <div className="content-container">
-        <FilterSection onFilterChange={onFilterChange} />
-        <div className="card-container">
-          {filteredResults.map((data, index) => (
-            <Card
-              key={index}
-              {...data}
-              openModal={() => handleOpenModal(data)}
-            />
-          ))}
-        </div>
-        {isModalOpen && modalContent && (
-          <InfoModal
-            isOpen={isModalOpen}
-            onClose={handleCloseModal}
-            content={modalContent}
-          />
-        )}
+    <div className="content-container">
+      <FilterSection onFilterChange={onFilterChange} />
+      <div className="card-container">
+        {filteredResults.map((data, index) => (
+          <Card key={index} {...data} openModal={() => handleOpenModal(data)} />
+        ))}
       </div>
+      {isModalOpen && modalContent && (
+        <InfoModal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          content={modalContent}
+        />
+      )}
     </div>
   );
 };

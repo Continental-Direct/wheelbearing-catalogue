@@ -4,7 +4,7 @@ import Nav from "./Nav";
 import Footer from "./Footer";
 import FilterContainer from "./filterContainer";
 import CardContainer from "../CardContainer";
-import SearchResultPage from "./SearchResultsPage";
+// import SearchResultPage from "./SearchResultsPage";
 
 function App() {
   return (

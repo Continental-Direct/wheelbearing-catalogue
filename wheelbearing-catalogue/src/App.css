@@ -23,7 +23,7 @@ body {
 .navbar-logo {
   position: absolute;
   left: 50%;
-  top: 50%; /* Center the logo vertically */
+  top: 50%;
   transform: translate(-50%, -50%);
   height: 50px;
 }
@@ -182,16 +182,6 @@ body {
   color: #32383f;
 }
 
-/* CardContainer.css */
-.card-container {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px;
-  padding: 16px;
-}
-
 .buy-button {
   background-color: #ff8200;
   color: white;
@@ -224,10 +214,9 @@ body {
 
 .modal-content {
   max-width: 50%; /* Adjusted for better control over layout */
-  height: 50%;
   background-color: white;
-  padding: 30px;
   border-radius: 8px;
+  padding: 20px;
   display: flex;
   flex-direction: row; /* Changed to row for side-by-side layout */
   align-items: center;
@@ -280,32 +269,30 @@ body {
   font-size: 1.5rem;
 }
 
+.card-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
 .content-container {
   display: flex;
-  justify-content: center;
-  align-items: start; /* Align items at the top */
-  gap: 20px; /* Adjust gap between filters and cards */
+  flex-direction: row; /* Ensure children are laid out in a row */
+  justify-content: center; /* Center children horizontally */
+  align-items: start; /* Align items at their start, adjust as needed */
+  gap: 20px; /* Adjust gap between children */
+  width: 100%; /* Full width of the parent */
+  background: linear-gradient(135deg, #e0e0e0 25%, #c2c2c2 75%);
 }
 
 .filter-section {
-  flex-basis: 20%;
-  background-color: rgba(67, 75, 85, 0.9);
+  width: 90%;
+  background-color: #32383f;
   padding: 20px;
   border-radius: 8px;
   color: white; /* Assuming a dark background */
-  margin-top: 20px;
-}
-
-.card-container {
-  flex-grow: 1;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 16px;
-}
-
-.component-container-cards {
-  margin-left: 25px;
+  margin-left: 20px;
 }
 
 /* colour scheme */
