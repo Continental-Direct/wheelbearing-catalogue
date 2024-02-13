@@ -18,9 +18,11 @@ export interface CardProps {
 const Card: React.FC<CardProps> = ({
   CD,
   ModelDesc,
-  Position,
+  MPos,
   Manuf,
   Model,
+  Years,
+  Transmission,
   openModal,
 }) => {
   const imageUrl = `https://dsucoxafocjydztfhxum.supabase.co/storage/v1/object/public/wheelbearing/Autocat%20Wheel%20Bearing%20Images%20(CDM)/${CD}.jpg`;
@@ -36,8 +38,10 @@ const Card: React.FC<CardProps> = ({
           {Manuf} {Model}
         </p>
         <p className="model-desc">{ModelDesc}</p>
+        <p className="position">{MPos}</p>
+        <p className="position">{Years}</p>
+        <p className="position">{Transmission}</p>
         <p className="price">**price placeholder**</p>
-        <p className="position">{Position}</p>
       </div>
       <button className="buy-button" onClick={openModal}>
         View
