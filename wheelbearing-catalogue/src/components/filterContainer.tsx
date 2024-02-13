@@ -7,6 +7,7 @@ import ResetButton from "./Reset";
 import SearchButton from "./Search";
 import supabase from "../assets/supaBaseClient";
 import { useNavigate } from "react-router-dom";
+import Footer from "./Footer";
 
 const FilterContainer = () => {
   const navigate = useNavigate();
@@ -114,6 +115,7 @@ const FilterContainer = () => {
           </p>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
