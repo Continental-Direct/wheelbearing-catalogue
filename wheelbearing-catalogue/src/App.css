@@ -163,6 +163,10 @@ body {
 .red {
   background-color: #f44336;
 }
+.filtered-results {
+  overflow-x: auto;
+  width: 100%;
+}
 
 .table {
   width: 100%;
@@ -172,7 +176,8 @@ body {
 
 .table th,
 .table td {
-  padding: 8px;
+  padding: 14px;
+  overflow-x: auto;
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
