@@ -45,6 +45,21 @@ const SearchResultPage: React.FC = () => {
       { Header: "Body Type", accessor: "BodyType", Filter: SelectColumnFilter },
       { Header: "Valve", accessor: "Valve", Filter: SelectColumnFilter },
       { Header: "Position", accessor: "MPos", Filter: SelectColumnFilter },
+      {
+        Header: "Drive Type",
+        accessor: "TRWDansDRWDive",
+        Filter: SelectColumnFilter,
+      },
+      {
+        Header: "Engine Code",
+        accessor: "Engine Code",
+        Filter: SelectColumnFilter,
+      },
+      {
+        Header: "ABS",
+        accessor: "abs_note",
+        Filter: SelectColumnFilter,
+      },
 
       {
         Header: "Image",

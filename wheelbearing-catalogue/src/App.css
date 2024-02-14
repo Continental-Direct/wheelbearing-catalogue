@@ -361,7 +361,7 @@ body {
 }
 .content-container {
   display: grid;
-  grid-template-columns: 1fr 4fr; /* Adjust the ratio as needed */
+  grid-template-columns: 1fr 4fr;
   width: 100%;
   background: linear-gradient(135deg, #e0e0e0 25%, #c2c2c2 75%);
   padding: 20px;
@@ -370,10 +370,9 @@ body {
 .filter-section {
   background-color: #32383fc9;
   padding: 20px;
-  /* border-radius: 8px; */
   color: white;
-  height: 650px;
   margin-top: 5px;
+  height: 700px;
 }
 
 /* colour scheme */

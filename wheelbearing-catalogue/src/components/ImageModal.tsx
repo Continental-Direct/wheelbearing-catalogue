@@ -4,7 +4,7 @@ interface ImageModalProps {
   isOpen: boolean;
   onClose: () => void;
   imageUrl: string;
-  PartNumber: string; 
+  PartNumber: string;
 }
 
 const ImageModal: React.FC<ImageModalProps> = ({
@@ -40,9 +40,10 @@ const ImageModal: React.FC<ImageModalProps> = ({
       <div
         style={{
           padding: 20,
-          backgroundColor: "orange",
+          backgroundColor: "white",
           borderRadius: 5,
           position: "relative",
+          color: "black",
         }}
       >
         <img
