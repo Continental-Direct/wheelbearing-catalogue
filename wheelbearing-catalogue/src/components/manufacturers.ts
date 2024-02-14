@@ -25,7 +25,7 @@ const manufacturers = [
   "Lotus",
   "Mazda",
   "Mercedes Benz",
-  "Mini",
+  "MINI",
   "Mitsubishi",
   "Nissan",
   "Opel",
