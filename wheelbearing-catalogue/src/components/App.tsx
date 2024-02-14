@@ -4,7 +4,7 @@ import Nav from "./Nav";
 
 import FilterContainer from "./filterContainer";
 import CardContainer from "../CardContainer";
-import SearchResultPage from "./SearchResultsPage";
+// import SearchResultPage from "./SearchResultsPage";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<FilterContainer />} />
-        <Route path="/results" element={<SearchResultPage />} />
+        <Route path="/results" element={<CardContainer />} />
       </Routes>
     </Router>
   );

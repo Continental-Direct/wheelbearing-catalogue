@@ -177,7 +177,6 @@ body {
 .table th,
 .table td {
   padding: 14px;
-  overflow-x: auto;
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
@@ -185,6 +184,12 @@ body {
 .table th {
   background-color: #434b55;
   color: #ddd;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
 }
 
 .table tr:nth-child(even) {
