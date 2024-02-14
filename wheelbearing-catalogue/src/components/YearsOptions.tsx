@@ -31,7 +31,7 @@ const YearsOptions: React.FC<YearsOptionsProps> = ({
         if (selectedModel && selectedEngineSize && selectedMarkSeries) {
           const { data, error } = await supabase
             .from("wheelbearing2")
-            .select("Years") // Adjust column name as per your DB
+            .select("Years")
             .eq("Model", selectedModel)
             .eq("EngineSize", selectedEngineSize)
             .eq("mark_series", selectedMarkSeries);

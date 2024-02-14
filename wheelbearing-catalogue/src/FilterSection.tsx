@@ -13,7 +13,6 @@ const FilterSection: React.FC<FilterSectionProps> = ({ onFilterChange }) => {
   return (
     <div className="filter-section">
       <h2>Filters</h2>
-      {/* Filter by Transmission */}
       <h3>Transmission</h3>
       <div>
         <input
@@ -42,7 +41,6 @@ const FilterSection: React.FC<FilterSectionProps> = ({ onFilterChange }) => {
         />{" "}
         Semi-Automatic
       </div>
-      {/* Filter by Fuel Type */}
       <h3>Fuel Type</h3>
       <div>
         <input
@@ -80,7 +78,6 @@ const FilterSection: React.FC<FilterSectionProps> = ({ onFilterChange }) => {
         />
         Electric
       </div>
-      {/* Filter by Drive Type */}
       <h3>Drive Type</h3>
       <div>
         <input
@@ -101,7 +98,6 @@ const FilterSection: React.FC<FilterSectionProps> = ({ onFilterChange }) => {
         Rear Wheel Drive (RWD)
       </div>
 
-      {/* Filter by Body Type */}
       <h3>Body Type</h3>
       <div>
         <input
@@ -184,7 +180,6 @@ const FilterSection: React.FC<FilterSectionProps> = ({ onFilterChange }) => {
         />
         Van
       </div>
-      {/* Add more filters as needed */}
     </div>
   );
 };

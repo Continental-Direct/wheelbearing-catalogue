@@ -87,7 +87,6 @@ const Card: React.FC<CardProps> = ({
               </p>
             </div>
           </div>
-          {/* <p className="position">{abs_note}</p> */}
         </div>
         <button className="buy-button" onClick={openModal}>
           View
