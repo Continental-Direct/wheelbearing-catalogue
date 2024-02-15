@@ -85,7 +85,16 @@ const CardContainer: React.FC = () => {
     });
   };
 
-  const filteredResults = searchResults.filter((data) => {
+  const uniqueCards = searchResults.reduce<CardProps[]>((acc, current) => {
+    const x = acc.find((item) => item.CD === current.CD);
+    if (!x) {
+      return acc.concat([current]);
+    } else {
+      return acc;
+    }
+  }, []);
+
+  const filteredResults = uniqueCards.filter((data) => {
     const matchesTransmission =
       filters.Transmission.length === 0 ||
       filters.Transmission.includes(data.Transmission);
