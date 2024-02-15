@@ -30,7 +30,7 @@ const MarkSeriesOptions: React.FC<MarkSeriesOptionsProps> = ({
       try {
         if (selectedModel && selectedEngineSize) {
           const { data, error } = await supabase
-            .from("wheelbearing2")
+            .from("wheelbearing")
             .select("mark_series")
             .eq("Model", selectedModel)
             .eq("EngineSize", selectedEngineSize);

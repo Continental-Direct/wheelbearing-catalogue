@@ -30,7 +30,7 @@ const YearsOptions: React.FC<YearsOptionsProps> = ({
       try {
         if (selectedModel && selectedEngineSize && selectedMarkSeries) {
           const { data, error } = await supabase
-            .from("wheelbearing2")
+            .from("wheelbearing")
             .select("Years")
             .eq("Model", selectedModel)
             .eq("EngineSize", selectedEngineSize)
