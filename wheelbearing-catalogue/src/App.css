@@ -224,7 +224,7 @@ body {
 .card-content {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center content if not already */
+  align-items: flex-start; /* Center content if not already */
   padding: 20px; /* Adjust padding as needed */
 }
 
@@ -335,7 +335,6 @@ body {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  justify-content: center;
 }
 .content-container {
   display: grid;
@@ -343,6 +342,7 @@ body {
   width: 100%;
   background: linear-gradient(135deg, #e0e0e0 25%, #c2c2c2 75%);
   padding: 20px;
+  gap: 2rem;
 }
 
 .filter-section {
