@@ -15,21 +15,11 @@ export interface CardProps {
   abs_note: string;
   Fueltype: string;
   TRWDansDRWDive: string;
+  Bearing1Size: string;
   openModal: () => void;
 }
 
-const Card: React.FC<CardProps> = ({
-  CD,
-  Model,
-  MPos,
-  Manuf,
-  Years,
-  Transmission,
-  abs_note,
-  FuelType,
-  BodyType,
-  openModal,
-}) => {
+const Card: React.FC<CardProps> = ({ CD, Bearing1Size, openModal }) => {
   const imageUrl = `https://dsucoxafocjydztfhxum.supabase.co/storage/v1/object/public/wheelbearing/Autocat%20Wheel%20Bearing%20Images%20(CDM)/${CD}.jpg`;
 
   return (
@@ -38,58 +28,14 @@ const Card: React.FC<CardProps> = ({
         <img src={imageUrl} alt={CD} />
       </div>
       <div className="card-content">
-        <div className="card-info">
-          <div className="card-details">
-            <div className="card-column">
-              <p>
-                <strong>Manuf</strong>
-                <br />
-                {Manuf}
-              </p>
-              <p>
-                <strong>Model:</strong>
-                <br />
-                {Model}
-              </p>
-              <p>
-                <strong>Body Type:</strong>
-                <br />
-                {BodyType}
-              </p>
-            </div>
-            <div className="card-column">
-              <p>
-                <strong>Part:</strong> <br />
-                {CD}
-              </p>
-              <p>
-                <strong>Transmission:</strong> <br />
-                {Transmission}
-              </p>
-              <p>
-                <strong>ABS:</strong> <br />
-                {abs_note}
-              </p>
-            </div>
-            <div className="card-column">
-              <p>
-                <strong>Years:</strong>
-                <br /> {Years}
-              </p>
-
-              <p>
-                <strong>Fuel Type:</strong>
-                <br /> {FuelType}
-              </p>
-
-              <p>
-                <strong>Positon:</strong> <br /> {MPos}
-              </p>
-            </div>
-          </div>
-        </div>
+        <p className="part-number">
+          <strong>Part Number:</strong> {CD}
+        </p>
+        <p className="bearing-size">
+          <strong>Bearing Size:</strong> {Bearing1Size}
+        </p>
         <button className="buy-button" onClick={openModal}>
-          View
+          View Details
         </button>
       </div>
     </div>

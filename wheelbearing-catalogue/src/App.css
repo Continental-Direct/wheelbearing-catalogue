@@ -214,10 +214,6 @@ body {
   font-size: 18px;
 }
 
-.logo {
-  width: 20%;
-}
-
 .card-image img {
   width: 100%;
   height: auto;
@@ -225,11 +221,17 @@ body {
 }
 
 .card-content {
-  color: black;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  justify-content: space-between;
+  align-items: center; /* Center content if not already */
+  padding: 16px; /* Adjust padding as needed */
+}
+
+.part-number,
+.bearing-size {
+  color: #32383f; /* Adjust text color as needed */
+  text-align: center; /* Center-align the text */
+  margin: 8px 0; /* Add some space around */
 }
 
 .card-info {
@@ -238,7 +240,7 @@ body {
   justify-content: space-between;
 }
 
-.card-details {
+/* .card-details {
   display: flex;
   gap: 1.2rem;
 }
@@ -251,9 +253,9 @@ body {
 
 .card-column p {
   margin-bottom: 12px;
-}
+} */
 
-.model-desc {
+/* .model-desc {
   color: #32383f;
   font-size: 1.2rem;
   font-weight: bold;
@@ -270,7 +272,7 @@ body {
 .position {
   font-size: 1rem;
   color: #32383f;
-}
+} */
 
 .buy-button {
   align-self: center;
@@ -281,7 +283,6 @@ body {
   margin-top: 8px;
   border-radius: 4px;
   cursor: pointer;
-  width: 50%;
 }
 
 .buy-button:hover {
