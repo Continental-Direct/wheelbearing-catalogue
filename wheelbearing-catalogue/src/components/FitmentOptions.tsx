@@ -69,18 +69,20 @@ const FitmentOptions: React.FC<MPosOptionsProps> = ({
 
   return (
     <div className="filter-container">
-      <select
-        className="dropdown"
-        value={selectedMPos}
-        onChange={handleMPosChange}
-      >
-        <option value="">Select MPos</option>
-        {mposOptions.map((mpos, index) => (
-          <option key={index} value={mpos}>
-            {mpos}
-          </option>
-        ))}
-      </select>
+      <div className="filter">
+        <select
+          className="dropdown"
+          value={selectedMPos}
+          onChange={handleMPosChange}
+        >
+          <option value="">Front/Rear</option>
+          {mposOptions.map((mpos, index) => (
+            <option key={index} value={mpos}>
+              {mpos}
+            </option>
+          ))}
+        </select>
+      </div>
     </div>
   );
 };

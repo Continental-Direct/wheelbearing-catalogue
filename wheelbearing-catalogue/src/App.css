@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
+/* Universal */
+
 * {
   box-sizing: border-box;
 }
@@ -44,6 +46,59 @@ body {
   background: linear-gradient(135deg, #b8b8b8 25%, #a4a4a4 75%);
 }
 
+/* Dropdowns */
+.inner-container {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #32383fc9;
+  width: 90%;
+  margin-bottom: 2rem;
+}
+.dropdown-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+  border-radius: 8px;
+}
+
+.filter-title {
+  color: #ffffff;
+  text-align: center;
+}
+
+.filter select {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  background-color: #ffffff;
+  color: #32383f;
+  border: 1px solid #ff8200;
+  border-radius: 4px;
+}
+
+.button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #ff8200;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.button:hover {
+  background-color: #ffbf0d;
+}
+
+.red {
+  background-color: #f44336;
+}
+
+/* Info */
+
 .wheelbearing-info {
   display: flex;
   width: 75%;
@@ -65,27 +120,7 @@ body {
   margin-bottom: 1rem;
 }
 
-.inner-container {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #32383fc9;
-  width: 80%;
-  margin-bottom: 2rem;
-}
-
-.dropdown-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2rem;
-  gap: 1rem;
-  border-radius: 8px;
-}
-.filter-title {
-  color: #ffffff;
-  text-align: center;
-}
+/* Footer */
 
 .footer {
   background-color: #32383fc9;
@@ -136,38 +171,12 @@ body {
   }
 }
 
-.filter select {
-  width: 100%;
-  padding: 8px;
-  font-size: 16px;
-  background-color: #ffffff;
-  color: #32383f;
-  border: 1px solid #ff8200;
-  border-radius: 4px;
-}
-
-.button {
-  padding: 8px 16px;
-  font-size: 16px;
-  background-color: #ff8200;
-  color: #ffffff;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.button:hover {
-  background-color: #ffbf0d;
-}
-
-.red {
-  background-color: #f44336;
-}
+/* Table may be deleted */
 .filtered-results {
   overflow-x: auto;
   width: 100%;
 }
-
+/* 
 .table {
   width: 100%;
   border-collapse: collapse;
@@ -198,9 +207,9 @@ body {
 
 .table tr:nth-child(odd) {
   background-color: #f0f0f0;
-}
+} */
 
-/* Card.css */
+/* Card */
 .card {
   background-color: white;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
