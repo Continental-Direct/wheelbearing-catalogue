@@ -1,6 +1,6 @@
 import { useState, useEffect, FC } from "react";
 
-import manufacturers from "./manufacturers";
+import manufacturers from "../src/components/manufacturers";
 
 interface ManufacturerOptionsProps {
   onManufacturerChange: (value: string) => void;

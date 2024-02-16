@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ManufacturerOptions from "./manufFilter";
+import ManufacturerOptions from "../../manufacturers.js/manufFilter";
 import ModelOptions from "./modelOptions";
 import EngineSizeOptions from "./EngineSizeOptions";
 import MarkSeriesOptions from "./MarkSeriesOptions";

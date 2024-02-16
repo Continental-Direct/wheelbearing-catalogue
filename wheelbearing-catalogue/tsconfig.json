@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "manufacturers.js/manufFilter.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
