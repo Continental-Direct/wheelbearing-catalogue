@@ -1,6 +1,6 @@
 import { useState } from "react";
-import ManufacturerOptions from "./dropdowns/manufFilter";
-import ModelOptions from "./modelOptions";
+import ManufacturerOptions from "./dropdowns/manufOptions";
+import ModelOptions from "./dropdowns/modelOptions";
 import EngineSizeOptions from "./dropdowns/EngineSizeOptions";
 import MarkSeriesOptions from "./dropdowns/MarkSeriesOptions";
 import ResetButton from "./Reset";

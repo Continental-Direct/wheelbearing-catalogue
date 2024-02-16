@@ -22,7 +22,7 @@
   },
   "include": [
     "src",
-    "src/components/dropdowns/manufFilter.tsx",
+    "src/components/dropdowns/manufOptions.tsx",
     "manufacturers.js/manufacturers.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
