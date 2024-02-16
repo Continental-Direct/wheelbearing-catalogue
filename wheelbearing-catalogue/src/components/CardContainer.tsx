@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Card from "./components/card";
-import InfoModal from "./components/InfoModal";
-import { CardProps } from "./components/card";
+import Card from "./card";
+import InfoModal from "./InfoModal";
+import { CardProps } from "./card";
 import { useLocation } from "react-router-dom";
 import FilterSection from "./FilterSection";
 
