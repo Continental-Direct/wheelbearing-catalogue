@@ -212,7 +212,6 @@ body {
   max-width: 30%;
   overflow: hidden;
   font-size: 18px;
-  height: 60%;
 }
 
 .card-image img {
@@ -334,7 +333,7 @@ body {
 .card-container {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 .content-container {
   display: grid;
