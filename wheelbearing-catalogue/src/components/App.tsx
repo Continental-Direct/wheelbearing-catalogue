@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "../App.css";
-import Nav from "./Nav";
+import Nav from "./home/Nav";
 
-import FilterContainer from "./filterContainer";
+import FilterContainer from "./home/filterContainer";
 import CardContainer from "./CardContainer";
 // import SearchResultPage from "./SearchResultsPage";
 

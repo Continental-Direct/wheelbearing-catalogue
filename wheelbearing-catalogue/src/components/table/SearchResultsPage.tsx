@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useTable, useFilters, Column } from "react-table";
-import ImageModal from "../modal/ImageModal";
+import ImageModal from "../modals/ImageModal";
 import SelectColumnFilter from "./SelectColumnFilter";
 
 declare module "react-table" {

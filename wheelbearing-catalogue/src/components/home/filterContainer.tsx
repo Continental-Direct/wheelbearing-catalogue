@@ -1,15 +1,15 @@
 import { useState } from "react";
-import ManufacturerOptions from "./dropdowns/manufOptions";
-import ModelOptions from "./dropdowns/modelOptions";
-import EngineSizeOptions from "./dropdowns/EngineSizeOptions";
-import MarkSeriesOptions from "./dropdowns/MarkSeriesOptions";
-import ResetButton from "./buttons/Reset";
-import SearchButton from "./buttons/Search";
-import supabase from "../assets/supaBaseClient";
+import ManufacturerOptions from "../dropdowns/manufOptions";
+import ModelOptions from "../dropdowns/modelOptions";
+import EngineSizeOptions from "../dropdowns/EngineSizeOptions";
+import MarkSeriesOptions from "../dropdowns/MarkSeriesOptions";
+import ResetButton from "../buttons/Reset";
+import SearchButton from "../buttons/Search";
+import supabase from "../../assets/supaBaseClient";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
-import YearsOptions from "./dropdowns/YearsOptions";
-import FitmentOptions from "./dropdowns/FitmentOptions";
+import YearsOptions from "../dropdowns/YearsOptions";
+import FitmentOptions from "../dropdowns/FitmentOptions";
 
 const FilterContainer = () => {
   const navigate = useNavigate();
