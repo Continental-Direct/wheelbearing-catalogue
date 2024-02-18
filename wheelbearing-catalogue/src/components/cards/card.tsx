@@ -1,4 +1,5 @@
 import React from "react";
+import "../../CSS/singleCard.css";
 
 export interface CardProps {
   CD: string;
