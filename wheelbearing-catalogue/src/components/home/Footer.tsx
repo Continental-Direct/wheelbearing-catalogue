@@ -1,3 +1,5 @@
+import "../../CSS/Footer.css";
+
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({
