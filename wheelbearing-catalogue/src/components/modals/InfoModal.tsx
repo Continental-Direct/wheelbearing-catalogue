@@ -1,4 +1,5 @@
 import React from "react";
+import "../../CSS/modal.css";
 
 interface InfoModalProps {
   isOpen: boolean;
