@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import "../App.css";
+import "../CSS/App.css";
 import Nav from "./home/Nav";
 
 import FilterContainer from "./home/filterContainer";
