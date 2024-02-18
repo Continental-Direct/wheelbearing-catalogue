@@ -1,14 +1,15 @@
 import { useState } from "react";
-import ManufacturerOptions from "./manufFilter";
-import ModelOptions from "./modelOptions";
-import EngineSizeOptions from "./EngineSizeOptions";
-import MarkSeriesOptions from "./MarkSeriesOptions";
-import ResetButton from "./Reset";
-import SearchButton from "./Search";
-import supabase from "../assets/supaBaseClient";
+import ManufacturerOptions from "../dropdowns/manufOptions";
+import ModelOptions from "../dropdowns/modelOptions";
+import EngineSizeOptions from "../dropdowns/EngineSizeOptions";
+import MarkSeriesOptions from "../dropdowns/MarkSeriesOptions";
+import ResetButton from "../buttons/Reset";
+import SearchButton from "../buttons/Search";
+import supabase from "../../assets/supaBaseClient";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
-import YearsOptions from "./YearsOptions";
+import YearsOptions from "../dropdowns/YearsOptions";
+import FitmentOptions from "../dropdowns/FitmentOptions";
 
 const FilterContainer = () => {
   const navigate = useNavigate();
@@ -18,7 +19,11 @@ const FilterContainer = () => {
   const [selectedEngineSize, setSelectedEngineSize] = useState<string>("");
   const [selectedMarkSeries, setSelectedMarkSeries] = useState<string>("");
   const [selectedYear, setSelectedYear] = useState<string>("");
+  const [selectedMPos, setSelectedMPos] = useState<string>("");
 
+  const handleMPosChange = (mpos: string) => {
+    setSelectedMPos(mpos);
+  };
   const handleManufacturerChange = (manufacturer: string) => {
     setSelectedManufacturer(manufacturer);
   };
@@ -66,6 +71,9 @@ const FilterContainer = () => {
       if (selectedYear) {
         query = query.eq("Years", selectedYear);
       }
+      if (selectedMPos) {
+        query = query.eq("MPos", selectedMPos);
+      }
 
       const { data, error } = await query;
 
@@ -108,6 +116,14 @@ const FilterContainer = () => {
             selectedMarkSeries={selectedMarkSeries}
             reset={reset}
             onYearsChange={handleYearChange}
+          />
+          <FitmentOptions
+            selectedModel={selectedModel}
+            selectedEngineSize={selectedEngineSize}
+            selectedMarkSeries={selectedMarkSeries}
+            selectedYear={selectedYear}
+            reset={reset}
+            onMPosChange={handleMPosChange}
           />
           <SearchButton onSearch={handleSearch} />
           <ResetButton onReset={handleReset} />

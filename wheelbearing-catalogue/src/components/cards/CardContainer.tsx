@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Card from "./components/card";
-import InfoModal from "./components/InfoModal";
-import { CardProps } from "./components/card";
+import Card from "./card";
+import InfoModal from "../modals/InfoModal";
+import { CardProps } from "./card";
 import { useLocation } from "react-router-dom";
 import FilterSection from "./FilterSection";
 
@@ -85,7 +85,16 @@ const CardContainer: React.FC = () => {
     });
   };
 
-  const filteredResults = searchResults.filter((data) => {
+  const uniqueCards = searchResults.reduce<CardProps[]>((acc, current) => {
+    const x = acc.find((item) => item.CD === current.CD);
+    if (!x) {
+      return acc.concat([current]);
+    } else {
+      return acc;
+    }
+  }, []);
+
+  const filteredResults = uniqueCards.filter((data) => {
     const matchesTransmission =
       filters.Transmission.length === 0 ||
       filters.Transmission.includes(data.Transmission);

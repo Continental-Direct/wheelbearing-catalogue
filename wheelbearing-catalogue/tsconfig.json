@@ -20,6 +20,10 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": [
+    "src",
+    "src/components/dropdowns/manufOptions.tsx",
+    "manufacturers.js/manufacturers.ts"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
