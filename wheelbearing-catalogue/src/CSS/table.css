@@ -1,0 +1,37 @@
+/* Table may be deleted */
+.filtered-results {
+  overflow-x: auto;
+  width: 100%;
+}
+/* 
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #32383f;
+}
+
+.table th,
+.table td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #434b55;
+  color: #ddd;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.table tr:nth-child(odd) {
+  background-color: #f0f0f0;
+} */
