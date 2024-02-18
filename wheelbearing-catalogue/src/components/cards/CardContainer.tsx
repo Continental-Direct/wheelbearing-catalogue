@@ -4,6 +4,7 @@ import InfoModal from "../modals/InfoModal";
 import { CardProps } from "./card";
 import { useLocation } from "react-router-dom";
 import FilterSection from "./FilterSection";
+import "../../CSS/CardContainer.css";
 
 export interface CardContainerProps {
   cardsData: CardProps[];
