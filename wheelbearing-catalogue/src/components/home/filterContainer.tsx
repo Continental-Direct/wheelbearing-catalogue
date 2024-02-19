@@ -79,7 +79,7 @@ const FilterContainer = () => {
       const { data, error } = await query;
 
       if (error) throw error;
-      console.log("Data returned from Supabase:", data);
+
       navigate("/results", { state: { searchResults: data } });
     } catch (error) {
       console.error("Error in search:", (error as any).message);

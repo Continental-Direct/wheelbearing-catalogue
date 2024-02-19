@@ -15,7 +15,7 @@ const SKFSearch = () => {
       // Query for SKF number
       const { data: skfData, error: skfError } = await supabase
         .from("wheelbearing")
-        .select("CD")
+        .select("*")
         .eq("SKF", inputNumber);
 
       if (skfError) throw skfError;
@@ -23,7 +23,7 @@ const SKFSearch = () => {
       // Query for FAG number
       const { data: fagData, error: fagError } = await supabase
         .from("wheelbearing")
-        .select("CD")
+        .select("*")
         .eq("FAG", inputNumber);
 
       if (fagError) throw fagError;
