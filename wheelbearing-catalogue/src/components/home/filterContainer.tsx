@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 import YearsOptions from "../dropdowns/YearsOptions";
 import FitmentOptions from "../dropdowns/FitmentOptions";
+import SKFSearch from "../dropdowns/SKFSearch";
 
 const FilterContainer = () => {
   const navigate = useNavigate();
@@ -129,6 +130,7 @@ const FilterContainer = () => {
           <ResetButton onReset={handleReset} />
         </div>
       </div>
+      <SKFSearch />
       <div className="wheelbearing-info">
         <div className="home-img-container">
           <img className="home-img" src="CD-WBK-2.jpg" alt="wheelbearings" />
