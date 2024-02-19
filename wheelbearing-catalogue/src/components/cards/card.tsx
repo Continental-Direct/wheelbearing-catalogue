@@ -20,7 +20,13 @@ export interface CardProps {
   openModal: () => void;
 }
 
-const Card: React.FC<CardProps> = ({ CD, Bearing1Size, Manuf, openModal }) => {
+const Card: React.FC<CardProps> = ({
+  CD,
+  Bearing1Size,
+  Manuf,
+  abs_note,
+  openModal,
+}) => {
   const imageUrl = `https://dsucoxafocjydztfhxum.supabase.co/storage/v1/object/public/wheelbearing/Autocat%20Wheel%20Bearing%20Images%20(CDM)/${CD}.jpg`;
 
   return (
@@ -36,6 +42,9 @@ const Card: React.FC<CardProps> = ({ CD, Bearing1Size, Manuf, openModal }) => {
       </p>
       <p className="bearing-size">
         <strong>Bearing Size:</strong> {Bearing1Size}
+      </p>
+      <p className="bearing-size">
+        <strong>ABS:</strong> {abs_note}
       </p>
       <button className="buy-button" onClick={openModal}>
         View Details
