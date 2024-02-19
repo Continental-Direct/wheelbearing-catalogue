@@ -17,6 +17,8 @@ export interface CardProps {
   Fueltype: string;
   TRWDansDRWDive: string;
   Bearing1Size: string;
+  vehicleDetails: string;
+  vehicleDetails2: string;
   openModal: () => void;
 }
 
@@ -25,6 +27,8 @@ const Card: React.FC<CardProps> = ({
   Bearing1Size,
   Manuf,
   abs_note,
+  vehicleDetails,
+  vehicleDetails2,
   openModal,
 }) => {
   const imageUrl = `https://dsucoxafocjydztfhxum.supabase.co/storage/v1/object/public/wheelbearing/Autocat%20Wheel%20Bearing%20Images%20(CDM)/${CD}.jpg`;
@@ -46,9 +50,8 @@ const Card: React.FC<CardProps> = ({
       <p className="bearing-size">
         <strong>ABS:</strong> {abs_note}
       </p>
-      <p className="bearing-size">
-        <strong>ABS:</strong> {abs_note}
-      </p>
+      <p className="bearing-size">{vehicleDetails}</p>
+      <p className="bearing-size">{vehicleDetails2}</p>
       <button className="buy-button" onClick={openModal}>
         View Details
       </button>
