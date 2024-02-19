@@ -25,6 +25,7 @@ const CardContainer: React.FC = () => {
   const { searchResults } = (location.state as {
     searchResults: CardProps[];
   }) || { searchResults: [] };
+  console.log("Initial search results:", searchResults);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState<{

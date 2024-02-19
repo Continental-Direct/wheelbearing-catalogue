@@ -3,26 +3,40 @@ import { useNavigate } from "react-router-dom";
 import supabase from "../../assets/supaBaseClient";
 
 const SKFSearch = () => {
-  const [skfNumber, setSkfNumber] = useState<string>("");
+  const [inputNumber, setInputNumber] = useState<string>("");
   const navigate = useNavigate();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSkfNumber(e.target.value);
+    setInputNumber(e.target.value);
   };
 
   const handleSearch = async () => {
     try {
-      const { data, error } = await supabase
+      // Query for SKF number
+      const { data: skfData, error: skfError } = await supabase
         .from("wheelbearing")
         .select("CD")
-        .eq("SKF", skfNumber);
+        .eq("SKF", inputNumber);
 
-      if (error) throw error;
+      if (skfError) throw skfError;
 
-      if (data && data.length === 0) {
-        alert("No part found for this SKF number.");
+      // Query for FAG number
+      const { data: fagData, error: fagError } = await supabase
+        .from("wheelbearing")
+        .select("CD")
+        .eq("FAG", inputNumber);
+
+      if (fagError) throw fagError;
+
+      // Combine results from both queries
+      const combinedData = [...(skfData || []), ...(fagData || [])];
+
+      if (combinedData.length === 0) {
+        alert("No part found for this number.");
       } else {
-        navigate("/results", { state: { searchResults: data } });
+        console.log(combinedData);
+        // Navigate to the results page with combined data
+        navigate("/results", { state: { searchResults: combinedData } });
       }
     } catch (error: any) {
       console.error("Error searching for part:", error.message);
@@ -33,9 +47,9 @@ const SKFSearch = () => {
     <div className="skf-search">
       <input
         type="text"
-        value={skfNumber}
+        value={inputNumber}
         onChange={handleInputChange}
-        placeholder="Enter SKF Number"
+        placeholder="Enter SKF or FAG Number"
       />
       <button onClick={handleSearch}>Search</button>
     </div>
