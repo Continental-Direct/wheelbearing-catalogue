@@ -84,32 +84,49 @@ body {
 
 .wheelbearing-info {
   display: flex;
+  align-items: stretch; /* Align items to stretch to the container height */
   width: 75%;
   margin-bottom: 3rem;
+  height: 250px; /* Set a fixed height for the container */
+  gap: 0;
 }
 
 .home-img-container {
-  flex: 1; /* Adjust flex basis as needed to control width */
-  display: flex; /* Add this if not present */
-  align-items: stretch; /* Stretch children to fill the container height */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the image within the image container */
+  height: 100%; /* Full height of the parent container */
 }
 
 .home-img {
-  width: 100%;
-  object-fit: cover;
+  max-height: 100%; /* Image will fill the height of its container */
+  object-fit: contain; /* Image will be scaled to maintain its aspect ratio */
 }
 
 .home-info {
-  flex: 1; /* Adjust flex basis as needed to control width */
-  padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* This centers the content vertically */
+  justify-content: center;
   background-color: #32383fc9;
-  padding: 2rem;
+  padding: 1rem;
+  height: 100%; /* Full height of the parent container */
 }
 
-.home-info h3 {
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
+/* Adjustments for responsive design */
+@media (max-width: 768px) {
+  .wheelbearing-info {
+    flex-direction: column;
+    height: auto; /* Allow the height to grow as needed */
+  }
+
+  .home-img-container,
+  .home-info {
+    padding: 0; /* Remove padding for smaller screens */
+    height: auto; /* Allow the height to grow as needed */
+  }
+
+  .home-img {
+    width: 100%; /* Image takes full width of the container */
+    height: auto; /* Height grows as needed */
+  }
 }

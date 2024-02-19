@@ -131,11 +131,7 @@ const FilterContainer = () => {
       </div>
       <div className="wheelbearing-info">
         <div className="home-img-container">
-          <img
-            className="home-img"
-            src="wheelbearings.png"
-            alt="wheelbearings"
-          />
+          <img className="home-img" src="CD-WBK-2.jpg" alt="wheelbearings" />
         </div>
         <div className="home-info">
           <h3>CD WHEEL BEARINGS</h3>
