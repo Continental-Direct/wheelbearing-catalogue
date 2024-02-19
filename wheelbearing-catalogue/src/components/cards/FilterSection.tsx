@@ -91,11 +91,20 @@ const FilterSection: React.FC<FilterSectionProps> = ({ onFilterChange }) => {
       <div>
         <input
           type="checkbox"
-          name="DriveType"
+          name="TRWDansDRWDive"
           value="RWD"
           onChange={handleCheckboxChange}
         />{" "}
         Rear Wheel Drive (RWD)
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          name="TRWDansDRWDive"
+          value="4WD"
+          onChange={handleCheckboxChange}
+        />{" "}
+        Four wheel drive (4WD)
       </div>
     </div>
   );
