@@ -9,7 +9,6 @@
 /* #434b55 */
 /* rgba(0, 0, 0, 1); */
 
-
 * {
   box-sizing: border-box;
 }
@@ -89,18 +88,28 @@ body {
   margin-bottom: 3rem;
 }
 
+.home-img-container {
+  flex: 1; /* Adjust flex basis as needed to control width */
+  display: flex; /* Add this if not present */
+  align-items: stretch; /* Stretch children to fill the container height */
+}
+
 .home-img {
   width: 100%;
+  object-fit: cover;
 }
 
 .home-info {
+  flex: 1; /* Adjust flex basis as needed to control width */
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* This centers the content vertically */
   background-color: #32383fc9;
   padding: 2rem;
-  height: 317px;
 }
 
 .home-info h3 {
   font-size: 1.6rem;
   margin-bottom: 1rem;
 }
-
