@@ -13,19 +13,21 @@ const SKFSearch = () => {
 
   const handleSearch = async () => {
     try {
-      // Query for SKF number
+      const inputNumberLowercase = inputNumber.toLowerCase(); // Convert input to lowercase
+
+      // Query for SKF number with case-insensitive search
       const { data: skfData, error: skfError } = await supabase
         .from("wheelbearing")
         .select("*")
-        .eq("SKF", inputNumber);
+        .ilike("SKF", `%${inputNumberLowercase}%`); // Use ilike for case-insensitive matching
 
       if (skfError) throw skfError;
 
-      // Query for FAG number
+      // Query for FAG number with case-insensitive search
       const { data: fagData, error: fagError } = await supabase
         .from("wheelbearing")
         .select("*")
-        .eq("FAG", inputNumber);
+        .ilike("FAG", `%${inputNumberLowercase}%`); // Use ilike for case-insensitive matching
 
       if (fagError) throw fagError;
 
