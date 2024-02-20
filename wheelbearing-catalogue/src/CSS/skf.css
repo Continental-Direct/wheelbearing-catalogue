@@ -1,8 +1,8 @@
 .skf-search-input,
 .skf-search-button {
-  font-size: 16px; /* Increased font size for better readability */
-  padding: 10px 12px; /* Increased padding for a larger appearance */
-  height: 40px; /* Ensure both input and button have the same height */
+  font-size: 16px; 
+  padding: 10px 12px; 
+  height: 40px;
 }
 
 .skf-search-input {
@@ -12,8 +12,8 @@
   border-radius: 4px;
   width: calc(
     100% - 24px - 1px * 2
-  ); /* Adjust width to account for padding and border */
-  margin-right: 0.5rem; /* Ensure some space between the input and the button */
+  ); 
+  margin-right: 0.5rem; 
 }
 
 .skf-search-button {
@@ -22,10 +22,10 @@
   border: none;
   cursor: pointer;
   border-radius: 4px;
-  white-space: nowrap; /* Prevents text from wrapping */
+  white-space: nowrap; 
 }
 
-/* Focus state for input to maintain consistency */
+
 .skf-search-input:focus {
   outline: none;
   border-color: #ffbf0d;
@@ -37,7 +37,7 @@
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  gap: 0.5rem; /* Adjust the gap as necessary */
-  width: auto; /* Adjust based on layout requirements */
-  background-color: transparent; /* Optional, based on design preference */
+  gap: 0.5rem; 
+  width: auto; 
+  background-color: transparent; 
 }

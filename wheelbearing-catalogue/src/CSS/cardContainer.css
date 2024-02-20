@@ -32,17 +32,17 @@
 }
 
 .filter-tag {
-  display: inline-block; /* Makes the <p> tag inline-block to allow width and padding adjustments */
-  background-color: #ff8200; /* Your specified orange color */
-  color: white; /* Text color for contrast */
-  padding: 5px 10px; /* Adds some padding inside the tag for a spacious look */
-  margin: 0 5px 5px 0; /* Adds some space around the tags */
-  border: none; /* Ensures no border is applied */
-  cursor: pointer; /* Changes the cursor to indicate clickability */
-  transition: background-color 0.3s; /* Smooth transition for hover effect */
+  display: inline-block; 
+  background-color: #ff8200; 
+  color: white; 
+  padding: 5px 10px; 
+  margin: 0 5px 5px 0; 
+  border: none; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
   border-radius: 5px;
 }
 
 .filter-tag:hover {
-  background-color: #e56e00; /* Slightly darker shade of orange on hover for a subtle effect */
+  background-color: #e56e00; 
 }
