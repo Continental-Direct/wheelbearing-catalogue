@@ -148,7 +148,7 @@ const FilterContainer: React.FC = () => {
       </div>
       <div className="wheelbearing-info">
         <div className="home-img-container">
-          <img className="home-img" src="CD-WBK-2.jpg" alt="wheelbearings" />
+          <img className="home-img" src="CD-WBK-Main.jpg" alt="wheelbearings" />
         </div>
         <div className="home-info">
           <h3>CD WHEEL BEARINGS</h3>
