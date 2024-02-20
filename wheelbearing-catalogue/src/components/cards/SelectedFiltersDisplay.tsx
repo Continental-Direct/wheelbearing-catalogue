@@ -19,13 +19,13 @@ const SelectedFiltersDisplay: React.FC<SelectedFiltersDisplayProps> = ({
 }) => {
   return (
     <div className="selected-filters-display">
-      <h4>Selected Filters:</h4>
-      {manufacturer && <p>Manufacturer: {manufacturer}</p>}
-      {model && <p>Model: {model}</p>}
-      {engineSize && <p>Engine Size: {engineSize}</p>}
-      {markSeries && <p>Mark Series: {markSeries}</p>}
-      {driveType && <p>Drive Type: {driveType}</p>}
-      {mPos && <p>Position: {mPos}</p>}
+      <h4>Vehicle:</h4>
+      {manufacturer && <p className="filter-tag">{manufacturer}</p>}
+      {model && <p className="filter-tag"> {model}</p>}
+      {engineSize && <p className="filter-tag"> {engineSize}</p>}
+      {markSeries && <p className="filter-tag">{markSeries}</p>}
+      {driveType && <p className="filter-tag"> {driveType}</p>}
+      {mPos && <p className="filter-tag">{mPos}</p>}
     </div>
   );
 };
