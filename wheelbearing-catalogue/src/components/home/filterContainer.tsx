@@ -130,8 +130,8 @@ const FilterContainer: React.FC = () => {
           />
           <SearchButton onSearch={handleSearch} />
           <ResetButton onReset={handleReset} />
-          <SKFSearch />
         </div>
+        <SKFSearch />
       </div>
       <div className="wheelbearing-info">
         <div className="home-img-container">

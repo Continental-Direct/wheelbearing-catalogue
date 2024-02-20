@@ -38,6 +38,7 @@ body {
   background-color: #32383fc9;
   width: 90%;
   margin-bottom: 2rem;
+  padding: 1rem;
 }
 .dropdown-container {
   display: flex;
