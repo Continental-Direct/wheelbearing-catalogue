@@ -5,7 +5,7 @@ interface MPosOptionsProps {
   selectedModel: string;
   selectedEngineSize: string;
   selectedMarkSeries: string;
-  selectedYear: string;
+  selectedDriveType: string;
   reset: boolean;
   onMPosChange: (mpos: string) => void;
 }
@@ -14,7 +14,7 @@ const FitmentOptions: React.FC<MPosOptionsProps> = ({
   selectedModel,
   selectedEngineSize,
   selectedMarkSeries,
-  selectedYear,
+  selectedDriveType,
   reset,
   onMPosChange,
 }) => {
@@ -33,7 +33,7 @@ const FitmentOptions: React.FC<MPosOptionsProps> = ({
         selectedModel &&
         selectedEngineSize &&
         selectedMarkSeries &&
-        selectedYear
+        selectedDriveType
       ) {
         try {
           const { data, error } = await supabase
@@ -42,7 +42,7 @@ const FitmentOptions: React.FC<MPosOptionsProps> = ({
             .eq("Model", selectedModel)
             .eq("EngineSize", selectedEngineSize)
             .eq("mark_series", selectedMarkSeries)
-            .eq("Years", selectedYear);
+            .eq("TRWDansDRWDive", selectedDriveType);
           if (error) {
             console.error("Error fetching MPos:", error.message);
           } else {
@@ -58,7 +58,12 @@ const FitmentOptions: React.FC<MPosOptionsProps> = ({
     };
 
     fetchMPos();
-  }, [selectedModel, selectedEngineSize, selectedMarkSeries, selectedYear]);
+  }, [
+    selectedModel,
+    selectedEngineSize,
+    selectedMarkSeries,
+    selectedDriveType,
+  ]);
 
   useEffect(() => {
     if (reset) {

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import ManufacturerOptions from "../dropdowns/manufOptions";
 import ModelOptions from "../dropdowns/modelOptions";
 import EngineSizeOptions from "../dropdowns/EngineSizeOptions";
@@ -8,18 +8,18 @@ import SearchButton from "../buttons/Search";
 import supabase from "../../assets/supaBaseClient";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
-import YearsOptions from "../dropdowns/YearsOptions";
+import DriveTypeOptions from "../dropdowns/DriveTypeOptions";
 import FitmentOptions from "../dropdowns/FitmentOptions";
 import SKFSearch from "../dropdowns/SKFSearch";
 
-const FilterContainer = () => {
+const FilterContainer: React.FC = () => {
   const navigate = useNavigate();
   const [selectedManufacturer, setSelectedManufacturer] = useState<string>("");
   const [reset, setReset] = useState<boolean>(false);
   const [selectedModel, setSelectedModel] = useState<string>("");
   const [selectedEngineSize, setSelectedEngineSize] = useState<string>("");
   const [selectedMarkSeries, setSelectedMarkSeries] = useState<string>("");
-  const [selectedYear, setSelectedYear] = useState<string>("");
+  const [selectedDriveType, setSelectedDriveType] = useState<string>("");
   const [selectedMPos, setSelectedMPos] = useState<string>("");
 
   const handleMPosChange = (mpos: string) => {
@@ -41,16 +41,18 @@ const FilterContainer = () => {
     setSelectedMarkSeries(markSeries);
   };
 
-  const handleYearChange = (year: string) => {
-    setSelectedYear(year);
+  const handleDriveTypeChange = (driveType: string) => {
+    setSelectedDriveType(driveType);
   };
 
   const handleReset = () => {
-    setReset((prevReset) => !prevReset);
+    setReset(!reset);
     setSelectedManufacturer("");
     setSelectedModel("");
     setSelectedEngineSize("");
     setSelectedMarkSeries("");
+    setSelectedDriveType("");
+    setSelectedMPos("");
   };
 
   const handleSearch = async () => {
@@ -69,8 +71,8 @@ const FilterContainer = () => {
       if (selectedMarkSeries) {
         query = query.eq("mark_series", selectedMarkSeries);
       }
-      if (selectedYear) {
-        query = query.eq("Years", selectedYear);
+      if (selectedDriveType) {
+        query = query.eq("TRWDansDRWDive", selectedDriveType);
       }
       if (selectedMPos) {
         query = query.eq("MPos", selectedMPos);
@@ -81,8 +83,8 @@ const FilterContainer = () => {
       if (error) throw error;
 
       navigate("/results", { state: { searchResults: data } });
-    } catch (error) {
-      console.error("Error in search:", (error as any).message);
+    } catch (error: any) {
+      console.error("Error in search:", error.message);
     }
   };
 
@@ -111,18 +113,18 @@ const FilterContainer = () => {
             reset={reset}
             onMarkSeriesChange={handleMarkSeriesChange}
           />
-          <YearsOptions
+          <DriveTypeOptions
             selectedModel={selectedModel}
             selectedEngineSize={selectedEngineSize}
             selectedMarkSeries={selectedMarkSeries}
             reset={reset}
-            onYearsChange={handleYearChange}
+            onDriveTypeChange={handleDriveTypeChange}
           />
           <FitmentOptions
             selectedModel={selectedModel}
             selectedEngineSize={selectedEngineSize}
             selectedMarkSeries={selectedMarkSeries}
-            selectedYear={selectedYear}
+            selectedDriveType={selectedDriveType}
             reset={reset}
             onMPosChange={handleMPosChange}
           />
@@ -131,20 +133,6 @@ const FilterContainer = () => {
         </div>
       </div>
       <SKFSearch />
-      <div className="wheelbearing-info">
-        <div className="home-img-container">
-          <img className="home-img" src="CD-WBK-2.jpg" alt="wheelbearings" />
-        </div>
-        <div className="home-info">
-          <h3>CD WHEEL BEARINGS</h3>
-          <p>
-            All generation wheel bearings and hubs. Featuring the highest
-            quality, all kits are complete with any ancillary components
-            required to complete the installation correctly. 100% coverage for
-            all popular applications.
-          </p>
-        </div>
-      </div>
       <Footer />
     </div>
   );
