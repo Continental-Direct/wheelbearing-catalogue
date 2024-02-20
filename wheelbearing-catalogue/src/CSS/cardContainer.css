@@ -1,7 +1,7 @@
 .card-container {
   display: flex;
   gap: 20px;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
 }
 .content-container {
   display: grid;
@@ -9,6 +9,7 @@
   width: 100%;
   padding: 20px;
   gap: 2rem;
+  background-color: transparent;
 }
 
 .filter-section {

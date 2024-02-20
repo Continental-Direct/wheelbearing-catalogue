@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import supabase from "../../assets/supaBaseClient";
-// import "../../CSS/skf.css";
+import "../../CSS/skf.css";
 
 const SKFSearch = () => {
   const [inputNumber, setInputNumber] = useState<string>("");
