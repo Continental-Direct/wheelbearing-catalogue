@@ -5,6 +5,7 @@ import { CardProps } from "./card";
 import { useLocation } from "react-router-dom";
 import FilterSection from "./FilterSection";
 import "../../CSS/CardContainer.css";
+import SelectedFiltersDisplay from "./SelectedFiltersDisplay";
 
 export interface CardContainerProps {
   cardsData: CardProps[];
@@ -12,6 +13,18 @@ export interface CardContainerProps {
 
 interface Filters {
   [key: string]: string[];
+}
+
+interface LocationState {
+  searchResults: CardProps[];
+  filterChoices: {
+    selectedManufacturer: string;
+    selectedModel: string;
+    selectedEngineSize: string;
+    selectedMarkSeries: string;
+    selectedDriveType: string;
+    selectedMPos: string;
+  };
 }
 
 const CardContainer: React.FC = () => {
@@ -22,11 +35,12 @@ const CardContainer: React.FC = () => {
     TRWDansDRWDive: [],
   });
   const location = useLocation();
-  const { searchResults } = (location.state as {
-    searchResults: CardProps[];
-  }) || { searchResults: [] };
-  console.log("Initial search results:", searchResults);
-
+  // Corrected: Destructuring should be inside the component function
+  const { searchResults, filterChoices } =
+    (location.state as LocationState) || {
+      searchResults: [],
+      filterChoices: undefined,
+    };
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState<{
     imageUrl: string;
@@ -42,7 +56,6 @@ const CardContainer: React.FC = () => {
     MPos: string;
     TRWDansDRWDive: string;
   } | null>(null);
-
   const handleOpenModal = (data: CardProps) => {
     const imageUrl = `https://dsucoxafocjydztfhxum.supabase.co/storage/v1/object/public/wheelbearing/Autocat%20Wheel%20Bearing%20Images%20(CDM)/${data.CD}.jpg`;
     setModalContent({
@@ -118,6 +131,16 @@ const CardContainer: React.FC = () => {
 
   return (
     <div className="content-container">
+      {filterChoices && (
+        <SelectedFiltersDisplay
+          manufacturer={filterChoices.selectedManufacturer || ""}
+          model={filterChoices.selectedModel || ""}
+          engineSize={filterChoices.selectedEngineSize || ""}
+          markSeries={filterChoices.selectedMarkSeries || ""}
+          driveType={filterChoices.selectedDriveType || ""}
+          mPos={filterChoices.selectedMPos || ""}
+        />
+      )}
       <FilterSection onFilterChange={onFilterChange} />
       <div className="card-container">
         {filteredResults.map((data, index) => (

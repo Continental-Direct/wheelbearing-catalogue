@@ -82,7 +82,20 @@ const FilterContainer: React.FC = () => {
 
       if (error) throw error;
 
-      navigate("/results", { state: { searchResults: data } });
+      navigate("/results", {
+        state: {
+          searchResults: data,
+          filterChoices: {
+            // Corrected typo here
+            selectedManufacturer,
+            selectedModel,
+            selectedEngineSize,
+            selectedMarkSeries,
+            selectedDriveType,
+            selectedMPos,
+          },
+        },
+      });
     } catch (error: any) {
       console.error("Error in search:", error.message);
     }
