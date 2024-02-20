@@ -20,8 +20,9 @@ body {
   color: #ffffff;
   background: radial-gradient(
     343px at 46.3% 47.5%,
-    rgb(242, 242, 242) 0%,
-    rgb(241, 241, 241) 72.9%
+    rgb(222, 222, 222) 0%,
+    /* Darkened from rgb(242, 242, 242) */ rgb(211, 211, 211) 72.9%
+      /* Darkened from rgb(241, 241, 241) */
   );
 }
 
