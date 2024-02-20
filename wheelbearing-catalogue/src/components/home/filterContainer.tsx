@@ -130,9 +130,23 @@ const FilterContainer: React.FC = () => {
           />
           <SearchButton onSearch={handleSearch} />
           <ResetButton onReset={handleReset} />
+          <SKFSearch />
         </div>
       </div>
-      <SKFSearch />
+      <div className="wheelbearing-info">
+        <div className="home-img-container">
+          <img className="home-img" src="CD-WBK-2.jpg" alt="wheelbearings" />
+        </div>
+        <div className="home-info">
+          <h3>CD WHEEL BEARINGS</h3>
+          <p>
+            All generation wheel bearings and hubs. Featuring the highest
+            quality, all kits are complete with any ancillary components
+            required to complete the installation correctly. 100% coverage for
+            all popular applications.
+          </p>
+        </div>
+      </div>
       <Footer />
     </div>
   );

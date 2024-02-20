@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import supabase from "../../assets/supaBaseClient";
+// import "../../CSS/skf.css";
 
 const SKFSearch = () => {
   const [inputNumber, setInputNumber] = useState<string>("");
@@ -44,14 +45,17 @@ const SKFSearch = () => {
   };
 
   return (
-    <div className="skf-search">
+    <div className="skf-search-container">
       <input
+        className="skf-search-input"
         type="text"
         value={inputNumber}
         onChange={handleInputChange}
         placeholder="Enter SKF or FAG Number"
       />
-      <button onClick={handleSearch}>Search</button>
+      <button className="skf-search-button" onClick={handleSearch}>
+        Search
+      </button>
     </div>
   );
 };

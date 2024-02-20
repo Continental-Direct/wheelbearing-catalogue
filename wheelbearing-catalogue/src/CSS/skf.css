@@ -1,0 +1,31 @@
+.skf-search-container {
+}
+
+.skf-search-input {
+  font-size: 14px; /* Adjust font size for compactness */
+  background-color: #ffffff;
+  color: #32383f;
+  border: 1px solid #ff8200;
+}
+
+.skf-search-button {
+  padding: 4px 8px; /* Reduced padding for compactness */
+  font-size: 14px; /* Adjust font size for consistency */
+  background-color: #ff8200;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Focus state for input to maintain consistency */
+.skf-search-input:focus {
+  outline: none;
+  border-color: #ffbf0d;
+  box-shadow: 0 0 0 2px rgba(255, 190, 13, 0.5);
+}
+
+.skf-search-container {
+  padding: 0.5rem;
+  gap: 0.5rem;
+}
