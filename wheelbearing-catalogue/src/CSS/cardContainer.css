@@ -18,3 +18,15 @@
   color: white;
   margin-top: 5px;
 }
+
+.selected-filters-display {
+  background-color: #32383fc9;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  align-items: center;
+  border-radius: 5px;
+  color: white;
+}

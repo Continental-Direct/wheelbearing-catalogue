@@ -130,7 +130,7 @@ const CardContainer: React.FC = () => {
   });
 
   return (
-    <div className="content-container">
+    <>
       {filterChoices && (
         <SelectedFiltersDisplay
           manufacturer={filterChoices.selectedManufacturer || ""}
@@ -141,20 +141,26 @@ const CardContainer: React.FC = () => {
           mPos={filterChoices.selectedMPos || ""}
         />
       )}
-      <FilterSection onFilterChange={onFilterChange} />
-      <div className="card-container">
-        {filteredResults.map((data, index) => (
-          <Card key={index} {...data} openModal={() => handleOpenModal(data)} />
-        ))}
+      <div className="content-container">
+        <FilterSection onFilterChange={onFilterChange} />
+        <div className="card-container">
+          {filteredResults.map((data, index) => (
+            <Card
+              key={index}
+              {...data}
+              openModal={() => handleOpenModal(data)}
+            />
+          ))}
+        </div>
+        {isModalOpen && modalContent && (
+          <InfoModal
+            isOpen={isModalOpen}
+            onClose={handleCloseModal}
+            content={modalContent}
+          />
+        )}
       </div>
-      {isModalOpen && modalContent && (
-        <InfoModal
-          isOpen={isModalOpen}
-          onClose={handleCloseModal}
-          content={modalContent}
-        />
-      )}
-    </div>
+    </>
   );
 };
 
