@@ -78,33 +78,87 @@ const FilterSection: React.FC<FilterSectionProps> = ({ onFilterChange }) => {
         />
         Electric
       </div>
-      <h3>Drive Type</h3>
+      <h3>Body Type</h3>
       <div>
         <input
           type="checkbox"
-          name="TRWDansDRWDive"
-          value="FWD"
+          name="BodyType"
+          value="Hatch"
           onChange={handleCheckboxChange}
         />{" "}
-        Front Wheel Drive (FWD)
+        Hatch
       </div>
       <div>
         <input
           type="checkbox"
-          name="TRWDansDRWDive"
-          value="RWD"
+          name="BodyType"
+          value="SUV"
           onChange={handleCheckboxChange}
         />{" "}
-        Rear Wheel Drive (RWD)
+        SUV
       </div>
       <div>
         <input
           type="checkbox"
-          name="TRWDansDRWDive"
-          value="4WD"
+          name="BodyType"
+          value="Estate"
+          onChange={handleCheckboxChange}
+        />
+        Estate
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          name="BodyType"
+          value="ATV"
           onChange={handleCheckboxChange}
         />{" "}
-        Four wheel drive (4WD)
+        ATV
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          name="BodyType"
+          value="Saloon"
+          onChange={handleCheckboxChange}
+        />{" "}
+        Saloon
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          name="Chassis Cab"
+          value="Saloon"
+          onChange={handleCheckboxChange}
+        />
+        Chassis Cab
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          name="BodyType"
+          value="Saloon"
+          onChange={handleCheckboxChange}
+        />{" "}
+        Coupe
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          name="BodyType"
+          value="Cabrio"
+          onChange={handleCheckboxChange}
+        />{" "}
+        Cabrio
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          name="BodyType"
+          value="Van"
+          onChange={handleCheckboxChange}
+        />
+        Van
       </div>
     </div>
   );
