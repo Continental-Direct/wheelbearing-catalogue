@@ -29,7 +29,7 @@ const EngineSizeOptions: React.FC<EngineSizeOptionsProps> = ({
       try {
         if (selectedModel) {
           const { data, error } = await supabase
-            .from("wheelbearing")
+            .from("wheelbearing2")
             .select("EngineSize")
             .eq("Model", selectedModel);
           if (error) {

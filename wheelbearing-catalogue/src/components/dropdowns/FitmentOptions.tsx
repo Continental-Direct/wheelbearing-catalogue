@@ -37,7 +37,7 @@ const FitmentOptions: React.FC<MPosOptionsProps> = ({
       ) {
         try {
           const { data, error } = await supabase
-            .from("wheelbearing")
+            .from("wheelbearing2")
             .select("MPos")
             .eq("Model", selectedModel)
             .eq("EngineSize", selectedEngineSize)

@@ -32,7 +32,7 @@ const DriveTypeOptions: React.FC<DriveTypeOptionsProps> = ({
       try {
         if (selectedModel && selectedEngineSize && selectedMarkSeries) {
           const { data, error } = await supabase
-            .from("wheelbearing")
+            .from("wheelbearing2")
             .select("TRWDansDRWDive") // Updated field name
             .eq("Model", selectedModel)
             .eq("EngineSize", selectedEngineSize)

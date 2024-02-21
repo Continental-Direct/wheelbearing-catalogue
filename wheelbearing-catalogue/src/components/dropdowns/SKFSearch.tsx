@@ -17,7 +17,7 @@ const SKFSearch = () => {
 
       // Query for SKF number with case-insensitive search
       const { data: skfData, error: skfError } = await supabase
-        .from("wheelbearing")
+        .from("wheelbearing2")
         .select("*")
         .ilike("SKF", `%${inputNumberLowercase}%`); // Use ilike for case-insensitive matching
 
@@ -25,7 +25,7 @@ const SKFSearch = () => {
 
       // Query for FAG number with case-insensitive search
       const { data: fagData, error: fagError } = await supabase
-        .from("wheelbearing")
+        .from("wheelbearing2")
         .select("*")
         .ilike("FAG", `%${inputNumberLowercase}%`); // Use ilike for case-insensitive matching
 
