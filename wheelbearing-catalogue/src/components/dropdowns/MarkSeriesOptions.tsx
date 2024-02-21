@@ -69,7 +69,7 @@ const MarkSeriesOptions: React.FC<MarkSeriesOptionsProps> = ({
           value={selectedMarkSeries}
           onChange={handleMarkSeriesChange}
         >
-          <option value="">Select Mark/Series</option>
+          <option value=""> Mark/Series</option>
           {markSeries.map((ms, index) => (
             <option key={index} value={ms}>
               {ms}

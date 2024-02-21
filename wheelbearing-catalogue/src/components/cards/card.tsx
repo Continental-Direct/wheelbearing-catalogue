@@ -19,6 +19,7 @@ export interface CardProps {
   Bearing1Size: string;
   vehicleDetails: string;
   vehicleDetails2: string;
+  imageUrl: string;
   openModal: () => void;
 }
 

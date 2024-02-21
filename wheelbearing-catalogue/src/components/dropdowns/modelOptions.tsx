@@ -65,7 +65,7 @@ const ModelOptions: React.FC<ModelOptionsProps> = ({
           value={selectedModel}
           onChange={handleModelChange}
         >
-          <option value="">Select Model</option>
+          <option value="">Model</option>
           {models.map((model) => (
             <option key={model} value={model}>
               {model}

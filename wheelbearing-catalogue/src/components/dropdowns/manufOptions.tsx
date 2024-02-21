@@ -41,7 +41,7 @@ const ManufacturerOptions: FC<ManufacturerOptionsProps> = ({
           onChange={handleManufacturerChange}
         >
           <option value="" disabled>
-            Select Manufacturer
+            Manufacturer
           </option>
           {manufacturerOptions}
         </select>

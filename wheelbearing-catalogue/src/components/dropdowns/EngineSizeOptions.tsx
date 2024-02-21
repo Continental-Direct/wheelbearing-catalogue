@@ -68,7 +68,7 @@ const EngineSizeOptions: React.FC<EngineSizeOptionsProps> = ({
           value={selectedEngineSize}
           onChange={handleEngineSizeChange}
         >
-          <option value="">Select Engine Size</option>
+          <option value=""> Engine Size</option>
           {engineSizes.map((size) => (
             <option key={size} value={size}>
               {size}

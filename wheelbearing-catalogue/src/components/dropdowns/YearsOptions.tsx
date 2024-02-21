@@ -71,7 +71,7 @@ const DriveTypeOptions: React.FC<DriveTypeOptionsProps> = ({
           value={selectedDriveType}
           onChange={handleDriveTypeChange}
         >
-          <option value="">Select Drive Type</option>
+          <option value="">Drive Type</option>
           {driveTypes.map((driveType, index) => (
             <option key={index} value={driveType}>
               {driveType}

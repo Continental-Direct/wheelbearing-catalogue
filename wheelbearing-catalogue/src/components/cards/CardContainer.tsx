@@ -100,14 +100,16 @@ const CardContainer: React.FC = () => {
     });
   };
 
-  const uniqueCards = searchResults.reduce<CardProps[]>((acc, current) => {
-    const x = acc.find((item) => item.CD === current.CD);
-    if (!x) {
-      return acc.concat([current]);
-    } else {
-      return acc;
-    }
-  }, []);
+  const uniqueCards = Array.from(
+    searchResults
+      .reduce((acc, current) => {
+        if (!acc.has(current.CD)) {
+          acc.set(current.CD, current);
+        }
+        return acc;
+      }, new Map())
+      .values()
+  );
 
   const filteredResults = uniqueCards.filter((data) => {
     const matchesTransmission =
@@ -144,9 +146,9 @@ const CardContainer: React.FC = () => {
       <div className="content-container">
         <FilterSection onFilterChange={onFilterChange} />
         <div className="card-container">
-          {filteredResults.map((data, index) => (
+          {filteredResults.map((data) => (
             <Card
-              key={index}
+              key={data.CD} // Use CD as the key instead of the index
               {...data}
               openModal={() => handleOpenModal(data)}
             />
