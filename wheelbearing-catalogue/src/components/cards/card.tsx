@@ -53,9 +53,7 @@ const Card: React.FC<CardProps> = ({
       </p>
       <p className="bearing-size">{vehicleDetails}</p>
       <p className="bearing-size">{vehicleDetails2}</p>
-      <button className="buy-button" onClick={openModal}>
-        View Details
-      </button>
+      <button className="buy-button">Buy now</button>
     </div>
   );
 };

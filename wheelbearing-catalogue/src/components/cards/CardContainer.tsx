@@ -109,7 +109,7 @@ const CardContainer: React.FC = () => {
       .reduce((acc, current) => {
         const trimmedCD = current.CD.trim(); // Trim the CD number
         if (!acc.has(trimmedCD)) {
-          acc.set(trimmedCD, { ...current, CD: trimmedCD }); // Also trim the CD in the object
+          acc.set(trimmedCD, { ...current, CD: trimmedCD }); //
         }
         return acc;
       }, new Map())
