@@ -116,6 +116,9 @@ body {
   padding: 1rem;
   height: 100%; /* Full height of the parent container */
 }
+
+/* Slider */
+
 .slider-container {
   position: relative;
   max-width: 300px; /* Adjust as needed */
@@ -170,7 +173,9 @@ body {
   right: 10px;
 }
 
-@media (max-width: 768px) {
+/* Queries */
+
+@media (max-width: 850px) {
   .slider-container {
     width: 90%;
     max-width: 90%;
@@ -178,5 +183,60 @@ body {
 
   .slider-image {
     max-height: 100px; /* Adjust for smaller devices */
+  }
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .inner-container,
+  .wheelbearing-info {
+    width: 95%; /* Increase width on smaller screens for better space utilization */
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+  }
+
+  .home-img {
+    max-height: 620px; /* Further reduce image size for very small screens */
+    margin-bottom: 25px;
+  }
+
+  .dropdown-container {
+    flex-direction: column; /* Stack dropdowns vertically on smaller screens */
+    gap: 0.5rem;
+  }
+
+  .wheelbearing-info {
+    text-align: center; /* Center the info section on smaller screens */
+    height: auto; /* Allow the info section to grow as needed */
+  }
+
+  .home-img-container,
+  .home-info {
+    width: 100%; /* Full width for both image and info containers */
+  }
+
+  .button {
+    font-size: 14px; /* Adjust button font size for better readability on smaller screens */
+    padding: 6px 12px;
+  }
+
+  .filter select {
+    font-size: 14px; /* Make select inputs easier to read */
+  }
+}
+
+/* Additional adjustments for even smaller screens, like mobile phones */
+@media (max-width: 480px) {
+  .home-img {
+    max-height: 370px; /* Further reduce image size for very small screens */
+    margin-bottom: 20px;
+  }
+
+  .button,
+  .filter select {
+    font-size: 12px; /* Smaller text for buttons and selects on mobile */
+  }
+
+  .filter-title {
+    font-size: 18px; /* Adjust title size for better fit on mobile screens */
   }
 }

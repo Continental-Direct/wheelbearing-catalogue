@@ -22,3 +22,51 @@
   gap: 10px;
 }
 
+.navbar {
+  background: linear-gradient(to right, #ffbf0d, #ff8200, #e67e22);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.navbar-logo {
+  height: 50px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-logo {
+    position: static; /* Remove absolute positioning */
+    transform: none; /* Reset transform */
+    order: -1; /* Ensure logo appears on the left */
+  }
+
+  .navbar-left,
+  .navbar-center,
+  .navbar-right {
+    flex: 1; /* Distribute space evenly */
+    display: flex;
+    justify-content: center; /* Center content */
+    align-items: center;
+  }
+
+  .navbar-right {
+    justify-content: flex-end; /* Align the home button to the right */
+  }
+
+  .navbar {
+    flex-wrap: wrap; /* Allow items to wrap as needed */
+  }
+}
