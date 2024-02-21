@@ -41,6 +41,10 @@ const CardContainer: React.FC = () => {
       searchResults: [],
       filterChoices: undefined,
     };
+  console.log("Original searchResults length:", searchResults.length);
+  const uniqueCheck = new Set(searchResults.map((item) => item.CD));
+  console.log("Unique CDs length:", uniqueCheck.size);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState<{
     imageUrl: string;
@@ -103,12 +107,18 @@ const CardContainer: React.FC = () => {
   const uniqueCards = Array.from(
     searchResults
       .reduce((acc, current) => {
-        if (!acc.has(current.CD)) {
-          acc.set(current.CD, current);
+        const trimmedCD = current.CD.trim(); // Trim the CD number
+        if (!acc.has(trimmedCD)) {
+          acc.set(trimmedCD, { ...current, CD: trimmedCD }); // Also trim the CD in the object
         }
         return acc;
       }, new Map())
       .values()
+  );
+
+  console.log("Final unique cards count:", uniqueCards.length);
+  uniqueCards.forEach((card) =>
+    console.log(`CD: ${card.CD}, ImageURL: ${card.imageUrl}`)
   );
 
   const filteredResults = uniqueCards.filter((data) => {
@@ -130,6 +140,10 @@ const CardContainer: React.FC = () => {
       matchesDriveType
     );
   });
+  console.log(
+    "Rendering CDs:",
+    filteredResults.map((data) => data.CD)
+  );
 
   return (
     <>
