@@ -116,54 +116,37 @@ body {
   padding: 1rem;
   height: 100%; /* Full height of the parent container */
 }
-
-/* Adjustments for responsive design */
-@media (max-width: 768px) {
-  .wheelbearing-info {
-    flex-direction: column;
-    height: auto; /* Allow the height to grow as needed */
-  }
-
-  .home-img-container,
-  .home-info {
-    padding: 0; /* Remove padding for smaller screens */
-    height: auto; /* Allow the height to grow as needed */
-  }
-
-  .home-img {
-    width: 100%; /* Image takes full width of the container */
-    height: auto; /* Height grows as needed */
-  }
-}
 .slider-container {
   position: relative;
-  max-width: 300px; /* Adjusted to make the slider smaller */
+  max-width: 300px; /* Adjust as needed */
   margin: 20px auto;
   overflow: hidden;
 }
 
 .slider-wrapper {
   display: flex;
-  transition: transform 0.3s ease-out;
+  overflow: hidden;
+  width: 100%;
 }
 
 .slide {
   min-width: 100%;
-  transition: opacity 0.3s ease-out;
-  opacity: 0;
-  display: flex;
-  justify-content: center; /* Center the image in the slide */
-  align-items: center; /* Align vertically */
+  transition: transform 0.3s ease-out;
+  flex-shrink: 0;
+  opacity: 0; /* Start with slides invisible */
+  visibility: hidden; /* Hide slides */
 }
 
 .slide.active {
   opacity: 1;
+  visibility: visible; /* Only the active slide is visible */
 }
 
-img {
-  max-width: 100%; /* Ensures image does not exceed the container's width */
-  max-height: 150px; /* Adjust this value to control the image height */
-  object-fit: contain; /* Keeps aspect ratio, but fits within dimensions */
+/* Specific class for slider images */
+.slider-image {
+  max-width: 100%; /* Ensures image does not exceed the slide width */
+  max-height: 150px; /* Controls the image height without affecting other images */
+  object-fit: contain; /* Keeps aspect ratio within the max dimensions */
 }
 
 .left-arrow,
@@ -187,14 +170,13 @@ img {
   right: 10px;
 }
 
-/* Add responsiveness for smaller devices */
 @media (max-width: 768px) {
   .slider-container {
     width: 90%;
-    max-width: 90%; /* Allows the slider to be responsive */
+    max-width: 90%;
   }
 
-  img {
-    max-height: 100px; /* Smaller images on smaller devices */
+  .slider-image {
+    max-height: 100px; /* Adjust for smaller devices */
   }
 }
