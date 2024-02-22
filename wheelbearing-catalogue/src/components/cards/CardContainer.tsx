@@ -34,8 +34,9 @@ const CardContainer: React.FC = () => {
     BodyType: [],
     TRWDansDRWDive: [],
   });
+
   const location = useLocation();
-  // Corrected: Destructuring should be inside the component function
+
   const { searchResults, filterChoices } =
     (location.state as LocationState) || {
       searchResults: [],
@@ -159,6 +160,7 @@ const CardContainer: React.FC = () => {
       )}
       <div className="content-container">
         <FilterSection onFilterChange={onFilterChange} />
+
         <div className="card-container">
           {filteredResults.map((data) => (
             <Card
