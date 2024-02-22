@@ -47,3 +47,49 @@
 .filter-tag:hover {
   background-color: #e56e00;
 }
+
+@media (max-width: 768px) {
+  /* Stack the filter section and cards vertically on smaller screens */
+  .content-container {
+    grid-template-columns: 1fr; /* Stack vertically */
+    gap: 1rem; /* Reduce gap for smaller screens */
+  }
+
+  .filter-section {
+    height: auto; /* Allow the filter section to grow as needed */
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .selected-filters-display {
+    flex-direction: column; /* Stack filter tags vertically */
+    gap: 1rem; /* Adjust gap for smaller screens */
+  }
+
+  .card-container {
+    justify-content: center; /* Center cards in the container */
+  }
+
+  /* Adjust card width or margins if necessary to fit smaller screens */
+  .card {
+    flex: 0 0 auto; /* Adjust this based on your card's CSS, ensuring cards resize appropriately */
+    width: calc(
+      100% - 40px
+    ); /* Example to make cards take almost full width, adjust margin as needed */
+    margin: 10px; /* Adjust margins to ensure cards do not touch the edges */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further adjustments for very small devices like mobile phones */
+  .filter-section,
+  .selected-filters-display,
+  .card-container {
+    padding: 5px; /* Reduce padding */
+  }
+
+  .card {
+    width: calc(
+      100% - 20px
+    ); /* Make cards take almost full width, with smaller margins */
+  }
+}
