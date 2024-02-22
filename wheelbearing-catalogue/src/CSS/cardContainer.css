@@ -3,6 +3,7 @@
   gap: 20px;
   flex-wrap: wrap;
 }
+
 .content-container {
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -48,48 +49,97 @@
   background-color: #e56e00;
 }
 
+.card {
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  margin: 8px;
+  max-width: 30%;
+  overflow: hidden;
+  font-size: 18px;
+  height: 550px;
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.part-number,
+.bearing-size {
+  color: #32383f;
+  text-align: center;
+  margin: 8px 0;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.buy-button {
+  align-self: center;
+  background-color: #ff8200;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin-top: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.buy-button:hover {
+  background-color: #e67e22;
+}
+
 @media (max-width: 768px) {
-  /* Stack the filter section and cards vertically on smaller screens */
   .content-container {
-    grid-template-columns: 1fr; /* Stack vertically */
-    gap: 1rem; /* Reduce gap for smaller screens */
+    grid-template-columns: 1fr; /* Stacks filter section and cards vertically */
+    gap: 1rem; /* Adjust gap as needed */
+  }
+
+  .content-container .card-container .card {
+    width: 100%; /* Ensures card takes full container width */
+    flex-basis: auto; /* Resets any previously set flex-basis */
+    max-width: none; /* Overrides the max-width set outside the media query */
+    margin: 10px 0; /* Adjusts margin for better spacing */
   }
 
   .filter-section {
-    height: auto; /* Allow the filter section to grow as needed */
+    height: auto; /* Allows the filter section to expand as needed */
     padding: 10px; /* Adjust padding for smaller screens */
   }
 
   .selected-filters-display {
-    flex-direction: column; /* Stack filter tags vertically */
+    flex-direction: column; /* Stacks filter tags vertically */
     gap: 1rem; /* Adjust gap for smaller screens */
   }
 
   .card-container {
-    justify-content: center; /* Center cards in the container */
-  }
-
-  /* Adjust card width or margins if necessary to fit smaller screens */
-  .card {
-    flex: 0 0 auto; /* Adjust this based on your card's CSS, ensuring cards resize appropriately */
-    width: calc(
-      100% - 40px
-    ); /* Example to make cards take almost full width, adjust margin as needed */
-    margin: 10px; /* Adjust margins to ensure cards do not touch the edges */
+    justify-content: center; /* Centers cards within the container */
   }
 }
 
 @media (max-width: 480px) {
-  /* Further adjustments for very small devices like mobile phones */
   .filter-section,
   .selected-filters-display,
   .card-container {
-    padding: 5px; /* Reduce padding */
+    padding: 5px; /* Reduces padding around these elements */
   }
 
-  .card {
-    width: calc(
-      100% - 20px
-    ); /* Make cards take almost full width, with smaller margins */
+  .content-container .card-container .card {
+    margin: 5px 0; /* Slightly smaller margin for very small devices */
   }
 }
