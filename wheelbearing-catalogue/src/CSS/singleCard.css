@@ -9,6 +9,7 @@
   max-width: 30%;
   overflow: hidden;
   font-size: 18px;
+  height: 550px;
 }
 
 .card-image img {
@@ -20,15 +21,15 @@
 .card-content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; 
-  padding: 20px; 
+  align-items: flex-start;
+  padding: 20px;
 }
 
 .part-number,
 .bearing-size {
-  color: #32383f; 
-  text-align: center; 
-  margin: 8px 0; 
+  color: #32383f;
+  text-align: center;
+  margin: 8px 0;
 }
 
 .card-info {

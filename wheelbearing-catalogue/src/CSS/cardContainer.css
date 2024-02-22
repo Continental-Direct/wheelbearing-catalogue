@@ -17,6 +17,7 @@
   padding: 20px;
   color: white;
   margin-top: 5px;
+  height: 600px;
 }
 
 .selected-filters-display {
@@ -32,17 +33,17 @@
 }
 
 .filter-tag {
-  display: inline-block; 
-  background-color: #ff8200; 
-  color: white; 
-  padding: 5px 10px; 
-  margin: 0 5px 5px 0; 
-  border: none; 
-  cursor: pointer; 
-  transition: background-color 0.3s; 
+  display: inline-block;
+  background-color: #ff8200;
+  color: white;
+  padding: 5px 10px;
+  margin: 0 5px 5px 0;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
   border-radius: 5px;
 }
 
 .filter-tag:hover {
-  background-color: #e56e00; 
+  background-color: #e56e00;
 }
