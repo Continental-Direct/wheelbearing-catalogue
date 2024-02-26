@@ -88,7 +88,6 @@ const FilterContainer: React.FC = () => {
         state: {
           searchResults: data,
           filterChoices: {
-            // Corrected typo here
             selectedManufacturer,
             selectedModel,
             selectedEngineSize,

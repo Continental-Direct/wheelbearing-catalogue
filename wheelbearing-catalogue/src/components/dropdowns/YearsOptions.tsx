@@ -33,7 +33,7 @@ const DriveTypeOptions: React.FC<DriveTypeOptionsProps> = ({
         if (selectedModel && selectedEngineSize && selectedMarkSeries) {
           const { data, error } = await supabase
             .from("wheelbearing2")
-            .select("TRWDansDRWDive") // Updated field name
+            .select("TRWDansDRWDive")
             .eq("Model", selectedModel)
             .eq("EngineSize", selectedEngineSize)
             .eq("mark_series", selectedMarkSeries);
@@ -41,7 +41,7 @@ const DriveTypeOptions: React.FC<DriveTypeOptionsProps> = ({
             console.error("Error fetching drive types:", error.message);
           } else {
             const uniqueDriveTypes = [
-              ...new Set(data.map((item: any) => item.TRWDansDRWDive)), // Updated field name
+              ...new Set(data.map((item: any) => item.TRWDansDRWDive)),
             ];
             setDriveTypes(uniqueDriveTypes);
           }

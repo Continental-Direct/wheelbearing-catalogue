@@ -13,32 +13,28 @@ const SKFSearch = () => {
 
   const handleSearch = async () => {
     try {
-      const inputNumberLowercase = inputNumber.toLowerCase(); // Convert input to lowercase
-
-      // Query for SKF number with case-insensitive search
+      const inputNumberLowercase = inputNumber.toLowerCase();
       const { data: skfData, error: skfError } = await supabase
         .from("wheelbearing2")
         .select("*")
-        .ilike("SKF", `%${inputNumberLowercase}%`); // Use ilike for case-insensitive matching
+        .ilike("SKF", `%${inputNumberLowercase}%`);
 
       if (skfError) throw skfError;
 
-      // Query for FAG number with case-insensitive search
       const { data: fagData, error: fagError } = await supabase
         .from("wheelbearing2")
         .select("*")
-        .ilike("FAG", `%${inputNumberLowercase}%`); // Use ilike for case-insensitive matching
+        .ilike("FAG", `%${inputNumberLowercase}%`);
 
       if (fagError) throw fagError;
 
-      // Combine results from both queries
       const combinedData = [...(skfData || []), ...(fagData || [])];
 
       if (combinedData.length === 0) {
         alert("No part found for this number.");
       } else {
         console.log(combinedData);
-        // Navigate to the results page with combined data
+
         navigate("/results", { state: { searchResults: combinedData } });
       }
     } catch (error: any) {

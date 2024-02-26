@@ -88,19 +88,15 @@ const CardContainer: React.FC = () => {
 
   const onFilterChange = (name: string, value: string, checked: boolean) => {
     setFilters((prevFilters) => {
-      // Get the previous values of the filter, or an empty array if it doesn't exist
       const prevFilterValues = prevFilters[name] || [];
 
       let newFilterValues;
 
       if (checked) {
-        // If checked is true, add the new value to the filter
         newFilterValues = [...prevFilterValues, value];
       } else {
-        // If checked is false, remove the new value from the filter
         newFilterValues = prevFilterValues.filter((item) => item !== value);
       }
-      // Return a new filters object with the updated filter values
       return { ...prevFilters, [name]: newFilterValues };
     });
   };
@@ -108,7 +104,7 @@ const CardContainer: React.FC = () => {
   const uniqueCards = Array.from(
     searchResults
       .reduce((acc, current) => {
-        const trimmedCD = current.CD.trim(); // Trim the CD number
+        const trimmedCD = current.CD.trim();
         if (!acc.has(trimmedCD)) {
           acc.set(trimmedCD, { ...current, CD: trimmedCD }); //
         }
@@ -164,7 +160,7 @@ const CardContainer: React.FC = () => {
         <div className="card-container">
           {filteredResults.map((data) => (
             <Card
-              key={data.CD} // Use CD as the key instead of the index
+              key={data.CD}
               {...data}
               openModal={() => handleOpenModal(data)}
             />
