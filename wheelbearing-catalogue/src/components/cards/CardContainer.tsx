@@ -154,9 +154,12 @@ const CardContainer: React.FC = () => {
           mPos={filterChoices.selectedMPos || ""}
         />
       )}
+      <div className="results-header">
+        {filteredResults.length}{" "}
+        {filteredResults.length === 1 ? "Result" : "Results"} Found
+      </div>
       <div className="content-container">
         <FilterSection onFilterChange={onFilterChange} />
-
         <div className="card-container">
           {filteredResults.map((data) => (
             <Card
