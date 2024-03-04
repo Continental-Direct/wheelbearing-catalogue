@@ -6,6 +6,7 @@ import { useLocation } from "react-router-dom";
 import FilterSection from "./FilterSection";
 import "../../CSS/CardContainer.css";
 import SelectedFiltersDisplay from "./SelectedFiltersDisplay";
+import Footer from "../home/Footer";
 
 export interface CardContainerProps {
   cardsData: CardProps[];
@@ -177,6 +178,7 @@ const CardContainer: React.FC = () => {
           />
         )}
       </div>
+      <Footer />
     </>
   );
 };
