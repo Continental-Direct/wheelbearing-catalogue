@@ -50,17 +50,17 @@
 }
 
 .card {
-  background-color: white;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  margin: 8px;
+  display: flex; /* Use flex layout */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: space-between; /* Distribute space evenly */
+  align-items: center; /* Center items horizontally */
+  padding: 20px;
+  margin: 5px;
   max-width: 30%;
   overflow: hidden;
   font-size: 18px;
-  height: 550px;
+  height: auto; /* Make height flexible */
+  min-height: 550px; /* Minimum height to maintain consistency */
 }
 
 .card-image img {
@@ -80,7 +80,6 @@
 .bearing-size {
   color: #32383f;
   text-align: center;
-  margin: 8px 0;
 }
 
 .card-info {

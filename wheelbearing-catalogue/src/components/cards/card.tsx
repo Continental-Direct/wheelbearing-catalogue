@@ -17,8 +17,8 @@ export interface CardProps {
   Fueltype: string;
   TRWDansDRWDive: string;
   Bearing1Size: string;
-  vehicleDetails: string;
-  vehicleDetails2: string;
+  vehicleDetails?: string; // Optional if they might not exist
+  vehicleDetails2?: string; // Optional if they might not exist
   imageUrl: string;
   openModal: () => void;
 }
@@ -50,8 +50,8 @@ const Card: React.FC<CardProps> = ({
       <p className="bearing-size">
         <strong>ABS:</strong> {abs_note}
       </p>
-      <p className="bearing-size">{vehicleDetails}</p>
-      <p className="bearing-size">{vehicleDetails2}</p>
+      {vehicleDetails && <p className="bearing-size">{vehicleDetails}</p>}
+      {vehicleDetails2 && <p className="bearing-size">{vehicleDetails2}</p>}
       <button className="buy-button">Buy now</button>
     </div>
   );
