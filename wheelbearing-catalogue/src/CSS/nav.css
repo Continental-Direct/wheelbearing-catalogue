@@ -45,28 +45,28 @@
   gap: 10px;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
   .navbar-logo {
-    position: static; /* Remove absolute positioning */
-    transform: none; /* Reset transform */
-    order: -1; /* Ensure logo appears on the left */
+    position: static; 
+    transform: none;
+    order: -1; 
   }
 
   .navbar-left,
   .navbar-center,
   .navbar-right {
-    flex: 1; /* Distribute space evenly */
+    flex: 1;
     display: flex;
-    justify-content: center; /* Center content */
+    justify-content: center; 
     align-items: center;
   }
 
   .navbar-right {
-    justify-content: flex-end; /* Align the home button to the right */
+    justify-content: flex-end; 
   }
 
   .navbar {
-    flex-wrap: wrap; /* Allow items to wrap as needed */
+    flex-wrap: wrap; 
   }
 }

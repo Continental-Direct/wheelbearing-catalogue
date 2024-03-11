@@ -114,7 +114,7 @@ const CardContainer: React.FC = () => {
       .values()
   );
 
-  console.log("Final unique cards count:", uniqueCards.length);
+ 
   uniqueCards.forEach((card) =>
     console.log(`CD: ${card.CD}, ImageURL: ${card.imageUrl}`)
   );
