@@ -14,7 +14,6 @@ const EngineSizeOptions: React.FC<EngineSizeOptionsProps> = ({
 }) => {
   const [engineSizes, setEngineSizes] = useState<string[]>([]);
   const [selectedEngineSize, setSelectedEngineSize] = useState<string>("");
-  console.log("Received model:", selectedModel);
 
   const handleEngineSizeChange = (
     event: React.ChangeEvent<HTMLSelectElement>

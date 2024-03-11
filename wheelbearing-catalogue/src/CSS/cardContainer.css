@@ -14,8 +14,6 @@
   margin-bottom: 30px;
 }
 
-/* test */
-
 .filter-section {
   background-color: #32383fc9;
   padding: 20px;
@@ -53,17 +51,17 @@
 }
 
 .card {
-  display: flex; /* Use flex layout */
-  flex-direction: column; /* Stack children vertically */
-  justify-content: space-between; /* Distribute space evenly */
-  align-items: center; /* Center items horizontally */
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between; 
+  align-items: center; 
   padding: 20px;
   margin: 5px;
   max-width: 30%;
   overflow: hidden;
   font-size: 18px;
-  height: auto; /* Make height flexible */
-  min-height: 550px; /* Minimum height to maintain consistency */
+  height: auto; 
+  min-height: 550px;
 }
 
 .card-image img {
@@ -108,50 +106,50 @@
 
 @media (max-width: 768px) {
   .content-container {
-    grid-template-columns: 1fr; /* Stacks filter section and cards vertically */
-    gap: 1rem; /* Adjust gap as needed */
+    grid-template-columns: 1fr; 
+    gap: 1rem;
   }
 
   .content-container .card-container .card {
-    width: 100%; /* Ensures card takes full container width */
-    flex-basis: auto; /* Resets any previously set flex-basis */
-    max-width: none; /* Overrides the max-width set outside the media query */
-    margin: 10px 0; /* Adjusts margin for better spacing */
+    width: 100%; 
+    flex-basis: auto; 
+    max-width: none; 
+    margin: 10px 0; 
   }
 
   .filter-section {
-    height: auto; /* Allows the filter section to expand as needed */
-    padding: 10px; /* Adjust padding for smaller screens */
+    height: auto; 
+    padding: 10px; 
   }
 
   .selected-filters-display {
-    flex-direction: column; /* Stacks filter tags vertically */
-    gap: 1rem; /* Adjust gap for smaller screens */
+    flex-direction: column; 
+    gap: 1rem; 
   }
 
   .card-container {
-    justify-content: center; /* Centers cards within the container */
+    justify-content: center; 
   }
 }
 
 .results-header {
-  font-size: 20px; /* Adjust size as needed */
-  color: #32383f; /* Consider using a color that matches your theme */
-  padding: 10px 20px; /* Adjust padding to align with your design */
-  margin-bottom: 20px; /* Ensures some space between the header and cards */
-  background-color: #f0f0f0; /* Light background, adjust as needed */
-  border-radius: 5px; /* Optional, for a slight rounded look */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth, optional */
+  font-size: 20px; 
+  color: #32383f; 
+  padding: 10px 20px; 
+  margin-bottom: 20px;
+  background-color: #f0f0f0; 
+  border-radius: 5px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 @media (max-width: 480px) {
   .filter-section,
   .selected-filters-display,
   .card-container {
-    padding: 5px; /* Reduces padding around these elements */
+    padding: 5px; 
   }
 
   .content-container .card-container .card {
-    margin: 5px 0; /* Slightly smaller margin for very small devices */
+    margin: 5px 0; 
   }
 }
