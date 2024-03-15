@@ -17,8 +17,8 @@ export interface CardProps {
   Fueltype: string;
   TRWDansDRWDive: string;
   Bearing1Size: string;
-  vehicleDetails?: string; // Optional if they might not exist
-  vehicleDetails2?: string; // Optional if they might not exist
+  vehicleDetails?: string; 
+  vehicleDetails2?: string; 
   imageUrl: string;
   openModal: () => void;
 }
