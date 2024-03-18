@@ -1,30 +1,82 @@
-# React + TypeScript + Vite
+# Continental Direct - WheelBearing Catalogue - A catalogue Website to help users find the correct wheelbearings for their vehicle
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of contents
 
-Currently, two official plugins are available:
+- [Overview](#overview)
+  - [Key Features](#Key-features)
+  - [Screenshot](#screenshot)
+- [Our process](#process)
+  - [Built with](#built-with)
+  - [Continued development](#continued-development)
+- [Authors](#author)
+- [Acknowledgments](#acknowledgments)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## Expanding the ESLint configuration
+The catalogue can be used both internally and by customers to find the correct wheelbearings for a wide selection of vehicles. Users are prompted to select options from dropdowns, which consist of Manufacturer, model, engine size, mark series, drive type and fitment. Once the users has filled out the required information the catalogue makes a request to the supabase database where the vehicle information provided by Continental Direct is stored. The Database returns the relevant information to the catalogue, which will be layed out in a card format. 
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Key-features
 
-- Configure the top-level `parserOptions` property like this:
+Users are able to:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- Search wheelbearings by all dropdown criteria
+- Search wheelbearings by multiple but not at all dropdown criteria
+- Search by FAG number
+- Search by SKF number 
+- View bearing size
+- View key bearing information
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Installation/requirements
+
+Requirements
+
+To run the project you will need Node.js v18.0 or higher. You can check your Node version using node --version in your terminal.
+
+Setup
+
+1. Make sure Node.js is installed on your system. If not, you can download it from here:
+2. create or fork or clone of the repo - git clone https://github.com/Continental-Direct/wheelbearing-catalogue.git
+3. Navigate into the cloned directory - cd wheelbearing-catalogue
+4. install the required dependencies - npm install
+5. npm run dev in your terminal and the project should be running
+
+
+## Process
+
+The process to creating catalogues for Continental Direct is as follows:
+1. Continental Direct sends the Excel vehicle Data as a CSV file
+2. The data should be uploaded to Supabase with the ID being the primary key
+3. Role Level security can be disabled during development
+4. Once the table has been created on Supabase, the .env file can be populated with the API URL and key
+5. Supabase provides extensive documentation to then access the data from the front-end
+
+### Built with
+
+Front-end:
+
+- React
+- React-Router
+- Typescript
+
+
+Back-End:
+- SupaBase
+- Node JS
+
+
+### Continued development
+
+There are still features and design updates to be completed
+
+- new images for wheelbearings
+- functionality to purchase Bearings, payment gate
+- alternatively a way to link the the catalogue to a purchasing site
+- user registration
+
+
+## Authors
+
+https://github.com/kevinzehner
+
+## Link to repository
+https://github.com/Continental-Direct/wheelbearing-catalogue
