@@ -45,12 +45,11 @@
   gap: 10px;
 }
 
-
 @media (max-width: 768px) {
   .navbar-logo {
-    position: static; 
+    position: static;
     transform: none;
-    order: -1; 
+    order: -1;
   }
 
   .navbar-left,
@@ -58,15 +57,26 @@
   .navbar-right {
     flex: 1;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
   }
 
   .navbar-right {
-    justify-content: flex-end; 
+    justify-content: flex-end;
+    margin-left: 18rem;
   }
+}
 
-  .navbar {
-    flex-wrap: wrap; 
+@media (max-width: 420px) {
+  .navbar-right {
+    justify-content: flex-end;
+    margin-left: 16rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .navbar-right {
+    justify-content: flex-end;
+    margin-left: 13rem;
   }
 }

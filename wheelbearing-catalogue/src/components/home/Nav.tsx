@@ -8,7 +8,6 @@ const Nav = () => {
         <img src={"/continental.png"} alt="Logo" className="navbar-logo" />
       </div>
       <div className="navbar-right">
-        <h3>Back to Home</h3>
         <Link to="/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
