@@ -173,6 +173,11 @@ body {
   right: 10px;
 }
 
+.slider-container {
+  width: 100%;
+  height: px; /* Adjust the height as needed */
+}
+
 /* Queries */
 
 @media (max-width: 850px) {

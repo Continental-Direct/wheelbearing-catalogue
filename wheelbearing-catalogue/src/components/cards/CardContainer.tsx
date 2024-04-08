@@ -114,7 +114,6 @@ const CardContainer: React.FC = () => {
       .values()
   );
 
- 
   uniqueCards.forEach((card) =>
     console.log(`CD: ${card.CD}, ImageURL: ${card.imageUrl}`)
   );

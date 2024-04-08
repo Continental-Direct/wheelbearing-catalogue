@@ -11,6 +11,7 @@ import Footer from "./Footer";
 import DriveTypeOptions from "../dropdowns/YearsOptions";
 import FitmentOptions from "../dropdowns/FitmentOptions";
 import SKFSearch from "../dropdowns/SKFSearch";
+import ImageSlider from "./carousel";
 
 const FilterContainer: React.FC = () => {
   const navigate = useNavigate();
@@ -147,7 +148,11 @@ const FilterContainer: React.FC = () => {
       </div>
       <div className="wheelbearing-info">
         <div className="home-img-container">
-          <img className="home-img" src="CD-WBK-Main.jpg" alt="wheelbearings" />
+          <img
+            className="home-img"
+            src="CD-WBK-Main.webp"
+            alt="wheelbearings"
+          />
         </div>
         <div className="home-info">
           <h3>CD WHEEL BEARINGS</h3>
@@ -158,6 +163,9 @@ const FilterContainer: React.FC = () => {
             all popular applications.
           </p>
         </div>
+      </div>
+      <div style={{ width: "30%", height: "600px" }}>
+        <ImageSlider />
       </div>
       <Footer />
     </div>
