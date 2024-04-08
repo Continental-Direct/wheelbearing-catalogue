@@ -67,16 +67,16 @@
   }
 }
 
+@media (max-width: 430px) {
+  .navbar-right {
+    justify-content: flex-end;
+    margin-left: 15rem;
+  }
+}
+
 @media (max-width: 420px) {
   .navbar-right {
     justify-content: flex-end;
     margin-left: 16rem;
-  }
-}
-
-@media (max-width: 390px) {
-  .navbar-right {
-    justify-content: flex-end;
-    margin-left: 13rem;
   }
 }
