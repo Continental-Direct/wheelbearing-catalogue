@@ -12,6 +12,7 @@ import DriveTypeOptions from "../dropdowns/YearsOptions";
 import FitmentOptions from "../dropdowns/FitmentOptions";
 import SKFSearch from "../dropdowns/SKFSearch";
 import ImageSlider from "./carousel";
+import Reviews from "./Reviews";
 
 const FilterContainer: React.FC = () => {
   const navigate = useNavigate();
@@ -167,6 +168,7 @@ const FilterContainer: React.FC = () => {
       <div style={{ width: "30%", height: "600px" }}>
         <ImageSlider />
       </div>
+      <Reviews />
       <Footer />
     </div>
   );
