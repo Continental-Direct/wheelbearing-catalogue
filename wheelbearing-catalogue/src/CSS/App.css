@@ -1,14 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
-/* Universal */
-
-/* colour scheme */
-/* #ff8200 */
-/* #ffbf0d */
-/* #32383f */
-/* #434b55 */
-/* rgba(0, 0, 0, 1); */
-
 * {
   box-sizing: border-box;
 }
@@ -18,12 +9,7 @@ body {
   padding: 0;
   font-family: "Roboto", sans-serif;
   color: #ffffff;
-  background: radial-gradient(
-    343px at 46.3% 47.5%,
-    rgb(222, 222, 222) 0%,
-    /* Darkened from rgb(242, 242, 242) */ rgb(211, 211, 211) 72.9%
-      /* Darkened from rgb(241, 241, 241) */
-  );
+  background: radial-gradient(343px at 46.3% 47.5%, rgb(222, 222, 222) 0%);
 }
 
 .container {
@@ -33,7 +19,6 @@ body {
   width: 100%;
 }
 
-/* Dropdowns */
 .inner-container {
   margin-top: 2rem;
   display: flex;
@@ -89,23 +74,23 @@ body {
 
 .wheelbearing-info {
   display: flex;
-  align-items: stretch; /* Align items to stretch to the container height */
+  align-items: stretch;
   width: 75%;
   margin-bottom: 3rem;
-  height: 250px; /* Set a fixed height for the container */
+  height: 250px;
   gap: 0;
 }
 
 .home-img-container {
   display: flex;
   align-items: center;
-  justify-content: center; /* Center the image within the image container */
-  height: 100%; /* Full height of the parent container */
+  justify-content: center;
+  height: 100%;
 }
 
 .home-img {
-  max-height: 100%; /* Image will fill the height of its container */
-  object-fit: contain; /* Image will be scaled to maintain its aspect ratio */
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .home-info {
@@ -114,10 +99,8 @@ body {
   justify-content: center;
   background-color: #32383fc9;
   padding: 1rem;
-  height: 100%; /* Full height of the parent container */
+  height: 100%;
 }
-
-/* Queries */
 
 @media (max-width: 850px) {
   .slider-container {
@@ -126,61 +109,60 @@ body {
   }
 
   .slider-image {
-    max-height: 100px; /* Adjust for smaller devices */
+    max-height: 100px;
   }
 }
 
-/* Adjustments for smaller screens */
 @media (max-width: 768px) {
   .inner-container,
   .wheelbearing-info {
-    width: 95%; /* Increase width on smaller screens for better space utilization */
-    flex-direction: column; /* Stack elements vertically on smaller screens */
+    width: 95%;
+    flex-direction: column; 
   }
 
   .home-img {
-    max-height: 620px; /* Further reduce image size for very small screens */
+    max-height: 620px; 
     margin-bottom: 25px;
   }
 
   .dropdown-container {
-    flex-direction: column; /* Stack dropdowns vertically on smaller screens */
+    flex-direction: column; 
     gap: 0.5rem;
   }
 
   .wheelbearing-info {
-    text-align: center; /* Center the info section on smaller screens */
-    height: auto; /* Allow the info section to grow as needed */
+    text-align: center; 
+    height: auto;
   }
 
   .home-img-container,
   .home-info {
-    width: 100%; /* Full width for both image and info containers */
+    width: 100%; 
   }
 
   .button {
-    font-size: 14px; /* Adjust button font size for better readability on smaller screens */
+    font-size: 14px; 
     padding: 6px 12px;
   }
 
   .filter select {
-    font-size: 14px; /* Make select inputs easier to read */
+    font-size: 14px;
   }
 }
 
-/* Additional adjustments for even smaller screens, like mobile phones */
+
 @media (max-width: 480px) {
   .home-img {
-    max-height: 370px; /* Further reduce image size for very small screens */
+    max-height: 370px; 
     margin-bottom: 20px;
   }
 
   .button,
   .filter select {
-    font-size: 12px; /* Smaller text for buttons and selects on mobile */
+    font-size: 12px; 
   }
 
   .filter-title {
-    font-size: 18px; /* Adjust title size for better fit on mobile screens */
+    font-size: 18px; 
   }
 }
