@@ -9,7 +9,8 @@ body {
   padding: 0;
   font-family: "Roboto", sans-serif;
   color: #ffffff;
-  background: radial-gradient(343px at 46.3% 47.5%, rgb(222, 222, 222) 0%);
+
+  background: radial-gradient(circle, #32383f 0%, #000000 100%) !important;
 }
 
 .container {
@@ -117,31 +118,31 @@ body {
   .inner-container,
   .wheelbearing-info {
     width: 95%;
-    flex-direction: column; 
+    flex-direction: column;
   }
 
   .home-img {
-    max-height: 620px; 
+    max-height: 620px;
     margin-bottom: 25px;
   }
 
   .dropdown-container {
-    flex-direction: column; 
+    flex-direction: column;
     gap: 0.5rem;
   }
 
   .wheelbearing-info {
-    text-align: center; 
+    text-align: center;
     height: auto;
   }
 
   .home-img-container,
   .home-info {
-    width: 100%; 
+    width: 100%;
   }
 
   .button {
-    font-size: 14px; 
+    font-size: 14px;
     padding: 6px 12px;
   }
 
@@ -150,19 +151,18 @@ body {
   }
 }
 
-
 @media (max-width: 480px) {
   .home-img {
-    max-height: 370px; 
+    max-height: 370px;
     margin-bottom: 20px;
   }
 
   .button,
   .filter select {
-    font-size: 12px; 
+    font-size: 12px;
   }
 
   .filter-title {
-    font-size: 18px; 
+    font-size: 18px;
   }
 }

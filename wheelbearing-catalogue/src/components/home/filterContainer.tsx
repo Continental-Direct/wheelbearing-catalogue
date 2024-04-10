@@ -165,7 +165,7 @@ const FilterContainer: React.FC = () => {
           </p>
         </div>
       </div>
-      <div style={{ width: "30%", height: "600px" }}>
+      <div style={{ width: "30%", height: "450px" }}>
         <ImageSlider />
       </div>
       <Reviews />
