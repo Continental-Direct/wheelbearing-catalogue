@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ManufacturerOptions from "../dropdowns/manufOptions";
 import ModelOptions from "../dropdowns/modelOptions";
 import EngineSizeOptions from "../dropdowns/EngineSizeOptions";
@@ -23,6 +23,31 @@ const FilterContainer: React.FC = () => {
   const [selectedMarkSeries, setSelectedMarkSeries] = useState<string>("");
   const [selectedDriveType, setSelectedDriveType] = useState<string>("");
   const [selectedMPos, setSelectedMPos] = useState<string>("");
+
+  const [canSearch, setCanSearch] = useState<boolean>(false);
+
+  useEffect(() => {
+    // Check if all required fields are filled
+    if (
+      selectedManufacturer &&
+      selectedModel &&
+      selectedEngineSize &&
+      selectedMarkSeries &&
+      selectedDriveType &&
+      selectedMPos
+    ) {
+      setCanSearch(true);
+    } else {
+      setCanSearch(false);
+    }
+  }, [
+    selectedManufacturer,
+    selectedModel,
+    selectedEngineSize,
+    selectedMarkSeries,
+    selectedDriveType,
+    selectedMPos,
+  ]);
 
   const handleMPosChange = (mpos: string) => {
     setSelectedMPos(mpos);
@@ -58,6 +83,11 @@ const FilterContainer: React.FC = () => {
   };
 
   const handleSearch = async () => {
+    if (!canSearch) {
+      alert("Please fill out all dropdowns before searching.");
+      return;
+    }
+
     try {
       let query = supabase.from("wheelbearing2").select("*");
 
@@ -142,7 +172,7 @@ const FilterContainer: React.FC = () => {
             reset={reset}
             onMPosChange={handleMPosChange}
           />
-          <SearchButton onSearch={handleSearch} />
+          <SearchButton onSearch={handleSearch} disabled={!canSearch} />
           <ResetButton onReset={handleReset} />
         </div>
         <SKFSearch />
