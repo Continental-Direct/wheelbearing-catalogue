@@ -30,6 +30,7 @@ const Card: React.FC<CardProps> = ({
   abs_note,
   vehicleDetails,
   vehicleDetails2,
+  openModal,
 }) => {
   const imageUrl = `https://dsucoxafocjydztfhxum.supabase.co/storage/v1/object/public/wheelbearing/Autocat%20Wheel%20Bearing%20Images%20(CDM)/${CD}.jpg`;
 
@@ -52,7 +53,9 @@ const Card: React.FC<CardProps> = ({
       </p>
       {vehicleDetails && <p className="bearing-size">{vehicleDetails}</p>}
       {vehicleDetails2 && <p className="bearing-size">{vehicleDetails2}</p>}
-      <button className="buy-button">more Info</button>
+      <button className="buy-button" onClick={openModal}>
+        more Info
+      </button>
     </div>
   );
 };
