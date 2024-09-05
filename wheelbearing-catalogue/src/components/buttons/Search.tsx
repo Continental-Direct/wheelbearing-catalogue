@@ -2,15 +2,20 @@ import React from "react";
 
 interface SearchButtonProps {
   onSearch: () => void;
-  disabled: boolean; // New prop to control button state
 }
 
-const SearchButton: React.FC<SearchButtonProps> = ({ onSearch, disabled }) => {
+const SearchButton: React.FC<SearchButtonProps> = ({ onSearch }) => {
+  const handleClick = () => {
+    console.log("Search button clicked");
+    onSearch(); // Always call onSearch
+  };
+
   return (
-    <button className="button" onClick={onSearch} disabled={disabled}>
+    <button className="button" onClick={handleClick}>
       Search
     </button>
   );
 };
 
 export default SearchButton;
+

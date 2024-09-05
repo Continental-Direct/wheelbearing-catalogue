@@ -25,9 +25,10 @@ const FilterContainer: React.FC = () => {
   const [selectedMPos, setSelectedMPos] = useState<string>("");
 
   const [canSearch, setCanSearch] = useState<boolean>(false);
+  const [searchAttempted, setSearchAttempted] = useState<boolean>(false); // Track if user attempted to search
 
+  // Check if all required fields are filled
   useEffect(() => {
-    // Check if all required fields are filled
     if (
       selectedManufacturer &&
       selectedModel &&
@@ -40,6 +41,7 @@ const FilterContainer: React.FC = () => {
     } else {
       setCanSearch(false);
     }
+    console.log("canSearch state updated: ", canSearch);
   }, [
     selectedManufacturer,
     selectedModel,
@@ -80,12 +82,16 @@ const FilterContainer: React.FC = () => {
     setSelectedMarkSeries("");
     setSelectedDriveType("");
     setSelectedMPos("");
+    setSearchAttempted(false); // Reset searchAttempted on reset
   };
 
   const handleSearch = async () => {
+    setSearchAttempted(true); // Always mark that the user attempted to search
+    console.log("Search button clicked: Search Attempted");
+
     if (!canSearch) {
-      alert("Please fill out all dropdowns before searching.");
-      return;
+      console.log("Incomplete attempt - fields missing");
+      return; // Prevent actual search if fields are missing
     }
 
     try {
@@ -172,9 +178,17 @@ const FilterContainer: React.FC = () => {
             reset={reset}
             onMPosChange={handleMPosChange}
           />
-          <SearchButton onSearch={handleSearch} disabled={!canSearch} />
+          <SearchButton onSearch={handleSearch} />
           <ResetButton onReset={handleReset} />
         </div>
+
+        {/* Conditionally display the prompt if search is attempted and fields are missing */}
+        {searchAttempted && !canSearch && (
+          <p style={{ color: "red", marginTop: "10px" }}>
+            Please fill out all dropdowns before searching.
+          </p>
+        )}
+
         <SKFSearch />
       </div>
       <div className="wheelbearing-info">
