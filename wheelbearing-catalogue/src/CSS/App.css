@@ -26,7 +26,7 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: #32383fc9;
-  width: 90%;
+  width: 100%;
   margin-bottom: 2rem;
   padding: 1rem;
 }
@@ -44,7 +44,7 @@ body {
 }
 
 .filter select {
-  width: 100%;
+  width: 200px;
   padding: 8px;
   font-size: 16px;
   background-color: #ffffff;
@@ -69,6 +69,13 @@ body {
 
 .red {
   background-color: #f44336;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 /* Info */

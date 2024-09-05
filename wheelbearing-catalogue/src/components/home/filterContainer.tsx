@@ -178,6 +178,8 @@ const FilterContainer: React.FC = () => {
             reset={reset}
             onMPosChange={handleMPosChange}
           />
+        </div>
+        <div className="buttons">
           <SearchButton onSearch={handleSearch} />
           <ResetButton onReset={handleReset} />
         </div>
