@@ -50,55 +50,6 @@
   background-color: #e56e00;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  margin: 5px;
-  max-width: 30%;
-  overflow: hidden;
-  font-size: 18px;
-  height: auto;
-  min-height: 550px;
-}
-
-.card-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-}
-
-.card-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 20px;
-}
-
-.part-number,
-.bearing-size {
-  color: #32383f;
-  text-align: center;
-}
-
-.card-info {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.buy-button {
-  align-self: center;
-  background-color: #ff8200;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  margin-top: 8px;
-  border-radius: 4px;
-  cursor: pointer;
-}
 
 .buy-button:hover {
   background-color: #e67e22;
