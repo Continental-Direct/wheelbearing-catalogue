@@ -34,7 +34,9 @@
 
 .modal-image {
   margin-right: 20px;
+  max-width: 50%;
 }
+
 .modal-category {
   font-weight: bold;
 }
