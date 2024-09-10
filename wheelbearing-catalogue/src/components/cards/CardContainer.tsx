@@ -43,9 +43,6 @@ const CardContainer: React.FC = () => {
       searchResults: [],
       filterChoices: undefined,
     };
-  console.log("Original searchResults length:", searchResults.length);
-  const uniqueCheck = new Set(searchResults.map((item) => item.CD));
-  console.log("Unique CDs length:", uniqueCheck.size);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState<{
@@ -61,25 +58,61 @@ const CardContainer: React.FC = () => {
     Transmission: string;
     MPos: string;
     TRWDansDRWDive: string;
+    KW: string;
+    StartYr: string;
+    EndYr: string;
+    Exactcc: string;
+    Cam: string;
+    Valve: string;
+    Gears: string;
+    Bearing1Size: string;
+    Bearing2Size: string;
+    vehicleDetails: string;
+    vehicleDetails2: string;
+    abs_note: string;
+    EngineCode: string;
+    FAG: string;
+    MOOG: string;
+    SKF: string;
+    SNR: string;
   } | null>(null);
+
   const handleOpenModal = (data: CardProps) => {
     const imageUrl = `https://dsucoxafocjydztfhxum.supabase.co/storage/v1/object/public/wheelbearing/Autocat%20Wheel%20Bearing%20Images%20(CDM)/${data.CD}.jpg`;
+
     setModalContent({
       imageUrl,
-      CD: data.CD,
-      ModelDesc: data.ModelDesc,
-      Manuf: data.Manuf,
-      Model: data.Model,
-      EngineSize: data.EngineSize,
-      Years: data.Years,
-      FuelType: data.FuelType,
-      BodyType: data.BodyType,
-      Transmission: data.Transmission,
-      MPos: data.MPos,
-      TRWDansDRWDive: data.TRWDansDRWDive,
+      CD: data.CD || "",
+      ModelDesc: data.ModelDesc || "",
+      Manuf: data.Manuf || "",
+      Model: data.Model || "",
+      EngineSize: data.EngineSize || "",
+      Years: data.Years || "",
+      FuelType: data.FuelType || "",
+      BodyType: data.BodyType || "",
+      Transmission: data.Transmission || "",
+      MPos: data.MPos || "",
+      TRWDansDRWDive: data.TRWDansDRWDive || "",
+      KW: data.KW || "",
+      StartYr: data.StartYr || "",
+      EndYr: data.EndYr || "",
+      Exactcc: data.Exactcc || "",
+      Cam: data.Cam || "",
+      Valve: data.Valve || "",
+      Gears: data.Gears || "",
+      Bearing1Size: data.Bearing1Size || "",
+      Bearing2Size: data.Bearing2Size || "",
+      vehicleDetails: data.vehicleDetails || "",
+      vehicleDetails2: data.vehicleDetails2 || "",
+      abs_note: data.abs_note || "",
+      EngineCode: data.EngineCode || "",
+      FAG: data.FAG || "",
+      MOOG: data.MOOG || "",
+      SKF: data.SKF || "",
+      SNR: data.SNR || "",
     });
+
     setIsModalOpen(true);
-    console.log("Modal content:");
   };
 
   const handleCloseModal = () => {
@@ -90,7 +123,6 @@ const CardContainer: React.FC = () => {
   const onFilterChange = (name: string, value: string, checked: boolean) => {
     setFilters((prevFilters) => {
       const prevFilterValues = prevFilters[name] || [];
-
       let newFilterValues;
 
       if (checked) {
@@ -107,15 +139,11 @@ const CardContainer: React.FC = () => {
       .reduce((acc, current) => {
         const trimmedCD = current.CD.trim();
         if (!acc.has(trimmedCD)) {
-          acc.set(trimmedCD, { ...current, CD: trimmedCD }); //
+          acc.set(trimmedCD, { ...current, CD: trimmedCD });
         }
         return acc;
       }, new Map())
       .values()
-  );
-
-  uniqueCards.forEach((card) =>
-    console.log(`CD: ${card.CD}, ImageURL: ${card.imageUrl}`)
   );
 
   const filteredResults = uniqueCards.filter((data) => {
@@ -137,10 +165,6 @@ const CardContainer: React.FC = () => {
       matchesDriveType
     );
   });
-  console.log(
-    "Rendering CDs:",
-    filteredResults.map((data) => data.CD)
-  );
 
   return (
     <>

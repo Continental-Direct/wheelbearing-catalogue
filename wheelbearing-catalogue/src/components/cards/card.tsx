@@ -14,13 +14,27 @@ export interface CardProps {
   Transmission: string;
   MPos: string;
   abs_note: string;
-  Fueltype: string;
   TRWDansDRWDive: string;
   Bearing1Size: string;
   vehicleDetails?: string;
   vehicleDetails2?: string;
   imageUrl: string;
   openModal: () => void;
+
+  // New fields added for more detailed information
+  KW?: string; // Engine power
+  StartYr?: string; // Start year of vehicle production
+  EndYr?: string; // End year of vehicle production
+  Exactcc?: string; // Engine displacement (cubic centimeters)
+  Cam?: string; // Camshaft details
+  Valve?: string; // Valve details
+  Gears?: string; // Number of gears in the transmission
+  Bearing2Size?: string; // Size of the second bearing
+  EngineCode?: string; // Engine code for the vehicle
+  FAG?: string; // FAG part number
+  MOOG?: string; // MOOG part number
+  SKF?: string; // SKF part number
+  SNR?: string; // SNR part number
 }
 
 const Card: React.FC<CardProps> = ({

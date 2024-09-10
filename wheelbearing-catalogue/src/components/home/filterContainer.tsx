@@ -87,11 +87,9 @@ const FilterContainer: React.FC = () => {
 
   const handleSearch = async () => {
     setSearchAttempted(true); // Always mark that the user attempted to search
-    console.log("Search button clicked: Search Attempted");
 
     if (!canSearch) {
-      console.log("Incomplete attempt - fields missing");
-      return; // Prevent actual search if fields are missing
+      return;
     }
 
     try {
@@ -184,7 +182,6 @@ const FilterContainer: React.FC = () => {
           <ResetButton onReset={handleReset} />
         </div>
 
-        {/* Conditionally display the prompt if search is attempted and fields are missing */}
         {searchAttempted && !canSearch && (
           <p style={{ color: "red", marginTop: "10px" }}>
             Please fill out all dropdowns before searching.
@@ -211,7 +208,7 @@ const FilterContainer: React.FC = () => {
           </p>
         </div>
       </div>
-      <div style={{ width: "30%", height: "450px" }}>
+      <div style={{ width: "30%", height: "450px", marginBottom: "100px" }}>
         <ImageSlider />
       </div>
       <Reviews />
