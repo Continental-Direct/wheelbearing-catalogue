@@ -12,10 +12,11 @@
 }
 .modal-info {
   margin-bottom: 30px;
+  list-style-type: none; /* This removes the bullet points */
+  padding-left: 0; /* This removes any left padding applied by default */
 }
 
 .modal-content {
-  min-height: 50%;
   background-color: white;
   border-radius: 8px;
   padding: 20px;
@@ -38,7 +39,7 @@
   font-weight: bold;
 }
 .text-content {
-  font-size: 16px;
+  font-size: 14px;
 }
 .modal-buttons {
   display: flex;
@@ -54,11 +55,6 @@
   cursor: pointer;
   outline: none;
   font-size: 16px;
-}
-
-.buy-now-button {
-  background-color: #ff8200;
-  color: white;
 }
 
 .back-to-menu-button {
