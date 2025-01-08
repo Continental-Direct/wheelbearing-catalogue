@@ -3,18 +3,9 @@ import Card from "./card";
 import InfoModal from "../modals/InfoModal";
 import { CardProps } from "./card";
 import { useLocation } from "react-router-dom";
-import FilterSection from "./FilterSection";
 import "../../CSS/CardContainer.css";
 import SelectedFiltersDisplay from "./SelectedFiltersDisplay";
 import Footer from "../home/Footer";
-
-export interface CardContainerProps {
-  cardsData: CardProps[];
-}
-
-interface Filters {
-  [key: string]: string[];
-}
 
 interface LocationState {
   searchResults: CardProps[];
@@ -29,13 +20,6 @@ interface LocationState {
 }
 
 const CardContainer: React.FC = () => {
-  const [filters, setFilters] = useState<Filters>({
-    Transmission: [],
-    FuelType: [],
-    BodyType: [],
-    TRWDansDRWDive: [],
-  });
-
   const location = useLocation();
 
   const { searchResults, filterChoices } =
@@ -120,20 +104,6 @@ const CardContainer: React.FC = () => {
     setModalContent(null);
   };
 
-  const onFilterChange = (name: string, value: string, checked: boolean) => {
-    setFilters((prevFilters) => {
-      const prevFilterValues = prevFilters[name] || [];
-      let newFilterValues;
-
-      if (checked) {
-        newFilterValues = [...prevFilterValues, value];
-      } else {
-        newFilterValues = prevFilterValues.filter((item) => item !== value);
-      }
-      return { ...prevFilters, [name]: newFilterValues };
-    });
-  };
-
   const uniqueCards = Array.from(
     searchResults
       .reduce((acc, current) => {
@@ -145,26 +115,6 @@ const CardContainer: React.FC = () => {
       }, new Map())
       .values()
   );
-
-  const filteredResults = uniqueCards.filter((data) => {
-    const matchesTransmission =
-      filters.Transmission.length === 0 ||
-      filters.Transmission.includes(data.Transmission);
-    const matchesFuelType =
-      filters.FuelType.length === 0 || filters.FuelType.includes(data.FuelType);
-    const matchesBodyType =
-      filters.BodyType.length === 0 || filters.BodyType.includes(data.BodyType);
-    const matchesDriveType =
-      filters.TRWDansDRWDive.length === 0 ||
-      filters.TRWDansDRWDive.includes(data.TRWDansDRWDive);
-
-    return (
-      matchesTransmission &&
-      matchesFuelType &&
-      matchesBodyType &&
-      matchesDriveType
-    );
-  });
 
   return (
     <>
@@ -179,13 +129,12 @@ const CardContainer: React.FC = () => {
         />
       )}
       <div className="results-header">
-        {filteredResults.length}{" "}
-        {filteredResults.length === 1 ? "Result" : "Results"} Found
+        {uniqueCards.length} {uniqueCards.length === 1 ? "Result" : "Results"}{" "}
+        Found
       </div>
       <div className="content-container">
-        <FilterSection onFilterChange={onFilterChange} />
         <div className="card-container">
-          {filteredResults.map((data) => (
+          {uniqueCards.map((data) => (
             <Card
               key={data.CD}
               {...data}

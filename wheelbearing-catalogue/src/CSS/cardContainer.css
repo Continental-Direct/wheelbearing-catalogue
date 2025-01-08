@@ -5,15 +5,14 @@
 }
 
 .content-container {
-  display: grid;
-  grid-template-columns: 1fr 4fr;
+  display: flex; /* Use flexbox instead of grid for simplicity */
+  flex-direction: column; /* Stack elements vertically */
   width: 100%;
   padding: 20px;
   gap: 2rem;
   background-color: transparent;
   margin-bottom: 30px;
 }
-
 .filter-section {
   background-color: #32383fc9;
   padding: 20px;
@@ -49,7 +48,6 @@
 .filter-tag:hover {
   background-color: #e56e00;
 }
-
 
 .buy-button:hover {
   background-color: #e67e22;
