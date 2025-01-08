@@ -18,7 +18,7 @@ const ModelOptions: React.FC<ModelOptionsProps> = ({
   const handleModelChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const newModel = event.target.value;
     setSelectedModel(newModel);
-    onModelChange(newModel);
+    onModelChange(newModel); // Notify parent component of change
   };
 
   useEffect(() => {
@@ -34,7 +34,6 @@ const ModelOptions: React.FC<ModelOptionsProps> = ({
             console.error("Error fetching models:", error.message);
             return;
           }
-          console.log("Data returned from Supabase:", data);
           const uniqueModels = [
             ...new Set(data.map((item: any) => item.Model)),
           ];
@@ -54,8 +53,9 @@ const ModelOptions: React.FC<ModelOptionsProps> = ({
     if (reset) {
       setModels([]);
       setSelectedModel("");
+      onModelChange(""); // Clear the selection in the parent component
     }
-  }, [reset]);
+  }, [reset, onModelChange]); // Ensure the reset effect also clears parent state
 
   return (
     <div className="filter-container">
