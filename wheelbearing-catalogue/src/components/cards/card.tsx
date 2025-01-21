@@ -18,23 +18,22 @@ export interface CardProps {
   Bearing1Size: string;
   vehicleDetails?: string;
   vehicleDetails2?: string;
-  imageUrl: string;
   openModal: () => void;
 
-  // New fields added for more detailed information
-  KW?: string; // Engine power
-  StartYr?: string; // Start year of vehicle production
-  EndYr?: string; // End year of vehicle production
-  Exactcc?: string; // Engine displacement (cubic centimeters)
-  Cam?: string; // Camshaft details
-  Valve?: string; // Valve details
-  Gears?: string; // Number of gears in the transmission
-  Bearing2Size?: string; // Size of the second bearing
-  EngineCode?: string; // Engine code for the vehicle
-  FAG?: string; // FAG part number
-  MOOG?: string; // MOOG part number
-  SKF?: string; // SKF part number
-  SNR?: string; // SNR part number
+  // Additional fields
+  KW?: string;
+  StartYr?: string;
+  EndYr?: string;
+  Exactcc?: string;
+  Cam?: string;
+  Valve?: string;
+  Gears?: string;
+  Bearing2Size?: string;
+  EngineCode?: string;
+  FAG?: string;
+  MOOG?: string;
+  SKF?: string;
+  SNR?: string;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -46,12 +45,13 @@ const Card: React.FC<CardProps> = ({
   vehicleDetails2,
   openModal,
 }) => {
-  const imageUrl = `https://dsucoxafocjydztfhxum.supabase.co/storage/v1/object/public/wheelbearing/Autocat%20Wheel%20Bearing%20Images%20(CDM)/${CD}.jpg`;
+  const placeholderImagePath = "/CDK6653.jpg"; // Direct path to the public folder
 
   return (
     <div className="card">
       <div className="card-image">
-        <img src={imageUrl} alt={CD} />
+        <img src={placeholderImagePath} alt={CD} />{" "}
+        {/* Always use the placeholder */}
       </div>
       <strong>
         <p className="part-number">{Manuf} Wheelbearing kit</p>
@@ -68,7 +68,7 @@ const Card: React.FC<CardProps> = ({
       {vehicleDetails && <p className="bearing-size">{vehicleDetails}</p>}
       {vehicleDetails2 && <p className="bearing-size">{vehicleDetails2}</p>}
       <button className="buy-button" onClick={openModal}>
-        more Info
+        More Info
       </button>
     </div>
   );

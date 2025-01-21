@@ -117,7 +117,7 @@ const CardContainer: React.FC = () => {
   );
 
   return (
-    <>
+    <div className="card-container-wrapper">
       {filterChoices && (
         <SelectedFiltersDisplay
           manufacturer={filterChoices.selectedManufacturer || ""}
@@ -151,7 +151,7 @@ const CardContainer: React.FC = () => {
         )}
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 
