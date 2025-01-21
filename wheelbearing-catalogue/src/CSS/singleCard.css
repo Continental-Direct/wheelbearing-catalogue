@@ -7,7 +7,8 @@
   padding: 10px;
   max-width: 20%;
   overflow: hidden;
-  font-size: 18px;
+  font-size: 20px; /* Increased font size */
+  line-height: 1.5; /* Increased line spacing */
   height: auto;
   min-height: 550px;
   background-color: #f0f0f0;
@@ -22,37 +23,29 @@
 .card-content {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center aligns the text within the card */
- 
-  margin: 0; /* Remove any external margins */
-  padding: 0; /* Remove any internal padding */
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .part-number,
 .bearing-size {
   text-align: center;
   color: #32383f;
-  line-height: 1; /* Reduce the line-height to bring text closer */
-  margin: 0; /* Remove any margin between these elements */
+  margin: 5px 0; /* Add spacing between text elements */
 }
 
-.card-info {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0;
-  margin: 0; /* Eliminate unnecessary margins here */
-}
 .buy-button {
   align-self: center;
   background-color: #ff8200;
   color: white;
   border: none;
-  padding: 8px 16px;
+  padding: 10px 20px; /* Increased button padding */
   border-radius: 4px;
+  font-size: 16px; /* Adjusted button text size */
   cursor: pointer;
 }
+
 .buy-button:hover {
   background-color: #e67e22;
 }

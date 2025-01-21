@@ -4,64 +4,75 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex; /* Flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  z-index: 1000; /* Ensure it overlays everything */
 }
-.modal-info {
-  margin-bottom: 30px;
-  list-style-type: none; /* This removes the bullet points */
-  padding-left: 0; /* This removes any left padding applied by default */
+
+.modal-body {
+  display: flex;
+  gap: 30px; /* Add spacing between image and text */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
 }
 
 .modal-content {
   background-color: white;
   border-radius: 8px;
-  padding: 20px;
+  padding: 30px; /* Add padding inside modal for breathing space */
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: row; /* Keep image and text side by side */
   color: #32383f;
   overflow: hidden;
-}
-
-.modal-body {
-  display: flex;
-  gap: 20px;
+  max-width: 850px; /* Ensure modal does not become too wide */
+  width: 90%; /* Responsive scaling */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+  gap: 30px; /* Space between image and text */
 }
 
 .modal-image {
-  margin-right: 20px;
+  width: 60%; /* Increased image size */
+  max-height: 700px; /* Limit height for balance */
+  object-fit: contain; /* Maintain aspect ratio */
+  border-radius: 8px;
 }
+
+.text-content {
+  flex: 1; /* Text takes remaining space */
+  font-size: 18px; /* Slightly larger font for readability */
+  line-height: 1.8; /* Spaced lines for readability */
+  text-align: left; /* Ensure text alignment */
+}
+
+.modal-info {
+  margin-bottom: 20px;
+  list-style: none; /* Remove bullets */
+  padding-left: 0;
+}
+
 .modal-category {
   font-weight: bold;
+  margin-right: 10px; /* Add space between category and value */
 }
-.text-content {
-  font-size: 14px;
-}
+
 .modal-buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end; /* Align button to the right */
   margin-top: 20px;
 }
 
-.buy-now-button,
 .back-to-menu-button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  outline: none;
-  font-size: 16px;
-}
-
-.back-to-menu-button {
+  padding: 12px 25px; /* Bigger button for better visibility */
   background-color: #6c757d;
   color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-.name {
-  font-size: 1.5rem;
+.back-to-menu-button:hover {
+  background-color: #5a6268;
 }
