@@ -16,6 +16,8 @@ body {
 .container {
   display: flex;
   flex-direction: column;
+  min-height: 100vh; /* Ensure the container spans the full viewport height */
+  justify-content: space-between; /* Push the footer to the bottom */
   align-items: center;
   width: 100%;
 }
@@ -83,7 +85,6 @@ body {
 .wheelbearing-info {
   display: flex;
   align-items: stretch;
-  width: 75%;
   margin-bottom: 3rem;
   height: 250px;
   gap: 0;

@@ -11,7 +11,6 @@ import Footer from "./Footer";
 import DriveTypeOptions from "../dropdowns/YearsOptions";
 import FitmentOptions from "../dropdowns/FitmentOptions";
 import SKFSearch from "../dropdowns/SKFSearch";
-import ImageSlider from "./carousel";
 import Reviews from "./Reviews";
 
 const FilterContainer: React.FC = () => {
@@ -207,9 +206,6 @@ const FilterContainer: React.FC = () => {
             all popular applications.
           </p>
         </div>
-      </div>
-      <div style={{ width: "20%", height: "300px", marginBottom: "100px" }}>
-        <ImageSlider />
       </div>
       <Reviews />
       <Footer />
