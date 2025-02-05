@@ -20,13 +20,13 @@ const Footer = () => {
             <ul className="contact-list">
               <li>📞 +44 (0)1623 755125</li>
               <li>
-                🐦{" "}
+                <FaTwitter />{" "}
                 <a href="https://twitter.com/cd_uk_ltd" className="footer-link">
                   @CD_UK_Ltd
                 </a>
               </li>
               <li>
-                📘{" "}
+                <FaFacebook />{" "}
                 <a
                   href="https://www.facebook.com/Continental-Direct-119294114847485/?ref=page_internal"
                   className="footer-link"
@@ -35,7 +35,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                📷{" "}
+                <FaInstagram />{" "}
                 <a
                   href="https://www.instagram.com/continentaldirectukltd/"
                   className="footer-link"
