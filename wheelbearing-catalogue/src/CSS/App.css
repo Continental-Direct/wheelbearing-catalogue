@@ -10,7 +10,10 @@ body {
   font-family: "Roboto", sans-serif;
   color: #ffffff;
 
-  background: radial-gradient(circle, #32383f 0%, #000000 100%) !important;
+  background: url("/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .container {
@@ -109,6 +112,34 @@ body {
   background-color: #32383fc9;
   padding: 1rem;
   height: 100%;
+}
+
+.orange-gradient-box {
+  width: 100%;
+  max-width: 1200px;
+  margin: 60px auto; /* Adds space above the box */
+  padding: 40px;
+  text-align: center;
+  background: linear-gradient(
+    to bottom,
+    #ffb347,
+    #ff8200
+  ); /* Light to Dark Orange */
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  border-radius: 8px;
+  font-weight: 700;
+}
+.orange-gradient-box h2 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.orange-gradient-box p {
+  font-size: 16px;
+  letter-spacing: 1px;
 }
 
 @media (max-width: 850px) {
