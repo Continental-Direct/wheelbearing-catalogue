@@ -1,46 +1,66 @@
 import "../../CSS/Footer.css";
+import { FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
   return (
     <footer className="footer">
-      <div className="footer-content">
-        <div className="footer-section">
-          <h2>CONTINENTAL DIRECT UK LTD</h2>
+      <div className="footer-container">
+        <section className="about">
+          <h3>Continental Direct UK Ltd</h3>
           <p>
-            The route to profit. Leading supplier of high quality vehicle
+            The route to profit. Leading supplier of high-quality vehicle
             replacement parts made to exacting standards and priced to offer the
             competitive edge.
           </p>
-          <button onClick={scrollToTop} className="top-button">
-            TOP
-          </button>
-        </div>
-        <div className="footer-section">
-          <h2>CONTACT US</h2>
-          <p>📞 +44 (0)1623 755125</p>
-          <p>Twitter: @CD_UK_Ltd</p>
-          <p>Facebook: @ContinentalDirect</p>
-          <p>Instagram: continentaldirectukltd</p>
-        </div>
-        <div className="footer-section">
-          <h2>ADDRESS</h2>
-          <p>Continental Direct UK Ltd</p>
-          <p>Greenwood House</p>
-          <p>Nottingham</p>
-          <p>NG17 7LE</p>
-          <p>United Kingdom</p>
+        </section>
+
+        <div className="footer-right">
+          <section className="contact">
+            <h3>Contact Us</h3>
+            <ul className="contact-list">
+              <li>📞 +44 (0)1623 755125</li>
+              <li>
+                🐦{" "}
+                <a href="https://twitter.com/cd_uk_ltd" className="footer-link">
+                  @CD_UK_Ltd
+                </a>
+              </li>
+              <li>
+                📘{" "}
+                <a
+                  href="https://www.facebook.com/Continental-Direct-119294114847485/?ref=page_internal"
+                  className="footer-link"
+                >
+                  @ContinentalDirect
+                </a>
+              </li>
+              <li>
+                📷{" "}
+                <a
+                  href="https://www.instagram.com/continentaldirectukltd/"
+                  className="footer-link"
+                >
+                  continentaldirectukltd
+                </a>
+              </li>
+            </ul>
+          </section>
+
+          <section className="address">
+            <h3>Address</h3>
+            <p>Continental Direct UK Ltd</p>
+            <p>Greenwood House</p>
+            <p>Nottingham</p>
+            <p>NG17 7LE</p>
+            <p>United Kingdom</p>
+          </section>
         </div>
       </div>
+
       <div className="footer-bottom">
         <p>
-          COPYRIGHT © CONTINENTAL DIRECT UK LTD. ALL RIGHTS RESERVED. 2016-2024
+          Copyright &copy; Continental Direct UK Ltd. All rights reserved.
+          2016-2025
         </p>
       </div>
     </footer>
