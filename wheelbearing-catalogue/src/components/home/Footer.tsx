@@ -9,8 +9,8 @@ const Footer = () => {
           <h3>Continental Direct UK Ltd</h3>
           <p>
             The route to profit. Leading supplier of high-quality vehicle
-            replacement parts made to exacting standards and priced to offer the
-            competitive edge.
+            replacement parts made to exacting standards
+            <br /> and priced to offer the competitive edge.
           </p>
         </section>
 
@@ -56,9 +56,9 @@ const Footer = () => {
           </section>
         </div>
       </div>
-
+      <div className="footer-divider"></div> {/* New border above copyright */}
       <div className="footer-bottom">
-        <p>
+        <p className="footer-copyright">
           Copyright &copy; Continental Direct UK Ltd. All rights reserved.
           2016-2025
         </p>
