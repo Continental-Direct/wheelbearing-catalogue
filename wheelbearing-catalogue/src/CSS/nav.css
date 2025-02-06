@@ -10,7 +10,7 @@
 
 .navbar-left {
   font-family: "Roboto", Helvetica, sans-serif;
-  font-weight: 600; /* Adjusted from 700 to 600 for a slightly lighter look */
+  font-weight: 600;
   font-size: 1.4em;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -20,12 +20,26 @@
   gap: 10px;
 }
 
+/* Prevent links from affecting title & subtitle */
+.navbar-title-link,
+.navbar-subtitle-link,
+.navbar-logo-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Ensure proper spacing between title and subtitle */
+.navbar-title {
+  display: inline-block;
+}
+
 .navbar-subtitle {
   font-size: 0.9em;
-  font-weight: 500; /* Adjusted to match the slightly thinner look */
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: #666666;
+  margin-left: 5px; /* Small spacing for separation */
 }
 
 .navbar-right {
@@ -53,6 +67,7 @@
 
   .navbar-subtitle {
     font-size: 0.8em;
+    margin-left: 0; /* Removes extra spacing on smaller screens */
   }
 
   .navbar-logo {

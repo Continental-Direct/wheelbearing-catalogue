@@ -11,7 +11,8 @@
   line-height: 1.5; /* Increased line spacing */
   height: auto;
   min-height: 550px;
-  background-color: #f0f0f0;
+  background-color: #2d333b;
+  color: #fff;
 }
 
 .card-image img {
@@ -31,7 +32,7 @@
 .part-number,
 .bearing-size {
   text-align: center;
-  color: #32383f;
+  color: #fff;
   margin: 5px 0; /* Add spacing between text elements */
 }
 

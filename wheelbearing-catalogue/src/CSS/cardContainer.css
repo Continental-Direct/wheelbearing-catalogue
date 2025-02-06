@@ -16,7 +16,7 @@
 }
 
 .filter-section {
-  background-color: #32383fc9;
+  background-color: #2d333b;
   padding: 20px;
   color: white;
   margin-top: 5px;
@@ -37,7 +37,6 @@
 
 .filter-tag {
   display: inline-block;
-  background-color: #ff8200;
   color: white;
   padding: 5px 10px;
   margin: 0 5px 5px 0;
@@ -45,10 +44,6 @@
   cursor: pointer;
   transition: background-color 0.3s;
   border-radius: 5px;
-}
-
-.filter-tag:hover {
-  background-color: #e56e00;
 }
 
 .buy-button:hover {
@@ -102,10 +97,10 @@
 
 .results-header {
   font-size: 20px;
-  color: #f0f0f0;
+  color: #fff;
   padding: 10px 20px;
   margin-bottom: 20px;
-  background-color: #32383fc9;
+  background: linear-gradient(to bottom, #ffb347, #ff8200);
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
