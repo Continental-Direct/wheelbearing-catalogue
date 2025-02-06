@@ -9,7 +9,6 @@ body {
   padding: 0;
   font-family: "Roboto", sans-serif;
   color: #ffffff;
-
   background: url("/bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -30,62 +29,100 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #32383fc9;
-  width: 100%;
+  background-color: #2d333b; /* Adjusted to match target design */
+  width: 40%; /* Slightly wider than dropdowns, not excessive */
   margin-bottom: 5rem;
-  padding: 1rem;
-}
-.dropdown-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2rem;
-  gap: 1rem;
+  padding: 2rem;
   border-radius: 8px;
+}
+
+.dropdown-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
 }
 
 .filter-title {
   color: #ffffff;
   text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 3rem;
 }
 
+/* Larger dropdowns for better visibility */
 .filter select {
-  width: 200px;
-  padding: 8px;
-  font-size: 16px;
+  width: 480px;
+  padding: 10px;
+  font-size: 24px;
   background-color: #ffffff;
   color: #32383f;
-  border: 1px solid #ff8200;
-  border-radius: 4px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }
 
+/* Updated button styles to match target design */
 .button {
-  padding: 8px 16px;
+  padding: 14px 20px;
   font-size: 16px;
-  background-color: #ff8200;
-  color: #ffffff;
-  border: none;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
   cursor: pointer;
   border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
 }
 
 .button:hover {
-  background-color: #ffbf0d;
+  background-color: white;
+  color: black;
 }
 
-.red {
-  background-color: #f44336;
-}
-
-.buttons {
+.buttons-container {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
-/* Info */
+/* Error message styling */
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
 
-.wheelbearing-info {
+/* Orange gradient box styling */
+.orange-gradient-box {
+  width: 40%;
+  margin: 60px auto; /* Adds space above the box */
+  padding: 40px;
+  text-align: center;
+  background: linear-gradient(to bottom, #ffb347, #ff8200);
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.orange-gradient-box h2 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.orange-gradient-box p {
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+/* Info section */
+/* .wheelbearing-info {
   display: flex;
   align-items: stretch;
   margin-bottom: 3rem;
@@ -114,44 +151,7 @@ body {
   height: 100%;
 }
 
-.orange-gradient-box {
-  width: 100%;
-  max-width: 1200px;
-  margin: 60px auto; /* Adds space above the box */
-  padding: 40px;
-  text-align: center;
-  background: linear-gradient(
-    to bottom,
-    #ffb347,
-    #ff8200
-  ); /* Light to Dark Orange */
-  color: #fff;
-  font-family: "Roboto", sans-serif;
-  border-radius: 8px;
-  font-weight: 700;
-}
-.orange-gradient-box h2 {
-  font-size: 24px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
-.orange-gradient-box p {
-  font-size: 16px;
-  letter-spacing: 1px;
-}
-
-@media (max-width: 850px) {
-  .slider-container {
-    width: 90%;
-    max-width: 90%;
-  }
-
-  .slider-image {
-    max-height: 100px;
-  }
-}
+Responsive design adjustments */
 
 @media (max-width: 768px) {
   .inner-container,

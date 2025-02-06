@@ -5,12 +5,12 @@ import EngineSizeOptions from "../dropdowns/EngineSizeOptions";
 import MarkSeriesOptions from "../dropdowns/MarkSeriesOptions";
 import ResetButton from "../buttons/Reset";
 import SearchButton from "../buttons/Search";
-import supabase from "../../assets/supaBaseClient";
-import { useNavigate } from "react-router-dom";
-import Footer from "./Footer";
 import DriveTypeOptions from "../dropdowns/YearsOptions";
 import FitmentOptions from "../dropdowns/FitmentOptions";
 import SKFSearch from "../dropdowns/SKFSearch";
+import { useNavigate } from "react-router-dom";
+import supabase from "../../assets/supaBaseClient";
+import Footer from "./Footer";
 
 const FilterContainer: React.FC = () => {
   const navigate = useNavigate();
@@ -23,23 +23,19 @@ const FilterContainer: React.FC = () => {
   const [selectedMPos, setSelectedMPos] = useState<string>("");
 
   const [canSearch, setCanSearch] = useState<boolean>(false);
-  const [searchAttempted, setSearchAttempted] = useState<boolean>(false); // Track if user attempted to search
+  const [searchAttempted, setSearchAttempted] = useState<boolean>(false);
 
-  // Check if all required fields are filled
   useEffect(() => {
-    if (
-      selectedManufacturer &&
-      selectedModel &&
-      selectedEngineSize &&
-      selectedMarkSeries &&
-      selectedDriveType &&
-      selectedMPos
-    ) {
-      setCanSearch(true);
-    } else {
-      setCanSearch(false);
-    }
-    console.log("canSearch state updated: ", canSearch);
+    setCanSearch(
+      !!(
+        selectedManufacturer &&
+        selectedModel &&
+        selectedEngineSize &&
+        selectedMarkSeries &&
+        selectedDriveType &&
+        selectedMPos
+      )
+    );
   }, [
     selectedManufacturer,
     selectedModel,
@@ -49,29 +45,6 @@ const FilterContainer: React.FC = () => {
     selectedMPos,
   ]);
 
-  const handleMPosChange = (mpos: string) => {
-    setSelectedMPos(mpos);
-  };
-  const handleManufacturerChange = (manufacturer: string) => {
-    setSelectedManufacturer(manufacturer);
-  };
-
-  const handleModelChange = (model: string) => {
-    setSelectedModel(model);
-  };
-
-  const handleEngineSizeChange = (engineSize: string) => {
-    setSelectedEngineSize(engineSize);
-  };
-
-  const handleMarkSeriesChange = (markSeries: string) => {
-    setSelectedMarkSeries(markSeries);
-  };
-
-  const handleDriveTypeChange = (driveType: string) => {
-    setSelectedDriveType(driveType);
-  };
-
   const handleReset = () => {
     setReset(!reset);
     setSelectedManufacturer("");
@@ -80,40 +53,27 @@ const FilterContainer: React.FC = () => {
     setSelectedMarkSeries("");
     setSelectedDriveType("");
     setSelectedMPos("");
-    setSearchAttempted(false); // Reset searchAttempted on reset
+    setSearchAttempted(false);
   };
 
   const handleSearch = async () => {
-    setSearchAttempted(true); // Always mark that the user attempted to search
-
-    if (!canSearch) {
-      return;
-    }
+    setSearchAttempted(true);
+    if (!canSearch) return;
 
     try {
       let query = supabase.from("wheelbearing2").select("*");
 
-      if (selectedManufacturer) {
-        query = query.eq("Manuf", selectedManufacturer);
-      }
-      if (selectedModel) {
-        query = query.eq("Model", selectedModel);
-      }
-      if (selectedEngineSize) {
+      if (selectedManufacturer) query = query.eq("Manuf", selectedManufacturer);
+      if (selectedModel) query = query.eq("Model", selectedModel);
+      if (selectedEngineSize)
         query = query.eq("EngineSize", selectedEngineSize);
-      }
-      if (selectedMarkSeries) {
+      if (selectedMarkSeries)
         query = query.eq("mark_series", selectedMarkSeries);
-      }
-      if (selectedDriveType) {
+      if (selectedDriveType)
         query = query.eq("TRWDansDRWDive", selectedDriveType);
-      }
-      if (selectedMPos) {
-        query = query.eq("MPos", selectedMPos);
-      }
+      if (selectedMPos) query = query.eq("MPos", selectedMPos);
 
       const { data, error } = await query;
-
       if (error) throw error;
 
       navigate("/results", {
@@ -137,38 +97,40 @@ const FilterContainer: React.FC = () => {
   return (
     <div className="container">
       <div className="orange-gradient-box">
-        <h2>CD WHEEL BEARINGS</h2>
+        <h2>CD PRODUCT CATALOGUES</h2>
         <p>IDENTIFY THE CORRECT PART FOR YOUR VEHICLE</p>
       </div>
+
       <div className="inner-container">
         <h3 className="filter-title">WHEEL BEARING CATALOGUE</h3>
-        <div className="dropdown-container">
+
+        <div className="dropdown-column">
           <ManufacturerOptions
-            onManufacturerChange={handleManufacturerChange}
+            onManufacturerChange={setSelectedManufacturer}
             reset={reset}
           />
           <ModelOptions
             selectedManufacturer={selectedManufacturer}
             reset={reset}
-            onModelChange={handleModelChange}
+            onModelChange={setSelectedModel}
           />
           <EngineSizeOptions
             selectedModel={selectedModel}
             reset={reset}
-            onEngineSizeChange={handleEngineSizeChange}
+            onEngineSizeChange={setSelectedEngineSize}
           />
           <MarkSeriesOptions
             selectedModel={selectedModel}
             selectedEngineSize={selectedEngineSize}
             reset={reset}
-            onMarkSeriesChange={handleMarkSeriesChange}
+            onMarkSeriesChange={setSelectedMarkSeries}
           />
           <DriveTypeOptions
             selectedModel={selectedModel}
             selectedEngineSize={selectedEngineSize}
             selectedMarkSeries={selectedMarkSeries}
             reset={reset}
-            onDriveTypeChange={handleDriveTypeChange}
+            onDriveTypeChange={setSelectedDriveType}
           />
           <FitmentOptions
             selectedModel={selectedModel}
@@ -176,40 +138,24 @@ const FilterContainer: React.FC = () => {
             selectedMarkSeries={selectedMarkSeries}
             selectedDriveType={selectedDriveType}
             reset={reset}
-            onMPosChange={handleMPosChange}
+            onMPosChange={setSelectedMPos}
           />
         </div>
-        <div className="buttons">
+
+        <div className="buttons-container">
           <SearchButton onSearch={handleSearch} />
           <ResetButton onReset={handleReset} />
         </div>
 
         {searchAttempted && !canSearch && (
-          <p style={{ color: "red", marginTop: "10px" }}>
+          <p className="error-message">
             Please fill out all dropdowns before searching.
           </p>
         )}
 
         <SKFSearch />
       </div>
-      {/* <div className="wheelbearing-info">
-        <div className="home-img-container">
-          <img
-            className="home-img"
-            src="CD-WBK-Main.webp"
-            alt="wheelbearings"
-          />
-        </div>
-        <div className="home-info">
-          <h3>CD WHEEL BEARINGS</h3>
-          <p>
-            All generation wheel bearings and hubs. Featuring the highest
-            quality, all kits are complete with any ancillary components
-            required to complete the installation correctly. 100% coverage for
-            all popular applications.
-          </p>
-        </div>
-      </div> */}
+
       <Footer />
     </div>
   );
