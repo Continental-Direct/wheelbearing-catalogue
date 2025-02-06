@@ -51,7 +51,7 @@ const SKFSearch = () => {
         onChange={handleInputChange}
         placeholder="Enter SKF or FAG Number"
       />
-      <button className="button" onClick={handleSearch}>
+      <button className="search-button" onClick={handleSearch}>
         Search
       </button>
     </div>

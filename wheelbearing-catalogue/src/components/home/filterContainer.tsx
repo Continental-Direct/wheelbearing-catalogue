@@ -3,8 +3,6 @@ import ManufacturerOptions from "../dropdowns/manufOptions";
 import ModelOptions from "../dropdowns/modelOptions";
 import EngineSizeOptions from "../dropdowns/EngineSizeOptions";
 import MarkSeriesOptions from "../dropdowns/MarkSeriesOptions";
-import ResetButton from "../buttons/Reset";
-import SearchButton from "../buttons/Search";
 import DriveTypeOptions from "../dropdowns/YearsOptions";
 import FitmentOptions from "../dropdowns/FitmentOptions";
 import SKFSearch from "../dropdowns/SKFSearch";
@@ -97,12 +95,12 @@ const FilterContainer: React.FC = () => {
   return (
     <div className="container">
       <div className="orange-gradient-box">
-        <h2>CD PRODUCT CATALOGUES</h2>
+        <h2>CD WHEELBEARINGS</h2>
         <p>IDENTIFY THE CORRECT PART FOR YOUR VEHICLE</p>
       </div>
 
       <div className="inner-container">
-        <h3 className="filter-title">WHEEL BEARING CATALOGUE</h3>
+        <h3 className="filter-title">ENTER VEHICLE DETAILS</h3>
 
         <div className="dropdown-column">
           <ManufacturerOptions
@@ -143,8 +141,12 @@ const FilterContainer: React.FC = () => {
         </div>
 
         <div className="buttons-container">
-          <SearchButton onSearch={handleSearch} />
-          <ResetButton onReset={handleReset} />
+          <button className="search-button" onClick={handleSearch}>
+            Search
+          </button>
+          <button className="reset-button" onClick={handleReset}>
+            Reset Filters
+          </button>
         </div>
 
         {searchAttempted && !canSearch && (
