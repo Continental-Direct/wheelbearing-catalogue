@@ -45,13 +45,16 @@ const Card: React.FC<CardProps> = ({
   vehicleDetails2,
   openModal,
 }) => {
-  const placeholderImagePath = "/CDK6653.jpg"; // Direct path to the public folder
+  const imageUrl = `https://dsucoxafocjydztfhxum.supabase.co/storage/v1/object/public/wheelbearing2/bearing_img/${CD}.jpg`;
 
   return (
     <div className="card">
       <div className="card-image">
-        <img src={placeholderImagePath} alt={CD} />{" "}
-        {/* Always use the placeholder */}
+        <img
+          src={imageUrl}
+          alt={CD}
+          onError={(e) => (e.currentTarget.src = "/CDK-Soon.jpg")} // Fallback to CDK-soon.jpg
+        />
       </div>
       <strong>
         <p className="part-number">{Manuf} Wheelbearing kit</p>
