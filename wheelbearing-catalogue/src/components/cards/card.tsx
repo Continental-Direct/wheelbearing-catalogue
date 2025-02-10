@@ -53,14 +53,12 @@ const Card: React.FC<CardProps> = ({
         <img
           src={imageUrl}
           alt={CD}
-          onError={(e) => (e.currentTarget.src = "/CDK-Soon.jpg")} // Fallback to CDK-soon.jpg
+          onError={(e) => (e.currentTarget.src = "/CDK-Soon.jpg")}
         />
       </div>
-      <strong>
-        <p className="part-number">{Manuf} Wheelbearing kit</p>
-      </strong>
-      <p className="part-number">
-        <strong>{CD}</strong>
+      <p className="part-number">{CD}</p>
+      <p className="bearing-size">
+        <strong>{Manuf} Wheelbearing Kit</strong>
       </p>
       <p className="bearing-size">
         <strong>Bearing Size:</strong> {Bearing1Size}
@@ -70,7 +68,7 @@ const Card: React.FC<CardProps> = ({
       </p>
       {vehicleDetails && <p className="bearing-size">{vehicleDetails}</p>}
       {vehicleDetails2 && <p className="bearing-size">{vehicleDetails2}</p>}
-      <button className="buy-button" onClick={openModal}>
+      <button className="search-button" onClick={openModal}>
         More Info
       </button>
     </div>
