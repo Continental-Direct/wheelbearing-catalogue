@@ -4,75 +4,78 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-  display: flex; /* Flexbox for centering */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  z-index: 1000; /* Ensure it overlays everything */
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #000;
+  border-radius: 8px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center content */
+  color: #fff;
+  max-width: 1000px;
+  width: 90%;
+  max-height: 90vh; /* Prevents cutoff */
+  overflow-y: auto; /* Enables scrolling if needed */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+  gap: 20px;
 }
 
 .modal-body {
   display: flex;
-  gap: 30px; /* Add spacing between image and text */
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
-}
-
-.modal-content {
-  background-color: white;
-  border-radius: 8px;
-  padding: 30px; /* Add padding inside modal for breathing space */
-  display: flex;
-  flex-direction: row; /* Keep image and text side by side */
-  color: #32383f;
-  overflow: hidden;
-  max-width: 850px; /* Ensure modal does not become too wide */
-  width: 90%; /* Responsive scaling */
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
-  gap: 30px; /* Space between image and text */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
 }
 
 .modal-image {
-  width: 60%; /* Increased image size */
-  max-height: 700px; /* Limit height for balance */
-  object-fit: contain; /* Maintain aspect ratio */
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
   border-radius: 8px;
+  margin-bottom: 3rem;
 }
 
-.text-content {
-  flex: 1; /* Text takes remaining space */
-  font-size: 18px; /* Slightly larger font for readability */
-  line-height: 1.8; /* Spaced lines for readability */
-  text-align: left; /* Ensure text alignment */
-}
-
+/* Two-column layout for details */
 .modal-info {
-  margin-bottom: 20px;
-  list-style: none; /* Remove bullets */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px 30px; /* More space between columns */
+  list-style: none;
   padding-left: 0;
+  width: 100%;
+  text-align: left;
 }
 
+/* Key (category) styling */
 .modal-category {
-  font-weight: bold;
-  margin-right: 10px; /* Add space between category and value */
+  font-weight: 700;
 }
 
+/* Value (details) styling */
+.modal-value {
+  font-weight: 400;
+}
+
+/* Align key-value pairs */
+.modal-info li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 4px;
+}
+
+/* Back button (uses .search-button from other components) */
 .modal-buttons {
   display: flex;
-  justify-content: flex-end; /* Align button to the right */
+  justify-content: center;
+  width: 100%;
   margin-top: 20px;
-}
-
-.back-to-menu-button {
-  padding: 12px 25px; /* Bigger button for better visibility */
-  background-color: #6c757d;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.back-to-menu-button:hover {
-  background-color: #5a6268;
 }

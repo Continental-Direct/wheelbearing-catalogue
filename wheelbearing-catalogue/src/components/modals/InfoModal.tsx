@@ -50,22 +50,24 @@ const InfoModal: React.FC<InfoModalProps> = ({ isOpen, onClose, content }) => {
             className="modal-image"
             src={imageUrl}
             alt={content.CD}
-            onError={(e) => (e.currentTarget.src = "/CDK-Soon.jpg")} // Fallback to CDK-soon.jpg
+            onError={(e) => {
+              e.currentTarget.onerror = null;
+              e.currentTarget.src = "/CDK-Soon.jpg";
+            }}
           />
           <div className="text-content">
-            <h3>Details</h3>
             <ul className="modal-info">
               {Object.entries(content)
                 .filter(([key, value]) => key !== "imageUrl" && value)
                 .map(([key, value], index) => (
                   <li key={index}>
-                    <strong>{key}: </strong>
-                    {value}
+                    <span className="modal-category">{key}:</span>
+                    <span className="modal-value">{value}</span>
                   </li>
                 ))}
             </ul>
             <div className="modal-buttons">
-              <button className="back-to-menu-button" onClick={onClose}>
+              <button className="search-button" onClick={onClose}>
                 Back
               </button>
             </div>
