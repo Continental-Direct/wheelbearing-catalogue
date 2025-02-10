@@ -40,7 +40,7 @@ interface InfoModalProps {
 const InfoModal: React.FC<InfoModalProps> = ({ isOpen, onClose, content }) => {
   if (!isOpen) return null;
 
-  const placeholderImagePath = "/CDK6653.jpg"; // Direct path to the public folder
+  const imageUrl = `https://dsucoxafocjydztfhxum.supabase.co/storage/v1/object/public/wheelbearing2/bearing_img/${content.CD}.jpg`;
 
   return (
     <div className="modal-backdrop" onClick={onClose}>
@@ -48,8 +48,9 @@ const InfoModal: React.FC<InfoModalProps> = ({ isOpen, onClose, content }) => {
         <div className="modal-body">
           <img
             className="modal-image"
-            src={placeholderImagePath} // Always use the placeholder
+            src={imageUrl}
             alt={content.CD}
+            onError={(e) => (e.currentTarget.src = "/CDK-Soon.jpg")} // Fallback to CDK-soon.jpg
           />
           <div className="text-content">
             <h3>Details</h3>
