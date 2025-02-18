@@ -28,7 +28,7 @@
   color: inherit;
 }
 
-/* Ensure proper spacing between title and subtitle */
+/* Title and subtitle spacing */
 .navbar-title {
   display: inline-block;
 }
@@ -51,6 +51,7 @@
   height: 50px;
 }
 
+/* Tablet adjustments */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -73,4 +74,26 @@
   .navbar-logo {
     height: 40px;
   }
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  /* Optionally hide less-critical elements to emphasize the logo */
+  .navbar-subtitle {
+    display: none; /* Hide subtitle for a cleaner layout */
+  }
+
+  /* Adjust overall padding and logo size */
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .navbar-logo {
+    height: 35px;
+  }
+
+  /* If desired, you can also hide the title text entirely by uncommenting below */
+  /* .navbar-left {
+       display: none;
+  } */
 }
