@@ -15,27 +15,30 @@ body {
   background-position: center;
 }
 
+/* Main container styling */
 .container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ensure the container spans the full viewport height */
-  justify-content: space-between; /* Push the footer to the bottom */
+  min-height: 100vh; /* Full viewport height */
+  justify-content: space-between; /* Footer pushed to bottom */
   align-items: center;
   width: 100%;
 }
 
+/* Inner container for filters/dropdowns */
 .inner-container {
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #2d333b; /* Adjusted to match target design */
-  width: 40%; /* Slightly wider than dropdowns, not excessive */
+  background-color: #2d333b;
+  width: 40%;
   margin-bottom: 5rem;
   padding: 2rem;
   border-radius: 8px;
 }
 
+/* Dropdown column styling */
 .dropdown-column {
   display: flex;
   flex-direction: column;
@@ -53,34 +56,34 @@ body {
   margin-bottom: 3rem;
 }
 
-/* Dropdown Title - Restored boldness for better readability */
+/* Dropdown label styling */
 .filter label {
-  font-size: 20px; /* Adjust for visibility */
-  font-weight: 700; /* Restore bold text */
+  font-size: 20px;
+  font-weight: 700;
   color: white;
   margin-bottom: 8px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-/* Dropdown typography - Matches smaller text from gradient box */
+/* Dropdown select styling */
 .filter select {
   width: 480px;
   padding: 12px;
-  font-size: 18px; /* Matches the paragraph size in the gradient box */
+  font-size: 18px;
   font-family: "Roboto", sans-serif;
-  font-weight: 400; /* Regular for a balanced look */
+  font-weight: 400;
   background-color: #ffffff;
   color: #32383f;
   border: 1px solid #ccc;
   border-radius: 6px;
 }
 
-/* Search button - Orange gradient */
+/* Search button styling */
 .search-button {
   padding: 14px 20px;
   font-size: 16px;
-  background: linear-gradient(to bottom, #ffb347, #ff8200); /* Gradient */
+  background: linear-gradient(to bottom, #ffb347, #ff8200);
   color: white;
   border: none;
   cursor: pointer;
@@ -91,14 +94,10 @@ body {
 }
 
 .search-button:hover {
-  background: linear-gradient(
-    to bottom,
-    #e09e34,
-    #d47400
-  ); /* Darker gradient on hover */
+  background: linear-gradient(to bottom, #e09e34, #d47400);
 }
 
-/* Reset button - Original style */
+/* Reset button styling */
 .reset-button {
   padding: 14px 20px;
   font-size: 16px;
@@ -117,6 +116,7 @@ body {
   color: black;
 }
 
+/* Buttons container */
 .buttons-container {
   display: flex;
   justify-content: center;
@@ -134,7 +134,7 @@ body {
 /* Orange gradient box styling */
 .orange-gradient-box {
   width: 40%;
-  margin: 60px auto; /* Adds space above the box */
+  margin: 60px auto;
   padding: 40px;
   text-align: center;
   background: linear-gradient(to bottom, #ffb347, #ff8200);
@@ -142,87 +142,82 @@ body {
   font-family: "Roboto", sans-serif;
   border-radius: 8px;
   font-weight: 700;
-  position: relative; /* Needed for the underline */
+  position: relative;
 }
 
-/* Gradient box heading - Bolder */
+/* Gradient box heading */
 .orange-gradient-box h2 {
   font-size: 26px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  font-weight: 800; /* Stronger emphasis */
-  margin-bottom: 2.5rem; /* Increased spacing */
+  font-weight: 800;
+  margin-bottom: 2.5rem;
   margin-top: 2rem;
 }
 
-/* Small underline under h2 in gradient box */
+/* Underline for heading */
 .orange-gradient-box h2::after {
   content: "";
   display: block;
   width: 60px;
   height: 3px;
   background-color: white;
-  margin: 14px auto 0; /* Increased margin to add space */
+  margin: 14px auto 0;
 }
 
-/* Gradient box subtext - Lighter weight */
+/* Gradient box subtext */
 .orange-gradient-box p {
   font-size: 18px;
   letter-spacing: 1px;
-  font-weight: 300; /* Lighter for better contrast */
+  font-weight: 300;
   margin-top: 10px;
 }
 
-/* Responsive design adjustments */
+/* RESPONSIVE DESIGN */
+
+/* Tablet & Mobile adjustments */
 @media (max-width: 768px) {
   .inner-container,
-  .wheelbearing-info {
-    width: 95%;
-    flex-direction: column;
-  }
-
-  .home-img {
-    max-height: 620px;
-    margin-bottom: 25px;
-  }
-
-  .dropdown-container {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .wheelbearing-info {
-    text-align: center;
-    height: auto;
-  }
-
-  .home-img-container,
-  .home-info {
-    width: 100%;
-  }
-
-  .button {
-    font-size: 14px;
-    padding: 6px 12px;
+  .orange-gradient-box {
+    width: 90%;
+    padding: 1rem;
   }
 
   .filter select {
+    width: 100%;
+  }
+
+  .filter label {
+    font-size: 18px;
+  }
+
+  .filter-title {
+    font-size: 22px;
+  }
+
+  .search-button,
+  .reset-button {
+    width: 100%;
+  }
+
+  .orange-gradient-box h2 {
+    font-size: 22px;
+  }
+
+  .orange-gradient-box p {
     font-size: 16px;
   }
 }
 
+/* Further adjustments for very small screens */
 @media (max-width: 480px) {
-  .home-img {
-    max-height: 370px;
-    margin-bottom: 20px;
-  }
-
-  .button,
   .filter select {
-    font-size: 12px;
+    font-size: 16px;
   }
 
-  .filter-title {
-    font-size: 18px;
+  .search-button,
+  .reset-button {
+    font-size: 14px;
+    padding: 10px 15px;
   }
 }

@@ -41,7 +41,7 @@
   text-align: left;
   justify-content: center;
   align-items: flex-start;
-  gap: 50px; /* Adjusting space between contact and address */
+  gap: 50px; /* Space between sections */
 }
 
 .contact {
@@ -50,7 +50,7 @@
 }
 
 .address {
-  flex: 1.2; /* Giving more space to address */
+  flex: 1.2;
   padding: 20px;
 }
 
@@ -81,7 +81,7 @@
 }
 
 .contact-list li {
-  margin-bottom: 10px; /* Increased spacing between social media links */
+  margin-bottom: 10px; /* Spacing between links */
   display: flex;
   align-items: center;
   gap: 8px;
@@ -104,5 +104,56 @@
 }
 
 .footer-copyright {
-  color: #aaa; /* Grayed out color for copyright text */
+  color: #aaa;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Tablet adjustments */
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 0;
+    font-size: 16px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .about,
+  .contact,
+  .address {
+    padding: 15px;
+    text-align: center;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .footer {
+    font-size: 14px;
+    padding: 30px 0;
+  }
+
+  .footer-section h3,
+  .about h3,
+  .contact h3,
+  .address h3 {
+    font-size: 16px;
+  }
+
+  .footer-section p,
+  .about p,
+  .contact-list li,
+  .address p {
+    font-size: 14px;
+  }
 }

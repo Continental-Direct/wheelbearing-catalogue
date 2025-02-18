@@ -99,35 +99,3 @@
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-
-@media (max-width: 480px) {
-  .filter-section,
-  .selected-filters-display,
-  .card-container {
-    padding: 5px;
-  }
-
-  .content-container .card-container .card {
-    margin: 5px 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .filter-section,
-  .selected-filters-display,
-  .card-container {
-    padding: 5px;
-  }
-
-  .content-container .card-container .card {
-    margin: 5px 0;
-  }
-
-  .selected-filters-display {
-    flex-direction: row;
-  }
-
-  .results-header {
-    font-size: 18px;
-  }
-}
