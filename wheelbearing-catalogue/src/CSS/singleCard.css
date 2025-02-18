@@ -1,21 +1,25 @@
+/* ========================================
+   Single Card Styles
+   ======================================== */
+
 .card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin: 10px; /* Increased margin for spacing */
-  padding: 10px; /* Increased padding */
-  max-width: 20%;
+  margin: 10px; /* Spacing between cards */
+  padding: 10px;
+  max-width: 20%; /* Five cards per row on large screens */
   overflow: hidden;
   font-family: "Roboto", sans-serif;
-  font-size: 18px; /* Adjusted font size for better readability */
+  font-size: 18px; /* Better readability */
   font-weight: 400;
-  line-height: 1.6; /* Increased line spacing */
-  min-height: 580px; /* Increased height slightly */
+  line-height: 1.6;
+  min-height: 580px;
   background-color: #2d333b;
   color: #fff;
   border-radius: 6px;
-  text-align: center; /* Center all text */
+  text-align: center;
 }
 
 .card-image img {
@@ -44,7 +48,26 @@
   margin: 10px 0; /* Increased spacing */
 }
 
-/* Making ABS stand out */
 .bearing-size strong {
-  font-weight: 700; /* Make key text bold */
+  font-weight: 700; /* Emphasize key text */
+}
+
+/* ========================================
+     Media Queries for Single Card
+     ======================================== */
+
+/* Tablet screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .card {
+    max-width: 45%; /* Two cards per row */
+    margin: 10px auto;
+  }
+}
+
+/* Mobile screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .card {
+    max-width: 90%; /* Single column layout */
+    margin: 10px auto;
+  }
 }

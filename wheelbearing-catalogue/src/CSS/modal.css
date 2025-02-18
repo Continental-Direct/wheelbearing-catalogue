@@ -79,3 +79,41 @@
   width: 100%;
   margin-top: 20px;
 }
+
+/* ========================================
+   Responsive Modal Adjustments
+   ======================================== */
+
+/* Tablet screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .modal-info {
+    grid-template-columns: 1fr; /* Switch to a single column layout */
+    gap: 10px 15px;
+  }
+
+  .modal-image {
+    margin-bottom: 2rem;
+  }
+}
+
+/* Mobile screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .modal-info {
+    grid-template-columns: 1fr; /* Maintain single column layout */
+    gap: 8px 10px;
+  }
+
+  .modal-image {
+    margin-bottom: 1.5rem;
+  }
+}

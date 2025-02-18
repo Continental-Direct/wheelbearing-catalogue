@@ -1,3 +1,8 @@
+/* ========================================
+   Card Container & Related Sections
+   ======================================== */
+
+/* Card Container */
 .card-container {
   display: flex;
   gap: 20px;
@@ -5,6 +10,7 @@
   font-family: "Roboto", sans-serif;
 }
 
+/* Main Content Container */
 .content-container {
   display: flex;
   flex-direction: column;
@@ -38,7 +44,7 @@
   align-items: center;
   border-radius: 5px;
   color: white;
-  font-size: 18px; /* Matching gradient box */
+  font-size: 18px;
   font-weight: 400;
 }
 
@@ -58,35 +64,7 @@
   letter-spacing: 1px;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .content-container {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .content-container .card-container .card {
-    width: 100%;
-    flex-basis: auto;
-    max-width: none;
-    margin: 10px 0;
-  }
-
-  .filter-section {
-    height: auto;
-    padding: 10px;
-  }
-
-  .selected-filters-display {
-    gap: 1rem;
-    font-size: 16px;
-  }
-
-  .card-container {
-    justify-content: center;
-  }
-}
-
+/* Results Header */
 .results-header {
   font-size: 20px;
   color: #fff;
@@ -98,4 +76,68 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+/* ========================================
+   Media Queries for Card Container
+   ======================================== */
+
+/* Tablet screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .card-container {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .content-container {
+    padding: 15px;
+    gap: 1.5rem;
+  }
+
+  .filter-section {
+    height: auto; /* Allow height to adjust based on content */
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  .selected-filters-display {
+    gap: 1.5rem;
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  .results-header {
+    font-size: 18px;
+    padding: 8px 15px;
+  }
+}
+
+/* Mobile screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .card-container {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .content-container {
+    padding: 10px;
+    gap: 1rem;
+  }
+
+  .filter-section {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .selected-filters-display {
+    gap: 1rem;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .results-header {
+    font-size: 16px;
+    padding: 5px 10px;
+  }
 }
