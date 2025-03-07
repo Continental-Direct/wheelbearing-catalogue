@@ -19,7 +19,7 @@ const SelectedFiltersDisplay: React.FC<SelectedFiltersDisplayProps> = ({
 }) => {
   return (
     <div className="selected-filters-display">
-      <h4>Vehicle:</h4>
+      <h4>Your Vehicle:</h4>
       {manufacturer && <p className="filter-tag">{manufacturer}</p>}
       {model && <p className="filter-tag"> {model}</p>}
       {engineSize && <p className="filter-tag"> {engineSize}</p>}

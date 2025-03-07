@@ -6,7 +6,7 @@ const Nav = () => {
     <nav className="navbar">
       <div className="navbar-left">
         <Link to="/" className="navbar-title-link" aria-label="Go to Home">
-          <span className="navbar-title">CONTINENTAL DIRECT</span>
+          <span className="navbar-title">Homepage</span>
         </Link>
         <Link to="/" className="navbar-subtitle-link" aria-label="Go to Home">
           <span className="navbar-subtitle">Wheel Bearings</span>

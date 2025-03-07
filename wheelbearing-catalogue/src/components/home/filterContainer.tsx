@@ -94,6 +94,11 @@ const FilterContainer: React.FC = () => {
 
   return (
     <div className="container">
+      <img
+        src={"/continental.png"}
+        alt="Continental Direct Logo"
+        className="home-img"
+      />
       <div className="orange-gradient-box">
         <h2>CD WHEELBEARINGS</h2>
         <p>IDENTIFY THE CORRECT PART FOR YOUR VEHICLE</p>

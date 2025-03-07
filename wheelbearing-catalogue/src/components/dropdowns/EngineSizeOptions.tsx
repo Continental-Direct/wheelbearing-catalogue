@@ -31,12 +31,16 @@ const EngineSizeOptions: React.FC<EngineSizeOptionsProps> = ({
             .from("wheelbearing2")
             .select("EngineSize")
             .eq("Model", selectedModel);
+
           if (error) {
             console.error("Error fetching engine sizes:", error.message);
           } else {
             const uniqueEngineSizes = [
-              ...new Set(data.map((item: any) => item.EngineSize)),
+              ...new Set(
+                data.map((item: any) => Number(item.EngineSize).toFixed(1))
+              ),
             ];
+
             uniqueEngineSizes.sort((a, b) => Number(a) - Number(b));
 
             setEngineSizes(uniqueEngineSizes);

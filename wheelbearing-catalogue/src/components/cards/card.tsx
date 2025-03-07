@@ -58,7 +58,7 @@ const Card: React.FC<CardProps> = ({
       </div>
       <p className="part-number">{CD}</p>
       <p className="bearing-size">
-        <strong>{Manuf} Wheelbearing Kit</strong>
+        <strong>Wheelbearing Kit for {Manuf}</strong>
       </p>
       <p className="bearing-size">
         <strong>Bearing Size:</strong> {Bearing1Size}

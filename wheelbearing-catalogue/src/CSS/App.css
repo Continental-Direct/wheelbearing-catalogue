@@ -173,6 +173,13 @@ body {
   margin-top: 10px;
 }
 
+.home-img {
+  display: block; /* Allows margin auto centering */
+  max-width: 400px; /* Reasonable size for desktop */
+  width: 100%; /* Scales down on smaller screens */
+  margin: 40px auto 20px; /* Centers image, adds spacing above & below */
+}
+
 /* RESPONSIVE DESIGN */
 
 /* Tablet & Mobile adjustments */
@@ -207,6 +214,10 @@ body {
   .orange-gradient-box p {
     font-size: 16px;
   }
+  .home-img {
+    max-width: 300px; /* Slightly smaller on tablets */
+    margin: 30px auto 15px;
+  }
 }
 
 /* Further adjustments for very small screens */
@@ -219,5 +230,9 @@ body {
   .reset-button {
     font-size: 14px;
     padding: 10px 15px;
+  }
+  .home-img {
+    max-width: 250px; /* Further reduce on mobile */
+    margin: 20px auto 10px;
   }
 }
