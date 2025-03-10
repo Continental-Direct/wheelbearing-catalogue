@@ -1,9 +1,15 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import "../../CSS/Nav.css";
 
 const Nav = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
   return (
     <nav className="navbar">
+      {/* Left Side (Homepage & Wheel Bearings) */}
       <div className="navbar-left">
         <Link to="/" className="navbar-title-link" aria-label="Go to Home">
           <span className="navbar-title">Homepage</span>
@@ -12,14 +18,65 @@ const Nav = () => {
           <span className="navbar-subtitle">Wheel Bearings</span>
         </Link>
       </div>
+
+      {/* Right Side (Hamburger Menu + "Catalogues" Label) */}
       <div className="navbar-right">
-        <Link to="/" className="navbar-logo-link" aria-label="Go to Home">
-          <img
-            src={"/continental.png"}
-            alt="Continental Direct Logo"
-            className="navbar-logo"
-          />
-        </Link>
+        <button
+          className="hamburger-btn"
+          onClick={toggleMenu}
+          aria-label="Toggle Menu"
+        >
+          <div className={`hamburger-line ${menuOpen ? "open" : ""}`}></div>
+          <div className={`hamburger-line ${menuOpen ? "open" : ""}`}></div>
+          <div className={`hamburger-line ${menuOpen ? "open" : ""}`}></div>
+        </button>
+        <span className="navbar-subtitle">Catalogues</span>
+        {menuOpen && (
+          <div className="hamburger-menu">
+            <ul>
+              <li>
+                <a
+                  href="https://wiperblades-test.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Wiperblades
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://shock-absorbers-test.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Shock Absorbers
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://coil-springs-test.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Coil Springs
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://cv-boots-test.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  CV Boots
+                </a>
+              </li>
+            </ul>
+          </div>
+        )}
       </div>
     </nav>
   );

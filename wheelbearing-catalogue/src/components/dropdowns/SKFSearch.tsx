@@ -43,18 +43,21 @@ const SKFSearch = () => {
   };
 
   return (
-    <div className="skf-search-container">
-      <input
-        className="skf-search-input"
-        type="text"
-        value={inputNumber}
-        onChange={handleInputChange}
-        placeholder="Enter SKF or FAG Number"
-      />
-      <button className="search-button" onClick={handleSearch}>
-        Search
-      </button>
-    </div>
+    <>
+      <h3>CROSS REFERENCE SEARCH</h3>
+      <div className="skf-search-container">
+        <input
+          className="skf-search-input"
+          type="text"
+          value={inputNumber}
+          onChange={handleInputChange}
+          placeholder="ENTER NUMBER"
+        />
+        <button className="search-button" onClick={handleSearch}>
+          Search
+        </button>
+      </div>
+    </>
   );
 };
 

@@ -12,6 +12,11 @@ const Footer = () => {
             replacement parts made to exacting standards
             <br /> and priced to offer the competitive edge.
           </p>
+          <br></br>
+          <p className="disclaimer">
+            Disclaimer: Manufacturers' references are for information purposes
+            only.
+          </p>
         </section>
 
         <div className="footer-right">

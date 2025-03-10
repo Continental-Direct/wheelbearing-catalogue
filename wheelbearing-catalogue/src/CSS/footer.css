@@ -14,6 +14,10 @@
   left: 0;
 }
 
+.about .disclaimer {
+  font-size: 10px;
+}
+
 .footer-container {
   display: flex;
   justify-content: center;

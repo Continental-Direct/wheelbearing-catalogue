@@ -47,6 +47,11 @@ const Card: React.FC<CardProps> = ({
 }) => {
   const imageUrl = `https://dsucoxafocjydztfhxum.supabase.co/storage/v1/object/public/wheelbearing2/bearing_img/${CD}.jpg`;
 
+  // Dynamic formatter to insert newlines before "I.D" and "W"
+  const formatBearingSize = (size: string) => {
+    return size.replace(/I\.D/g, "\nI.D").replace(/W/g, "\nW");
+  };
+
   return (
     <div className="card">
       <div className="card-image">
@@ -60,8 +65,12 @@ const Card: React.FC<CardProps> = ({
       <p className="bearing-size">
         <strong>Wheelbearing Kit for {Manuf}</strong>
       </p>
-      <p className="bearing-size">
-        <strong>Bearing Size:</strong> {Bearing1Size}
+      <p className="bearing-size" style={{ whiteSpace: "pre-line" }}>
+        <strong>
+          Bearing Size:
+          <br />
+        </strong>{" "}
+        {formatBearingSize(Bearing1Size)}
       </p>
       <p className="bearing-size">
         <strong>ABS:</strong> {abs_note}
