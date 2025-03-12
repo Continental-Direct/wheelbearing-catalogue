@@ -19,7 +19,6 @@ const Nav = () => {
         </Link>
       </div>
 
-      {/* Right Side (Hamburger Menu + "Catalogues" Label) */}
       <div className="navbar-right">
         <button
           className="hamburger-btn"
