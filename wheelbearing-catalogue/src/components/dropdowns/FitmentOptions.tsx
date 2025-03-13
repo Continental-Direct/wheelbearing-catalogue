@@ -4,6 +4,8 @@ import supabase from "../../assets/supaBaseClient";
 interface MPosOptionsProps {
   selectedModel: string;
   selectedEngineSize: string;
+  selectedBodyType: string;
+  selectedTransmission: string;
   selectedMarkSeries: string;
   selectedDriveType: string;
   reset: boolean;
@@ -13,6 +15,8 @@ interface MPosOptionsProps {
 const FitmentOptions: React.FC<MPosOptionsProps> = ({
   selectedModel,
   selectedEngineSize,
+  selectedBodyType,
+  selectedTransmission,
   selectedMarkSeries,
   selectedDriveType,
   reset,
@@ -32,6 +36,8 @@ const FitmentOptions: React.FC<MPosOptionsProps> = ({
       if (
         selectedModel &&
         selectedEngineSize &&
+        selectedBodyType &&
+        selectedTransmission &&
         selectedMarkSeries &&
         selectedDriveType
       ) {
@@ -41,8 +47,11 @@ const FitmentOptions: React.FC<MPosOptionsProps> = ({
             .select("MPos")
             .eq("Model", selectedModel)
             .eq("EngineSize", selectedEngineSize)
+            .eq("BodyType", selectedBodyType)
+            .eq("Transmission", selectedTransmission)
             .eq("mark_series", selectedMarkSeries)
             .eq("TRWDansDRWDive", selectedDriveType);
+
           if (error) {
             console.error("Error fetching MPos:", error.message);
           } else {
@@ -61,6 +70,8 @@ const FitmentOptions: React.FC<MPosOptionsProps> = ({
   }, [
     selectedModel,
     selectedEngineSize,
+    selectedBodyType,
+    selectedTransmission,
     selectedMarkSeries,
     selectedDriveType,
   ]);

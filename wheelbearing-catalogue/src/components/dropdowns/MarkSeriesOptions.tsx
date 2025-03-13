@@ -4,6 +4,8 @@ import supabase from "../../assets/supaBaseClient";
 interface MarkSeriesOptionsProps {
   selectedModel: string;
   selectedEngineSize: string;
+  selectedBodyType: string;
+  selectedTransmission: string;
   reset: boolean;
   onMarkSeriesChange: (markSeries: string) => void;
 }
@@ -11,6 +13,8 @@ interface MarkSeriesOptionsProps {
 const MarkSeriesOptions: React.FC<MarkSeriesOptionsProps> = ({
   selectedModel,
   selectedEngineSize,
+  selectedBodyType,
+  selectedTransmission,
   reset,
   onMarkSeriesChange,
 }) => {
@@ -28,12 +32,19 @@ const MarkSeriesOptions: React.FC<MarkSeriesOptionsProps> = ({
   useEffect(() => {
     const fetchMarkSeries = async () => {
       try {
-        if (selectedModel && selectedEngineSize) {
+        if (
+          selectedModel &&
+          selectedEngineSize &&
+          selectedBodyType &&
+          selectedTransmission
+        ) {
           const { data, error } = await supabase
             .from("wheelbearing2")
             .select("mark_series")
             .eq("Model", selectedModel)
-            .eq("EngineSize", selectedEngineSize);
+            .eq("EngineSize", selectedEngineSize)
+            .eq("BodyType", selectedBodyType)
+            .eq("Transmission", selectedTransmission);
 
           if (error) {
             console.error("Error fetching mark/series:", error.message);
@@ -52,7 +63,12 @@ const MarkSeriesOptions: React.FC<MarkSeriesOptionsProps> = ({
     };
 
     fetchMarkSeries();
-  }, [selectedModel, selectedEngineSize]);
+  }, [
+    selectedModel,
+    selectedEngineSize,
+    selectedBodyType,
+    selectedTransmission,
+  ]);
 
   useEffect(() => {
     if (reset) {
@@ -69,7 +85,7 @@ const MarkSeriesOptions: React.FC<MarkSeriesOptionsProps> = ({
           value={selectedMarkSeries}
           onChange={handleMarkSeriesChange}
         >
-          <option value=""> Mark/Series</option>
+          <option value="">Mark/Series</option>
           {markSeries.map((ms, index) => (
             <option key={index} value={ms}>
               {ms}

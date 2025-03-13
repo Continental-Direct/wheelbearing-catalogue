@@ -1,3 +1,5 @@
+/* Existing styles remain unchanged ... */
+
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -16,13 +18,13 @@
   border-radius: 8px;
   padding: 30px;
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  align-items: center; /* Center content */
+  flex-direction: column;
+  align-items: center;
   color: #fff;
   max-width: 1000px;
   width: 90%;
-  max-height: 90vh; /* Prevents cutoff */
-  overflow-y: auto; /* Enables scrolling if needed */
+  max-height: 90vh;
+  overflow-y: auto;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
   gap: 20px;
 }
@@ -47,24 +49,21 @@
 .modal-info {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px 30px; /* More space between columns */
+  gap: 15px 30px;
   list-style: none;
   padding-left: 0;
   width: 100%;
   text-align: left;
 }
 
-/* Key (category) styling */
 .modal-category {
   font-weight: 700;
 }
 
-/* Value (details) styling */
 .modal-value {
   font-weight: 400;
 }
 
-/* Align key-value pairs */
 .modal-info li {
   display: flex;
   justify-content: space-between;
@@ -72,7 +71,6 @@
   padding-bottom: 4px;
 }
 
-/* Back button (uses .search-button from other components) */
 .modal-buttons {
   display: flex;
   justify-content: center;
@@ -80,40 +78,126 @@
   margin-top: 20px;
 }
 
-/* ========================================
-   Responsive Modal Adjustments
-   ======================================== */
-
-/* Tablet screens (max-width: 768px) */
+/* Responsive Modal Adjustments */
 @media (max-width: 768px) {
   .modal-content {
     padding: 20px;
     gap: 15px;
   }
-
   .modal-info {
-    grid-template-columns: 1fr; /* Switch to a single column layout */
+    grid-template-columns: 1fr;
     gap: 10px 15px;
   }
-
   .modal-image {
     margin-bottom: 2rem;
   }
 }
 
-/* Mobile screens (max-width: 480px) */
 @media (max-width: 480px) {
   .modal-content {
     padding: 15px;
     gap: 10px;
   }
-
   .modal-info {
-    grid-template-columns: 1fr; /* Maintain single column layout */
+    grid-template-columns: 1fr;
     gap: 8px 10px;
   }
-
   .modal-image {
     margin-bottom: 1.5rem;
   }
+}
+
+/* ===============================
+   Request Price Form Styling
+   =============================== */
+
+.request-price-form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: left;
+}
+
+.request-price-form label {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.request-price-form input,
+.request-price-form textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #32383f;
+}
+
+.request-price-form input:focus,
+.request-price-form textarea:focus {
+  outline: none;
+  border-color: #ff8200;
+}
+
+.request-price-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Radio button group for contact method */
+.request-price-form .radio-group {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.request-price-form .radio-group input {
+  margin-right: 0.5rem;
+}
+
+/* Button container styling within the form */
+.request-price-form .modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.request-price-form .modal-buttons button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* Back button styling: transparent with white border */
+.request-price-form .modal-buttons button:first-child {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.request-price-form .modal-buttons button:last-child {
+  background: linear-gradient(to bottom, #ffb347, #ff8200);
+  color: #fff;
+}
+
+.request-price-form .modal-buttons button:first-child:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.request-price-form .modal-buttons button:last-child:hover {
+  background: linear-gradient(to bottom, #e09e34, #d47400);
 }

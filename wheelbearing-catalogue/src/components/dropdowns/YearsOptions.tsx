@@ -4,6 +4,8 @@ import supabase from "../../assets/supaBaseClient";
 interface DriveTypeOptionsProps {
   selectedModel: string;
   selectedEngineSize: string;
+  selectedBodyType: string; // Make sure this exists
+  selectedTransmission: string; // And this, too
   selectedMarkSeries: string;
   reset: boolean;
   onDriveTypeChange: (driveType: string) => void;
