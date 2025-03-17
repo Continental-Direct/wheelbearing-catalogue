@@ -1,4 +1,6 @@
-/* Existing styles remain unchanged ... */
+/* -------------------------------
+   Existing Modal Styles
+---------------------------------*/
 
 .modal-backdrop {
   position: fixed;
@@ -21,8 +23,8 @@
   flex-direction: column;
   align-items: center;
   color: #fff;
-  max-width: 1000px;
-  width: 90%;
+  max-width: 700px;
+  width: 70%;
   max-height: 90vh;
   overflow-y: auto;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
@@ -83,6 +85,8 @@
   .modal-content {
     padding: 20px;
     gap: 15px;
+    width: 90%;
+    max-width: 90%;
   }
   .modal-info {
     grid-template-columns: 1fr;
@@ -97,6 +101,8 @@
   .modal-content {
     padding: 15px;
     gap: 10px;
+    width: 95%;
+    max-width: 95%;
   }
   .modal-info {
     grid-template-columns: 1fr;
@@ -107,9 +113,54 @@
   }
 }
 
-/* ===============================
-   Request Price Form Styling
-   =============================== */
+/* -------------------------------
+   Shared Button Styling
+---------------------------------*/
+
+/* Plain Back Button */
+.back-button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 12px;
+  font-size: 16px;
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Orange Request Button */
+.request-button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 12px;
+  font-size: 16px;
+  background: linear-gradient(to bottom, #ffb347, #ff8200);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.request-button:hover {
+  background: linear-gradient(to bottom, #e09e34, #d47400);
+}
+
+/* -------------------------------
+   Request Price Form Specific Styling
+---------------------------------*/
 
 .request-price-form {
   width: 100%;
@@ -150,7 +201,6 @@
   min-height: 80px;
 }
 
-/* Radio button group for contact method */
 .request-price-form .radio-group {
   display: flex;
   gap: 1rem;
@@ -159,45 +209,4 @@
 
 .request-price-form .radio-group input {
   margin-right: 0.5rem;
-}
-
-/* Button container styling within the form */
-.request-price-form .modal-buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1.5rem;
-}
-
-.request-price-form .modal-buttons button {
-  flex: 1;
-  margin: 0 5px;
-  padding: 12px;
-  font-size: 16px;
-  border: none;
-  border-radius: 4px;
-  font-weight: 700;
-  text-transform: uppercase;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-}
-
-/* Back button styling: transparent with white border */
-.request-price-form .modal-buttons button:first-child {
-  background-color: transparent;
-  border: 2px solid #fff;
-  color: #fff;
-}
-
-.request-price-form .modal-buttons button:last-child {
-  background: linear-gradient(to bottom, #ffb347, #ff8200);
-  color: #fff;
-}
-
-.request-price-form .modal-buttons button:first-child:hover {
-  background-color: #fff;
-  color: #000;
-}
-
-.request-price-form .modal-buttons button:last-child:hover {
-  background: linear-gradient(to bottom, #e09e34, #d47400);
 }

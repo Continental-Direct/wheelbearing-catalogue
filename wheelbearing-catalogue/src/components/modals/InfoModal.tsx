@@ -1,5 +1,11 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
+import emailjs from "emailjs-com";
 import "../../CSS/modal.css";
+
+// Hard-coded EmailJS configuration (for testing purposes only)
+const EMAILJS_SERVICE_ID = "service_yekcptf";
+const EMAILJS_TEMPLATE_ID = "template_lnu01lc";
+const EMAILJS_USER_ID = "ZXVDob_g72ZecgQKm";
 
 interface InfoModalProps {
   isOpen: boolean;
@@ -37,7 +43,6 @@ interface InfoModalProps {
   };
 }
 
-// RequestPriceForm component encapsulating the request price form.
 interface RequestPriceFormProps {
   onBack: () => void;
   onSubmit: (data: {
@@ -57,7 +62,7 @@ const RequestPriceForm: React.FC<RequestPriceFormProps> = ({
     name: "",
     email: "",
     phone: "",
-    contactMethod: "email", // default selection
+    contactMethod: "email",
     message: "",
   });
 
@@ -70,7 +75,6 @@ const RequestPriceForm: React.FC<RequestPriceFormProps> = ({
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    // Here you can add form validation or integration with your backend.
     onSubmit(formData);
   };
 
@@ -138,10 +142,12 @@ const RequestPriceForm: React.FC<RequestPriceFormProps> = ({
         />
       </div>
       <div className="modal-buttons">
-        <button type="button" onClick={onBack}>
+        <button type="button" className="back-button" onClick={onBack}>
           Back
         </button>
-        <button type="submit">Request</button>
+        <button type="submit" className="request-button">
+          Request
+        </button>
       </div>
     </form>
   );
@@ -149,22 +155,63 @@ const RequestPriceForm: React.FC<RequestPriceFormProps> = ({
 
 const InfoModal: React.FC<InfoModalProps> = ({ isOpen, onClose, content }) => {
   const [showRequestForm, setShowRequestForm] = useState(false);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const imageUrl = `https://dsucoxafocjydztfhxum.supabase.co/storage/v1/object/public/wheelbearing2/bearing_img/${content.CD}.jpg`;
 
-  // Handle form submission (expand this to integrate with your backend as needed)
-  const handleFormSubmit = (data: {
+  const handleFormSubmit = async (data: {
     name: string;
     email: string;
     phone: string;
     contactMethod: string;
     message?: string;
   }) => {
-    console.log("Request Price Data:", data);
-    // Optionally, show a confirmation message or close the modal
-    onClose();
+    // Prepare template parameters for EmailJS
+    const templateParams = {
+      from_name: data.name,
+      from_email: data.email,
+      phone: data.phone,
+      contact_method: data.contactMethod,
+      message: data.message || "",
+      part_number: content.CD, // part number from the product content
+    };
+
+    try {
+      const result = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_USER_ID
+      );
+      console.log("Email sent successfully:", result.text);
+      setSuccessMessage(
+        "Your request has been sent and we will contact you shortly."
+      );
+    } catch (error) {
+      console.error("Error sending email:", error);
+      // Optionally, you can set an error message here.
+    }
   };
 
+  // If the modal isn't open, don't render anything.
   if (!isOpen) return null;
+
+  // If there's a success message, display that instead of the form/details.
+  if (successMessage) {
+    return (
+      <div className="modal-backdrop" onClick={onClose}>
+        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+          <div className="modal-body">
+            <p>{successMessage}</p>
+            <div className="modal-buttons">
+              <button onClick={onClose} className="request-button">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="modal-backdrop" onClick={onClose}>
@@ -198,14 +245,14 @@ const InfoModal: React.FC<InfoModalProps> = ({ isOpen, onClose, content }) => {
                     ))}
                 </ul>
                 <div className="modal-buttons">
+                  <button onClick={onClose} className="back-button">
+                    Back
+                  </button>
                   <button
-                    className="search-button"
                     onClick={() => setShowRequestForm(true)}
+                    className="request-button"
                   >
                     Request Price
-                  </button>
-                  <button className="search-button" onClick={onClose}>
-                    Back
                   </button>
                 </div>
               </div>
