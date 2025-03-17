@@ -113,26 +113,32 @@ const RequestPriceForm: React.FC<RequestPriceFormProps> = ({
       <div>
         <label>How would you like to receive the price?</label>
         <div className="radio-group">
-          <input
-            type="radio"
-            id="contactEmail"
-            name="contactMethod"
-            value="email"
-            checked={formData.contactMethod === "email"}
-            onChange={handleChange}
-          />
-          <label htmlFor="contactEmail">Email</label>
-          <input
-            type="radio"
-            id="contactPhone"
-            name="contactMethod"
-            value="phone"
-            checked={formData.contactMethod === "phone"}
-            onChange={handleChange}
-          />
-          <label htmlFor="contactPhone">Phone</label>
+          <label htmlFor="contactEmail" className="radio-label">
+            <input
+              type="radio"
+              id="contactEmail"
+              name="contactMethod"
+              value="email"
+              checked={formData.contactMethod === "email"}
+              onChange={handleChange}
+            />
+            Email
+          </label>
+
+          <label htmlFor="contactPhone" className="radio-label">
+            <input
+              type="radio"
+              id="contactPhone"
+              name="contactMethod"
+              value="phone"
+              checked={formData.contactMethod === "phone"}
+              onChange={handleChange}
+            />
+            Phone
+          </label>
         </div>
       </div>
+
       <div>
         <label>Optional Message</label>
         <textarea

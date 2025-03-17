@@ -201,10 +201,12 @@
   min-height: 80px;
 }
 
+/* Radio group layout and spacing */
 .request-price-form .radio-group {
   display: flex;
-  gap: 1rem;
   align-items: center;
+  gap: 2rem; /* Increase spacing between Email/Phone */
+  margin-top: 0.5rem; /* Space above the radio options */
 }
 
 .request-price-form .radio-group input {
