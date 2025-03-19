@@ -8,7 +8,7 @@
   justify-content: space-between;
   align-items: center;
   margin: 10px; /* Spacing between cards */
-  padding: 10px;
+  padding-bottom: 2rem;
   max-width: 20%; /* Five cards per row on large screens */
   overflow: hidden;
   font-family: "Roboto", sans-serif;
@@ -51,7 +51,9 @@
 .bearing-size strong {
   font-weight: 700; /* Emphasize key text */
 }
-
+.top {
+  margin-top: 10px;
+}
 /* ========================================
      Media Queries for Single Card
      ======================================== */

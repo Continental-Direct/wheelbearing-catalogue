@@ -77,7 +77,7 @@ const Card: React.FC<CardProps> = ({
       </p>
       {vehicleDetails && <p className="bearing-size">{vehicleDetails}</p>}
       {vehicleDetails2 && <p className="bearing-size">{vehicleDetails2}</p>}
-      <button className="search-button" onClick={openModal}>
+      <button className="search-button top" onClick={openModal}>
         More Info
       </button>
     </div>
