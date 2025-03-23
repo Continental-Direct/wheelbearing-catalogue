@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import "../../CSS/Nav.css";
+import "../../CSS/nav.css";
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
