@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import supabase from "../../assets/supaBaseClient";
 
+interface EngineSizeOption {
+  raw: string;
+  formatted: string;
+}
+
 interface EngineSizeOptionsProps {
   selectedModel: string;
   reset: boolean;
@@ -12,7 +17,7 @@ const EngineSizeOptions: React.FC<EngineSizeOptionsProps> = ({
   reset,
   onEngineSizeChange,
 }) => {
-  const [engineSizes, setEngineSizes] = useState<string[]>([]);
+  const [engineSizes, setEngineSizes] = useState<EngineSizeOption[]>([]);
   const [selectedEngineSize, setSelectedEngineSize] = useState<string>("");
 
   const handleEngineSizeChange = (
@@ -35,15 +40,26 @@ const EngineSizeOptions: React.FC<EngineSizeOptionsProps> = ({
           if (error) {
             console.error("Error fetching engine sizes:", error.message);
           } else {
-            const uniqueEngineSizes = [
-              ...new Set(
-                data.map((item: any) => Number(item.EngineSize).toFixed(1))
-              ),
-            ];
+            // Use a Map to ensure unique engine sizes based on the raw value.
+            const uniqueEngineSizesMap = new Map<string, string>();
+            data.forEach((item: any) => {
+              const raw = item.EngineSize; // e.g. "2", "3"
+              // Format for display (always one decimal)
+              const formatted = Number(raw).toFixed(1); // e.g. "2.0", "3.0"
+              if (!uniqueEngineSizesMap.has(raw)) {
+                uniqueEngineSizesMap.set(raw, formatted);
+              }
+            });
 
-            uniqueEngineSizes.sort((a, b) => Number(a) - Number(b));
+            // Convert Map to array of objects.
+            const engineSizesOptions: EngineSizeOption[] = Array.from(
+              uniqueEngineSizesMap.entries()
+            ).map(([raw, formatted]) => ({ raw, formatted }));
 
-            setEngineSizes(uniqueEngineSizes);
+            // Sort options by numeric value of raw.
+            engineSizesOptions.sort((a, b) => Number(a.raw) - Number(b.raw));
+
+            setEngineSizes(engineSizesOptions);
           }
         } else {
           setEngineSizes([]);
@@ -71,10 +87,10 @@ const EngineSizeOptions: React.FC<EngineSizeOptionsProps> = ({
           value={selectedEngineSize}
           onChange={handleEngineSizeChange}
         >
-          <option value=""> Engine Size</option>
-          {engineSizes.map((size) => (
-            <option key={size} value={size}>
-              {size}
+          <option value="">Engine Size</option>
+          {engineSizes.map((option) => (
+            <option key={option.raw} value={option.raw}>
+              {option.formatted}
             </option>
           ))}
         </select>
