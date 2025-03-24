@@ -23,10 +23,9 @@ const BodyTypeOptions: React.FC<BodyTypeOptionsProps> = ({
       try {
         if (selectedModel && selectedEngineSize) {
           const { data, error } = await supabase
-            .from("wheelbearing2")
+            .from("wiperblades2")
             .select("BodyType")
-            .eq("Model", selectedModel)
-            .eq("EngineSize", selectedEngineSize);
+            .eq("Model", selectedModel);
 
           if (error) {
             console.error("Error fetching body types:", error.message);

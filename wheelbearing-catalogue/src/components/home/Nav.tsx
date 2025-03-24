@@ -35,16 +35,6 @@ const Nav = () => {
             <ul>
               <li>
                 <a
-                  href="https://wiperblades-test.netlify.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Wiperblades
-                </a>
-              </li>
-              <li>
-                <a
                   href="https://shock-absorbers-test.netlify.app/"
                   target="_blank"
                   rel="noopener noreferrer"
