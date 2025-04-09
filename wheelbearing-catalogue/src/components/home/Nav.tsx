@@ -35,7 +35,7 @@ const Nav = () => {
             <ul>
               <li>
                 <a
-                  href="https://shock-absorbers-test.netlify.app/"
+                  href="https://shockabsorbers-test-v3.netlify.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMenuOpen(false)}
@@ -45,7 +45,7 @@ const Nav = () => {
               </li>
               <li>
                 <a
-                  href="https://coil-springs-test.netlify.app/"
+                  href="https://coil-springs-test-v3.netlify.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMenuOpen(false)}
@@ -55,12 +55,32 @@ const Nav = () => {
               </li>
               <li>
                 <a
-                  href="https://cv-boots-test.netlify.app/"
+                  href="https://cv-boots-test-v3.netlify.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMenuOpen(false)}
                 >
                   CV Boots
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://strutmounts-test-v3.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Strutmounts
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://wiperblades-test-v3.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Wiperblades
                 </a>
               </li>
             </ul>
