@@ -35,7 +35,7 @@ const Nav = () => {
             <ul>
               <li>
                 <a
-                  href="https://shockabsorbers-test-v3.netlify.app/"
+                  href="https://shock-absorbers-test-v3.netlify.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMenuOpen(false)}
